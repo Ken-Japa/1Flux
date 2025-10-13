@@ -1,0 +1,27 @@
+{
+  "nome_do_cliente": "",
+  "subnicho": "",
+  "informacoes_de_contato": "",
+  "publico_alvo": "",
+  "tom_de_voz": "",
+  "estilo_de_comunicacao": "",
+  "vocabulario_da_marca": [""],
+  "exemplos_de_nicho": [""],
+  "objetivos_de_marketing": "",
+  "canais_de_distribuicao": [""],
+  "topicos_principais": [""],
+  "palavras_chave": [""],
+  "chamada_para_acao": "",
+  "restricoes_e_diretrizes": "",
+  "informacoes_adicionais": "",
+  "referencias_de_concorrentes": [""],
+  "referencias_de_estilo_e_formato": [""],
+  "tipo_de_conteudo": "",
+  "tipo_de_campanha": "",
+  "conteudos_semanais": [
+    {
+      "chamada_para_acao_individual": "",
+      "objetivo_do_conteudo_individual": ""
+    }
+  ]
+}

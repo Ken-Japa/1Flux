@@ -1,0 +1,96 @@
+{
+  "lancamento": {
+    "objetivo_principal": "Gerar atenção e cadastros/testes do produto",
+    "metricas_principais": [
+      "Taxa de cliques no link da bio (CTR)",
+      "Número de conversões (cadastros, downloads, trials)",
+      "Taxa de conversão da landing page (%)"
+    ],
+    "metricas_secundarias": [
+      "Impressões totais",
+      "Alcance dos posts",
+      "Visualizações de vídeo (especialmente Post 2 ou 4)",
+      "Engajamento no CTA final (comentários, cliques no botão)"
+    ],
+    "interpretacao": "Quanto maior o CTR e as conversões, melhor a eficiência da narrativa de lançamento."
+  },
+
+  "autoridade": {
+    "objetivo_principal": "Construir confiança, reputação e percepção de expertise",
+    "metricas_principais": [
+      "Compartilhamentos por post",
+      "Salvamentos por post",
+      "Tempo médio de leitura (em artigos ou blog)",
+      "Cliques em conteúdos educativos (e-book, whitepaper)"
+    ],
+    "metricas_secundarias": [
+      "Novos seguidores orgânicos",
+      "Número de comentários com dúvidas ou perguntas",
+      "Menções externas ou backlinks"
+    ],
+    "interpretacao": "Altos compartilhamentos e salvamentos indicam que o conteúdo é visto como valioso e confiável."
+  },
+
+  "engajamento": {
+    "objetivo_principal": "Aumentar interação e fortalecer a comunidade",
+    "metricas_principais": [
+      "Taxa de engajamento (%) [(likes + comentários + compartilhamentos) / alcance]",
+      "Número de comentários por post",
+      "Respostas a stories ou enquetes",
+      "Participações em desafios ou interações diretas"
+    ],
+    "metricas_secundarias": [
+      "Cliques em stickers",
+      "Visualizações de stories ou lives",
+      "Número de conteúdos gerados pelo usuário (UGC)"
+    ],
+    "interpretacao": "Engajamento alto mostra que o público está ativo e emocionalmente envolvido."
+  },
+
+  "conversao": {
+    "objetivo_principal": "Gerar vendas ou leads qualificados",
+    "metricas_principais": [
+      "Taxa de conversão (%)",
+      "Valor total de vendas ou receita gerada",
+      "Custo por lead (CPL)",
+      "Retorno sobre investimento (ROI)"
+    ],
+    "metricas_secundarias": [
+      "CTR em botões de compra",
+      "Taxa de abandono no checkout",
+      "Tempo médio até a conversão"
+    ],
+    "interpretacao": "Se as conversões não crescem, revise a clareza da oferta e o alinhamento com o público."
+  },
+
+  "retencao": {
+    "objetivo_principal": "Aumentar retenção e engajamento de usuários atuais",
+    "metricas_principais": [
+      "Taxa de reengajamento (usuários ativos novamente)",
+      "Taxa de churn (cancelamentos)",
+      "Participação em programas de fidelidade ou comunidade"
+    ],
+    "metricas_secundarias": [
+      "Taxa de abertura de e-mails de clientes",
+      "Cliques em atualizações de produto",
+      "Feedbacks positivos recebidos"
+    ],
+    "interpretacao": "Altas taxas de reengajamento indicam que os usuários continuam encontrando valor no produto."
+  },
+
+  "criativa": {
+    "objetivo_principal": "Explorar formatos, crescer base e testar ideias",
+    "metricas_principais": [
+      "Crescimento de seguidores por semana",
+      "Taxa de engajamento média",
+      "Alcance orgânico por post",
+      "Taxa de compartilhamento"
+    ],
+    "metricas_secundarias": [
+      "Tempo médio de visualização em Reels",
+      "CTR em experimentos de conteúdo",
+      "Feedback qualitativo nos comentários"
+    ],
+    "interpretacao": "Essas métricas ajudam a identificar o que mais ressoa com o público e guiam futuras estratégias de conteúdo."
+  }
+}
