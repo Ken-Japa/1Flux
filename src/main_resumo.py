@@ -104,7 +104,7 @@ def process_gemini_summary(posts_file_path=None):
         str: Caminho do arquivo de resumo salvo ou None se ocorrer um erro
     """
     # Diretórios
-    base_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
     gemini_posts_dir = os.path.join(base_dir, "output_files", "respostas_IA", "Gemini", "Resumo")
     gemini_summary_dir = os.path.join(base_dir, "output_files", "Resumo", "Gemini")
     
@@ -158,7 +158,7 @@ def process_cohere_summary(posts_file_path=None):
         str: Caminho do arquivo de resumo salvo ou None se ocorrer um erro
     """
     # Diretórios
-    base_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
     cohere_posts_dir = os.path.join(base_dir, "output_files", "respostas_IA", "Cohere", "Resumo")
     cohere_summary_dir = os.path.join(base_dir, "output_files", "Resumo", "Cohere")
     
@@ -229,7 +229,7 @@ def combine_summaries(gemini_summary_path, cohere_summary_path):
         }
         
         # Criar diretório para o JSON combinado
-        base_dir = os.path.dirname(os.path.abspath(__file__))
+        base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
         combined_dir = os.path.join(base_dir, "output_files", "Resumo", "Enviar")
         os.makedirs(combined_dir, exist_ok=True)
         

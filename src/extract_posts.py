@@ -71,7 +71,7 @@ def main():
     """
     # Diretório base
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    output_files_dir = os.path.join(base_dir, "output_files", "respostas_IA")
+    output_files_dir = os.path.join(base_dir, "..", "output_files", "respostas_IA")
     
     # Diretórios de entrada e saída para Gemini
     gemini_input_dir = os.path.join(output_files_dir, "Gemini")

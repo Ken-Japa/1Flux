@@ -11,6 +11,40 @@ from src.utils.prompt_manager.build_mistral_prompt import build_mistral_prompt
 from src.llm_client.mistral_client import generate_text_content
 from src.utils.html_generator.create_briefing_html import create_briefing_html
 from src.utils.pdf_generator.create_briefing_pdf import create_briefing_pdf
+from src.utils.prompt_manager.analyze_briefing_for_strategy import analyze_briefing_for_strategy
+
+def find_latest_summary_file(directory):
+    """
+    Encontra o arquivo de resumo combinado mais recente em um diretório.
+    
+    Args:
+        directory (Path): Caminho do diretório a ser pesquisado
+    
+    Returns:
+        Path: Caminho completo do arquivo mais recente ou None se não encontrar
+    """
+    try:
+        # Verificar se o diretório existe
+        if not directory.exists():
+            print(f"Diretório não encontrado: {directory}")
+            return None
+        
+        # Listar todos os arquivos JSON no diretório que começam com 'combined_summary_'
+        files = [f for f in directory.iterdir() if f.is_file() and f.name.startswith('combined_summary_') and f.name.endswith('.json')]
+        
+        if not files:
+            print(f"Nenhum arquivo de resumo combinado encontrado em: {directory}")
+            return None
+        
+        # Ordenar por data de modificação (mais recente primeiro)
+        files.sort(key=lambda x: x.stat().st_mtime, reverse=True)
+        
+        # Retornar o caminho completo do arquivo mais recente
+        return files[0]
+    
+    except Exception as e:
+        print(f"Erro ao buscar arquivo de resumo mais recente: {str(e)}")
+        return None
 
 def main():
     """
@@ -25,9 +59,17 @@ def main():
     print("Iniciando processo de consolidação de posts com Mistral...")
     
     # Definir caminhos
-    base_dir = Path(__file__).parent
-    client_briefing_path = base_dir / "client_briefing.json"
-    resumo_path = base_dir / "output_files" / "Resumo" / "Enviar" / "combined_summary_20251009_141117.json"
+    base_dir = Path(__file__).parent.parent
+    client_briefing_path = base_dir / "src" / "client_briefing.json"
+    
+    # Encontrar o arquivo de resumo combinado mais recente
+    combined_summary_dir = base_dir / "output_files" / "Resumo" / "Enviar"
+    resumo_path = find_latest_summary_file(combined_summary_dir)
+    
+    if not resumo_path:
+        print("Erro: Nenhum arquivo de resumo combinado encontrado.")
+        return
+
     logs_dir = base_dir / "output_files" / "logs_para_IA"
     respostas_dir = base_dir / "output_files" / "respostas_IA" / "Mistral"
     briefings_dir = base_dir / "output_files" / "briefings" / "Mistral"
@@ -51,13 +93,29 @@ def main():
         return
     
     # Extrair informações do briefing
-    client_profile = client_briefing.get("client_profile", {})
-    niche_guidelines = client_briefing.get("niche_guidelines", {})
-    content_type = client_briefing.get("content_type", "")
-    weekly_themes = client_briefing.get("weekly_themes", [])
-    weekly_goal = client_briefing.get("weekly_goal", "")
-    campaign_type = client_briefing.get("campaign_type", "")
-    strategic_analysis = client_briefing.get("strategic_analysis", {})
+    # Extrair informações do briefing
+    client_profile = {
+        "nome_do_cliente": client_briefing.get("nome_do_cliente", ""),
+        "subnicho": client_briefing.get("subnicho", ""),
+        "informacoes_de_contato": client_briefing.get("informacoes_de_contato", ""),
+        "publico_alvo": client_briefing.get("publico_alvo", ""),
+        "tom_de_voz": client_briefing.get("tom_de_voz", ""),
+        "estilo_de_comunicacao": client_briefing.get("estilo_de_comunicacao", ""),
+        "vocabulario_da_marca": client_briefing.get("vocabulario_da_marca", []),
+        "exemplos_de_nicho": client_briefing.get("exemplos_de_nicho", []),
+        "informacoes_adicionais": client_briefing.get("informacoes_adicionais", "")
+    }
+    niche_guidelines = {
+        "subnicho": client_briefing.get("subnicho", ""),
+        "exemplos_de_nicho": client_briefing.get("exemplos_de_nicho", [])
+    }
+    content_type = client_briefing.get("tipo_de_conteudo", "")
+    weekly_themes_raw = client_briefing.get("conteudos_semanais", [])
+    weekly_themes = [item.get("objetivo_do_conteudo_individual", "") for item in weekly_themes_raw]
+    weekly_goal = client_briefing.get("objetivos_de_marketing", "")
+    campaign_type = client_briefing.get("tipo_de_campanha", "")
+    strategic_analysis = analyze_briefing_for_strategy(client_profile, niche_guidelines)
+
     
     # Extrair informações adicionais necessárias para o PDF
     publico_alvo = client_profile.get("publico_alvo", "")

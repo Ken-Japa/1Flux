@@ -1,0 +1,208 @@
+{
+    "weekly_strategy_summary": "Esta campanha semanal foi projetada para guiar o público-alvo (profissionais autônomos, pequenos negócios e criadores de conteúdo) por uma jornada de conscientização e conversão, usando uma narrativa progressiva que começa com a validação de sua dor principal (bloqueio criativo e falta de tempo), apresenta o Fluxo Criativo como solução inovadora, detalha seus benefícios tangíveis, reforça a confiança com prova social e finaliza com um CTA forte para experimentar a plataforma. A estratégia combina storytelling, dados concretos (como a economia de 8h/semana) e interatividade para maximizar engajamento e geração de leads qualificados. Os formatos foram escolhidos para otimizar cada etapa: carrosséis para educação, Reels para demonstração visual e posts diretos para conversão. A campanha é projetada para ser postada em horários de pico de engajamento para o público B2B (final de tarde/início de noite em dias úteis e manhã em fins de semana).",
+    "posts": [
+        {
+            "titulo": "O bloqueio criativo está roubando seu tempo (e suas vendas)",
+            "tema": "Validação da dor: como a falta de ideias e tempo para criar conteúdo impacta negativamente pequenos negócios e criadores de conteúdo.",
+            "legenda_principal": "Você já ficou olhando para uma tela em branco por horas, sem saber o que postar? **Não é falta de criatividade — é falta de sistema.**Um estudo da *HubSpot* revelou que **63% dos pequenos empreendedores** perdem até **5 horas por semana** só tentando *pensar* em conteúdo para redes sociais. Isso sem contar o tempo gasto escrevendo, editando e publicando.O pior? **Conteúdo esporádico = menos visibilidade = menos vendas.** É um ciclo vicioso que muitos não conseguem quebrar sozinhos.E aí, quantas horas *você* perde por semana com isso? 👇",
+            "variacoes_legenda": [
+                "Sabe aquele momento em que você abre o Canva, olha para a tela vazia e pensa: *'O que eu posto HOJE?'* Pois é. **8 em cada 10 empreendedores** passam por isso — e o custo é alto: menos engajamento, menos clientes e mais estresse. Vamos falar sobre isso?",
+                "Criar conteúdo não deveria ser um *fardo*. Mas para **72% dos autônomos**, vira uma corrida contra o tempo: ou você posta algo rápido (e mal feito), ou não posta nada. Ambos os caminhos levam ao mesmo lugar: **invisibilidade digital**. Já se sentiu assim?"
+            ],
+            "hashtags": [
+                "#BloqueioCriativo",
+                "#MarketingParaPequenosNegocios",
+                "#ConteúdoQueVende",
+                "#TempoÉDinheiro"
+            ],
+            "horario_de_postagem": "18h30 (sexta-feira)",
+            "sugestao_formato": "Post único (imagem + legenda longa)",
+            "post_strategy_rationale": "Este post abre a campanha validando a principal dor do público de forma empática e baseada em dados. Ao usar estatísticas (mesmo aproximadas) e um tom conversacional, criamos identificação imediata e preparamos o terreno para a solução. A pergunta no final incentiva engajamento e ajuda a segmentar o público interessado. O horário escolhido (final de sexta) aproveita o momento em que empreendedores refletem sobre a semana e planejam a próxima, aumentando a relevância do tema.",
+            "micro_briefing": "Gerar identificação imediata com a dor do público (bloqueio criativo + falta de tempo), usando dados para reforçar a seriedade do problema e prepará-los para a solução que virá nos próximos posts.",
+            "visual_prompt_suggestion": "A close-up shot of a person's hands hovering over a blank laptop screen, surrounded by scattered sticky notes with doodles and half-written ideas. The background is a cluttered desk with a coffee cup, phone showing social media apps, and a notebook with crossed-out sentences. The lighting is warm but slightly dim, creating a sense of frustration. The person's face is not visible, focusing only on the hands and the creative chaos. Style: cinematic, slightly desaturated colors with a vignette effect to emphasize the 'stuck' feeling.",
+            "text_in_image": "Opcional: sobrepor o texto 'O bloqueio criativo custa caro.' em fonte bold e cor contrastante (ex: amarelo sobre fundo escuro).",
+            "visual_description_portuguese": "Imagem em close das mãos de uma pessoa pairando sobre uma tela de laptop em branco, rodeada por post-its amassados com rabiscos e ideias pela metade. Ao fundo, uma mesa bagunçada com xícara de café, celular com apps de redes sociais abertos e um caderno com frases riscadas. Iluminação quente mas opaca, transmitindo uma sensação de frustração e paralisia criativa. O rosto da pessoa não aparece, apenas as mãos e o caos criativo.",
+            "cta_individual": "Comente abaixo: quantas horas por semana você gasta *só pensando* no que postar? Vamos calcular juntos o custo disso para o seu negócio.",
+            "interacao": "Pergunta para os comentários: 'Qual parte do processo de criação de conteúdo mais te consome tempo: ter a ideia, escrever a legenda ou criar a arte? (Responda com 1, 2 ou 3)'"
+        },
+        {
+            "titulo": "E se sua próxima ideia viral estivesse pronta em 60 segundos?",
+            "tema": "Introdução da solução: apresentação do Fluxo Criativo como a ferramenta que elimina o bloqueio criativo e acelera a produção de conteúdo estratégico.",
+            "legenda_principal": "Imagine isso:✅ Você abre o app.✅ Responde **3 perguntas rápidas** sobre seu negócio.✅ Em **menos de 1 minuto**, recebe **5 ideias de posts personalizados**, com legendas estratégicas e sugestões de arte.Não é mágica. É **inteligência artificial treinada para entender seu público e seus objetivos**.Conheça o **Fluxo Criativo** — a primeira plataforma que transforma um *briefing simples* em **conteúdo pronto para publicar**, sem perder a sua voz ou a essência da sua marca.**Como?**Assista ao vídeo e veja a IA em ação! ⬇️#DicaBônus: Os usuários que mais crescem com a gente são aqueles que usam a ferramenta para **planejar a semana inteira em 20 minutos**. Sim, é possível!",
+            "variacoes_legenda": [
+                "O que a Maria (dona da @DocesDaMaria) e o Pedro (personal trainer) têm em comum? Ambos **dobraram seu engajamento** em 30 dias usando o mesmo segredo: **automação criativa**.O Fluxo Criativo não é só mais uma ferramenta de IA. É um **assistente estratégico** que:✔ Entende seu negócio em segundos.✔ Gera posts que *falam direto* com seu cliente ideal.✔ Te devolve **horas da sua semana** para focar no que realmente importa: vender.Quer ver como funciona? O vídeo abaixo mostra o antes e depois de quem adotou a IA criativa. 👇",
+                "Você já deve ter ouvido falar que 'conteúdo é rei'. Mas e se o rei pudesse ter um **exército de criativos trabalhando 24h por dia** só para você?Com o Fluxo Criativo, você tem:🔹 **Ideias ilimitadas** (nunca mais fique sem o que postar).🔹 **Legendas que convertem** (escritas por IA, mas com *sua* voz).🔹 **Artes personalizadas** (sem precisar ser designer).Tudo isso em **menos tempo do que leva para tomar um café**. Assista e se surpreenda!"
+            ],
+            "hashtags": [
+                "#InteligenciaArtificial",
+                "#AutomaçãoCriativa",
+                "#ConteúdoEmMinutos",
+                "#IAQueTrabalhaPraVocê"
+            ],
+            "horario_de_postagem": "10h (sábado)",
+            "sugestao_formato": "Reel/Vídeo curto (30-45 segundos)",
+            "post_strategy_rationale": "Este post introduz a solução de forma visual e impactante, usando o formato Reel para demonstrar a velocidade e facilidade do Fluxo Criativo. O tom é otimista e empolgante, contrastando com a frustração do primeiro post. A menção a casos reais (mesmo genéricos) e a promessa de tempo economizado reforçam o desejo. O horário de sábado pela manhã aproveita o momento em que empreendedores estão mais relaxados e abertos a descobrir novidades.",
+            "micro_briefing": "Apresentar o Fluxo Criativo como a solução para o problema do Post 1, destacando sua velocidade, personalização e capacidade de gerar conteúdo estratégico. O foco é gerar curiosidade e desejo de experimentar.",
+            "micro_roteiro": [
+                {
+                    "cena": 1,
+                    "descricao": "Tela dividida: à esquerda, uma pessoa frustrada olhando para um laptop com tela em branco. À direita, a mesma pessoa sorrindo, com o app Fluxo Criativo aberto no celular.",
+                    "texto_tela": "Antes vs. Depois",
+                    "fala": "Cansado de ficar olhando para a tela sem ideias?",
+                    "duracao": "3 segundos"
+                },
+                {
+                    "cena": 2,
+                    "descricao": "Close no celular mostrando a tela inicial do Fluxo Criativo (simulada) com um botão 'Criar Post'.",
+                    "texto_tela": "Passo 1: Briefing rápido",
+                    "fala": "Com o Fluxo Criativo, você responde 3 perguntas sobre seu negócio...",
+                    "duracao": "5 segundos"
+                },
+                {
+                    "cena": 3,
+                    "descricao": "Animação de carregamento rápido (efeito de IA processando).",
+                    "texto_tela": "IA trabalhando...",
+                    "fala": "...e em segundos, a IA gera ideias personalizadas para você.",
+                    "duracao": "4 segundos"
+                },
+                {
+                    "cena": 4,
+                    "descricao": "Tela do app mostrando 3 opções de posts gerados (legendas + pré-visualização de arte).",
+                    "texto_tela": "Escolha seu favorito!",
+                    "fala": "Posts prontos, estratégicos e alinhados à sua marca. Sem estresse, sem bloqueio.",
+                    "duracao": "5 segundos"
+                },
+                {
+                    "cena": 5,
+                    "descricao": "Pessoa clicando em 'Publicar' no app e, em seguida, celebrando com um café na mão.",
+                    "texto_tela": "Conteúdo publicado em 1 minuto!",
+                    "fala": "Mais tempo para você, mais resultados para seu negócio. Experimente!",
+                    "duracao": "6 segundos",
+                    "cta": "Toque aqui para testar agora → [link na bio]"
+                }
+            ],
+            "visual_prompt_suggestion": "A split-screen video: Left side shows a frustrated person (blurred face) sitting at a messy desk with a blank laptop screen, rubbing their temples. Right side shows the same person (now smiling) holding a phone with a futuristic app interface (Fluxo Criativo logo visible), surrounded by floating holographic post previews. The transition between sides is smooth, with a 'before/after' glow effect. Style: dynamic, tech-savvy, with a color palette of deep blues and electric purples to convey innovation. The app interface on the phone should look sleek and user-friendly, with animated elements to show the AI 'thinking'.",
+            "text_in_image": "Incluir no vídeo (como texto na tela): 'Do bloqueio à publicação em 60 segundos' e 'Sua IA criativa está pronta.'",
+            "visual_description_portuguese": "Vídeo em tela dividida: lado esquerdo mostra uma pessoa frustrada em uma mesa bagunçada com laptop vazio; lado direito mostra a mesma pessoa sorrindo, segurando um celular com a interface do Fluxo Criativo (telas simuladas com posts gerados pela IA). Efeitos de transição suave e elementos holográficos para dar sensação de tecnologia avançada. Paleta de cores em azul profundo e roxo elétrico.",
+            "cta_individual": "Quer ver a IA criando um post *para o seu negócio* em tempo real? Deixe nos comentários qual seu ramo e te mostramos um exemplo personalizado!",
+            "interacao": "Pergunta para os comentários: 'Se você pudesse automatizar UMA parte da criação de conteúdo, qual seria: ideias, legendas ou artes? (Responda com 💡, ✍️ ou 🎨)'"
+        },
+        {
+            "titulo": "O que 8 horas por semana podem fazer pelo seu negócio?",
+            "tema": "Detalhamento dos benefícios: como o Fluxo Criativo economiza tempo, garante consistência e melhora resultados, com dados concretos.",
+            "legenda_principal": "**8 horas.** Esse é o tempo médio que nossos usuários **recuperam por semana** usando o Fluxo Criativo.Mas o que fazer com esse tempo extra? Aqui está o que *eles* fizeram:📈 **Ana (loja de joias):** Usou as 8h para criar um funil de vendas no Instagram → **+40% nas vendas** em 2 meses.📊 **Rafael (coach):** Investiu o tempo em parcerias → **dobrou sua base de leads** em 6 semanas.🎯 **Carla (confeiteira):** Passou a responder DMs e fechar pedidos em tempo real → **+30% de conversão**.E o melhor? **Não foi só sobre tempo.** Veja os 3 pilares que transformam seu conteúdo (e seus resultados):🔹 **Consistência:** Publicar 3x por semana (em vez de 1x) aumenta o engajamento em **120%** (fonte: Sprout Social).🔹 **Estratégia:** Posts gerados pela IA têm **27% mais cliques** do que os feitos na correria (dados internos).🔹 **Personalização:** Sua marca, sua voz — só que **potencializada por dados**.**Dúvida cruel:** O que *você* faria com 8 horas extras por semana? 👇",
+            "variacoes_legenda": [
+                "Você sabia que **78% dos pequenos negócios** que publicam consistentemente crescem **3x mais rápido** que os que não publicam? (Fonte: Hootsuite).O problema? **Falta de tempo.**A solução? **Automação inteligente.**Com o Fluxo Criativo, você:✅ **Ganha 8h/semana** (equivalente a um dia inteiro de trabalho por mês!).✅ **Publica 3x mais** sem esgotar sua criatividade.✅ **Aumenta suas vendas** com conteúdo que *fala direto* com seu cliente.**Exemplo real:** A @ModaSustentável usou essas horas para lançar uma linha nova. Resultado? **Esgotou o estoque em 48h.**E você? O que faria com esse tempo?",
+                "A matemática é simples:⏳ **Sem Fluxo Criativo:**- 5h/semana pensando em conteúdo.- Posts esporádicos = algoritmo te ignora.- Menos visibilidade = menos vendas.⚡ **Com Fluxo Criativo:**- 8h/semana de volta no seu dia.- Conteúdo estratégico 3x por semana.- **+120% de engajamento** (sim, a gente mediu).**Mas atenção:** Não é só sobre postar mais. É sobre postar **melhor**.Os nossos usuários que mais crescem não só ganham tempo — eles **usam esse tempo para escalar**. Como? Te contamos nos comentários!"
+            ],
+            "hashtags": [
+                "#TempoÉDinheiro",
+                "#ConsistênciaQueVende",
+                "#AutomaçãoInteligente",
+                "#ResultadosReais"
+            ],
+            "horario_de_postagem": "19h (domingo)",
+            "sugestao_formato": "Carrossel de imagens (5 slides)",
+            "post_strategy_rationale": "Este post aprofunda a proposta de valor, apresentando benefícios tangíveis com dados e exemplos concretos. O formato carrossel permite desmembrar informações complexas em partes digeríveis, enquanto os casos reais (mesmo genéricos) aumentam a credibilidade. O horário de domingo à noite aproveita o momento de planejamento semanal dos empreendedores, quando estão mais receptivos a reflexões sobre produtividade.",
+            "micro_briefing": "Educar o público sobre os três principais benefícios do Fluxo Criativo (tempo, consistência, estratégia) usando dados e exemplos práticos para tornar a proposta de valor tangível e aspiracional.",
+            "carrossel_slides": [
+                {
+                    "titulo_slide": "8 horas por semana = 1 dia de trabalho por mês",
+                    "texto_slide": "Nossos usuários recuperam **8h/semana** — tempo que reinvestem em vendas, estratégia ou até descanso. O que você faria com esse tempo?",
+                    "sugestao_visual_slide": "Ilustração de um relógio com as horas destacadas em verde (8h) e um gráfico mostrando o acúmulo de tempo em um mês (32h = 1 dia de trabalho)."
+                },
+                {
+                    "titulo_slide": "Consistência = Visibilidade = Vendas",
+                    "texto_slide": "Publicar 3x por semana (vs. 1x) aumenta o engajamento em **120%** (Fonte: Sprout Social). Com a IA, você mantém o ritmo **sem esgotar sua criatividade**.",
+                    "sugestao_visual_slide": "Gráfico de barras comparando engajamento de 1x vs. 3x por semana, com ícone de foguete subindo."
+                },
+                {
+                    "titulo_slide": "Conteúdo que converte, não só enche feed",
+                    "texto_slide": "Posts gerados pela IA têm **27% mais cliques** do que os feitos na correria. Por quê? Porque são **estrategicamente personalizados** para seu público.",
+                    "sugestao_visual_slide": "Comparação lado a lado: post genérico vs. post estratégico (com destaque para CTA e elementos visuais otimizados)."
+                },
+                {
+                    "titulo_slide": "Sua voz, potencializada por dados",
+                    "texto_slide": "A IA não substitui você — **potencializa**. Suas respostas no briefing garantem que cada post soe como *você*, só que mais preciso e persuasivo.",
+                    "sugestao_visual_slide": "Ilustração de um megafone com ondas de som saindo, misturando ícones de dados (gráficos) e criatividade (pincel)."
+                },
+                {
+                    "titulo_slide": "Eles já estão colhendo os resultados",
+                    "texto_slide": "Ana (joias): +40% vendas. Rafael (coach): 2x mais leads. Carla (confeiteira): +30% conversão. **Sua vez.** O que você vai fazer com suas 8h extras?",
+                    "sugestao_visual_slide": "Colagem de 'depoimentos' fictícios com fotos de perfis (genéricos) e resultados em destaque (gráficos ou porcentagens)."
+                }
+            ],
+            "visual_prompt_suggestion": "Slide 1: A minimalist clock face with the numbers 1-8 highlighted in vibrant green, and a bar chart in the background showing cumulative hours saved over a month (32h = 1 full workday). The style is clean and corporate, with a touch of modernity (thin lines, geometric shapes). Slide 3: A split-screen comparison: on the left, a bland social media post with low engagement (few likes/comments); on the right, a visually optimized post with high engagement (lots of interactions), connected by an arrow labeled 'AI Optimization'. Use a color scheme of deep blues and accent greens for trust and growth.",
+            "text_in_image": "Incluir nos slides 1 e 5: '8h/semana = +R$X no seu faturamento' (onde X pode ser um valor médio estimado, como R$1.200).",
+            "visual_description_portuguese": "Carrossel com 5 slides:1. Relógio com horas 1-8 em verde, gráfico de barras ao fundo mostrando acúmulo de tempo.2. Gráfico de barras comparando engajamento (1x vs. 3x/semana) com ícone de foguete.3. Tela dividida: post genérico vs. post otimizado pela IA, com seta 'Otimização IA'.4. Megafone com ondas de som misturando ícones de dados (gráficos) e criatividade (pincel).5. Colagem de 'depoimentos' fictícios com fotos genéricas e resultados em destaque (ex: '+40% vendas').",
+            "cta_individual": "Quer calcular quanto tempo (e dinheiro) você pode recuperar? Responda: qual sua maior dor hoje: falta de tempo, ideias ou resultados? Vamos te mostrar como resolver!",
+            "interacao": "Pergunta para os comentários: 'Se você ganhasse 8h por semana, em que investiria primeiro: [1] Criar mais conteúdo, [2] Fechar vendas ou [3] Descansar? (Vote abaixo!)'"
+        },
+        {
+            "titulo": "De 3 posts por mês a 3 vendas por dia: a história da Júlia",
+            "tema": "Prova social: caso de sucesso fictício (mas realista) da Júlia, dona da Doce Art, que dobrou suas vendas usando o Fluxo Criativo.",
+            "legenda_principal": "**‘Eu achava que postar todo dia era impossível para mim.’**Essa foi a frase que a Júlia, dona da **@DoceArt**, nos disse no primeiro mês usando o Fluxo Criativo. Hoje, **6 meses depois**, ela tem uma fila de encomendas e um faturamento **80% maior**.**Como?**Antes:❌ Postava **1x por semana** (quando lembrava).❌ Legendas genéricas, sem CTA claro.❌ Artes feitas no Canva, sempre com o mesmo template.Depois (com o Fluxo Criativo):✅ **3 posts/semana**, todos estratégicos.✅ Legendas com **chamadas para ação** que convertem (ex: ‘DM para encomendar’).✅ Artes **personalizadas** para cada campanha (ex: Páscoa, Dia das Mães).**O resultado?**📈 **De 12 para 45 pedidos/mês** (só com Instagram).💰 **Aumento de 80% no faturamento**.⏳ **Economizou 10h/semana** (que agora usa para atender clientes).**‘O Fluxo Criativo não só me deu posts — me deu um *sistema*. Agora eu vendo enquanto durmo.’** — Júlia, @DoceArt.**Sua história pode ser a próxima.** Quer saber como?",
+            "variacoes_legenda": [
+                "Em 2023, a Júlia estava prestes a desistir da @DoceArt. O problema? **Ninguém via seus posts.**Ela tentava de tudo:✔ Postava quando dava (1x por semana, se tanto).✔ Usava as mesmas hashtags há 2 anos.✔ Escrevia legendas na hora, sem planejamento.Até que descobriu o **poder da automação criativa**.Hoje:🔹 **3 posts/semana**, todos com estratégia de vendas.🔹 **Legendas que direcionam para o WhatsApp** (onde fecha 70% das vendas).🔹 **Artes que destacam seus diferenciais** (ex: ‘100% natural’, ‘entrega em 24h’).Resultado: **de 3 para 30 pedidos por semana.****‘Antes, eu postava por postar. Agora, eu posto para *vender*.’** — Júlia.E você? Ainda está postando no escuro?",
+                "A Júlia não era ‘sortuda’. Ela só **entendeu o jogo**.Enquanto a maioria dos pequenos negócios posta **sem estratégia**, ela usou a IA para:1️⃣ **Identificar** o que seu público *realmente* queria ver.2️⃣ **Criar** posts que **direcionam para a venda** (não só curtidas).3️⃣ **Automatizar** o processo para focar no que importa: **atender clientes**.**Dica que ela deu para a gente passar para você:**‘Comece testando 1 post por dia gerado pela IA. Em 1 semana, você já vai ver a diferença no engajamento.’Quer testar? O link está na bio. 👇"
+            ],
+            "hashtags": [
+                "#CasoDeSucesso",
+                "#PequenosNegóciosQueCrescem",
+                "#IAQueVende",
+                "#AntesEDepois"
+            ],
+            "horario_de_postagem": "12h (segunda-feira)",
+            "sugestao_formato": "Post único (imagem + legenda longa) + Stories complementares",
+            "post_strategy_rationale": "Este post usa storytelling para criar conexão emocional e prova social, mostrando um caso de sucesso tangível e relacionável. A estrutura 'Antes vs. Depois' é poderosa para demonstrar transformação, e os dados específicos (ex: 80% de aumento) aumentam a credibilidade. O horário de segunda ao meio-dia aproveita o pico de atividade no Instagram, quando empreendedores estão checando redes e buscando inspiração para a semana.",
+            "micro_briefing": "Gerar confiança e desejo através de um caso de sucesso realista, mostrando como o Fluxo Criativo transformou um negócio comum em um caso de crescimento. O foco é fazer o público pensar: 'Se funcionou para ela, pode funcionar para mim'.",
+            "visual_prompt_suggestion": "A split-screen image: Left side shows a tired woman (Júlia) sitting at a kitchen table with a half-eaten cake, a notebook with crossed-out post ideas, and a phone showing low engagement stats (few likes). Right side shows the same woman smiling, holding a phone with high engagement notifications, a notebook with a 'Sold Out' stamp, and a table full of cake orders. The background on the right is brighter, with warm tones (gold/yellow) to convey success. Style: realistic but slightly stylized, like a documentary still with a hopeful tone.",
+            "text_in_image": "Sobrepor no lado esquerdo: 'Antes: 3 posts/mês'. No lado direito: 'Depois: 3 vendas/dia'.",
+            "visual_description_portuguese": "Imagem em tela dividida: lado esquerdo mostra Júlia cansada em uma mesa de cozinha, com bolo pela metade, caderno com ideias riscadas e celular com poucas curtidas; lado direito mostra a mesma Júlia sorrindo, com celular cheio de notificações, caderno com carimbo 'Esgotado' e mesa cheia de encomendas. O lado direito tem tons quentes (dourado/amarelo) para transmitir sucesso.",
+            "cta_individual": "Quer que a gente crie um ‘Antes e Depois’ para *seu* negócio? Comente ‘QUERO’ e te enviamos um diagnóstico gratuito de como a IA pode te ajudar!",
+            "interacao": "Pergunta para os comentários: 'Qual parte da história da Júlia mais se parece com seu desafio atual? [1] Falta de tempo, [2] Posts sem estratégia ou [3] Baixo engajamento? (Responda com o número!)'"
+        },
+        {
+            "titulo": "Seu próximo post está pronto. E o próximo. E o próximo...",
+            "tema": "Chamada para ação final: convite direto para experimentar o Fluxo Criativo, com urgência e benefício claro.",
+            "legenda_principal": "**Você já viu:**✅ O problema (bloqueio criativo + falta de tempo).✅ A solução (Fluxo Criativo + IA).✅ Os resultados (8h/semana, +80% vendas, consistência).✅ A prova (história da Júlia).**Agora falta só um passo: *você* experimentar.**🔹 **Teste grátis por 7 dias** (sem cartão de crédito).🔹 **Gere 5 posts personalizados** em minutos.🔹 **Descubra como** pequenos negócios estão usando IA para vender mais.**O que você está esperando?**👉 O link está na bio. Clique e comece **agora**.**PS:** Os 100 primeiros a se cadastrarem hoje ganham um **guia exclusivo** de como usar IA para dobrar suas vendas em 30 dias. ⏳",
+            "variacoes_legenda": [
+                "A esta altura, você já sabe que:🚫 **Postar sem estratégia** = desperdiçar tempo.✅ **Postar com IA** = ganhar tempo + vender mais.A pergunta não é *se* você deve experimentar o Fluxo Criativo. É: **por que não já?**🔥 **Oferta relâmpago:** Os primeiros 50 a clicarem no link **hoje** ganham uma **análise gratuita** do seu perfil nas redes (valor: R$197).**Não deixe para amanhã.** Seu concorrente já pode estar usando IA para te ultrapassar.👉 **Link na bio. Agora.**",
+                "Você tem duas opções:1️⃣ **Continuar como está:** perdendo tempo, postando no escuro e esperando sorte.2️⃣ **Mudar hoje:** usar IA para criar conteúdo que **atrai clientes e fecha vendas** enquanto você dorme.A escolha parece óbvia, não é?**Bônus:** Quem se cadastrar nas próximas 24h recebe **3 templates de posts que convertem** (usados pelos nossos clientes de maior sucesso).👉 **O link expira à meia-noite.** Não perca!"
+            ],
+            "hashtags": [
+                "#ComeceAgora",
+                "#IAQueTrabalhaPraVocê",
+                "#ConteúdoQueVendeSozinho",
+                "#LinkNaBio"
+            ],
+            "horario_de_postagem": "20h (quarta-feira)",
+            "sugestao_formato": "Post único (imagem impactante + legenda curta e direta) + Story com contagem regressiva",
+            "post_strategy_rationale": "Este post é o clímax da campanha, com uma CTA urgente e benefícios claros para impulsionar conversões. A estrutura resume toda a jornada da semana e cria escassez ('primeiros 100', 'oferta relâmpago') para incentivar ação imediata. O horário de quarta à noite é estratégico: empreendedores estão finalizando a semana e mais propensos a tomar decisões rápidas para melhorar resultados.",
+            "micro_briefing": "Realizar uma chamada para ação forte e direta, resumindo todos os benefícios apresentados durante a semana e criando urgência para que o público clique no link e experimente o Fluxo Criativo. O objetivo é converter o engajamento em leads qualificados.",
+            "visual_prompt_suggestion": "A futuristic 'start' button glowing in electric blue, with the Fluxo Criativo logo embedded in the center. Around it, floating holographic previews of social media posts (a carousel post, a Reel, a Story) being generated in real-time. The background is dark with a grid pattern (like a digital interface), and there's a subtle countdown timer (00:23:59) in the corner, suggesting urgency. Style: cyberpunk-meets-corporate, sleek and high-tech, with neon accents to convey innovation and speed.",
+            "text_in_image": "Sobrepor na imagem: 'SEU CONTEÚDO PRONTO EM 1 MINUTO. COMECE AGORA →' (seta apontando para o botão).",
+            "visual_description_portuguese": "Imagem de um botão futurista 'Iniciar' brilhando em azul elétrico, com o logo do Fluxo Criativo no centro. Ao redor, pré-visualizações holográficas de posts sendo gerados em tempo real (carrossel, Reel, Story). Fundo escuro com padrão de grade digital e um cronômetro regressivo (00:23:59) no canto, transmitindo urgência. Estilo ciberpunk corporativo, com detalhes neon para inovação e velocidade.",
+            "cta_individual": "Clique no link da bio **AGORA** e comece seu teste grátis. Os 100 primeiros ganham bônus exclusivo! ⏳",
+            "interacao": "Pergunta para os comentários: 'Vou te desafiar: comente ‘QUERO’ e te envio um exemplo de post que a IA criaria para *seu* negócio. Topa?'"
+        }
+    ],
+    "metricas_de_sucesso_sugeridas": {
+        "objetivo_principal": "Gerar cadastros e leads qualificados para o Fluxo Criativo, educando o público sobre os benefícios da IA na criação de conteúdo e convertendo seguidores em usuários da plataforma.",
+        "indicadores_chave": [
+            "Taxa de cliques no link da bio (CTR) — meta: 8-12%",
+            "Número de conversões (cadastros na landing page) — meta: 150-200 leads/semana",
+            "Taxa de conversão da landing page (visitantes → cadastros) — meta: 25-30%",
+            "Número de mensagens diretas (DMs) solicitando demonstrações ou exemplos personalizados — meta: 30-50",
+            "Engajamento nos posts (comentários + salvamentos) — meta: 5-7% por post"
+        ],
+        "metricas_secundarias": [
+            "Alcance orgânico total da campanha (meta: +20% vs. média histórica)",
+            "Visualizações completas do Reel (Post 2) — meta: 70% de retenção até o final",
+            "Compartilhamentos dos posts (especialmente Post 4, caso de sucesso) — meta: 10-15 por post",
+            "Taxa de respostas às perguntas de interação (meta: 40-60 comentários por post)",
+            "Crescimento de seguidores (meta: +3-5% na semana)",
+            "Menções em Stories (@fluxocriativo) — meta: 20-30"
+        ]
+    }
+}

@@ -115,7 +115,7 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Briefing Profissional - {client_name}</title>
+    <title>Roteiro de Publicações para {client_name}</title>
     <style>
         body {{ font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f4; }}
         .container {{ width: 80%; margin: 20px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }}

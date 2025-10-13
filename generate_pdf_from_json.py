@@ -40,7 +40,7 @@ def main():
         date_match = file_name.split("_debug_")[1].split("_")[1]
         generation_date = date_match if len(date_match) == 8 and date_match.isdigit() else "Data Desconhecida"
 
-        output_dir = os.path.join(os.path.dirname(__file__), 'src', 'output_files', 'briefings_testes')
+        output_dir = os.path.join(os.path.dirname(__file__), 'output_files', 'briefings_testes')
         os.makedirs(output_dir, exist_ok=True)
 
         pdf_output_path = os.path.join(output_dir, f"briefing_{client_name.replace(" ", "_")}_{generation_date}.pdf")

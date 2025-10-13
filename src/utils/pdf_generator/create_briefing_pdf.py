@@ -35,10 +35,10 @@ def create_briefing_pdf(content_json: dict, client_name: str, output_filename: s
     while os.path.basename(project_root) != "plataforma_automacao_ia_generativa":
         project_root = os.path.dirname(project_root)
         if project_root == os.path.dirname(project_root): # Reached filesystem root
-            project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..', '..', 'plataforma_automacao_ia_generativa')) # Fallback
+            project_root = os.path.abspath(os.path.join(os.path.dirname(__file__))) # Fallback
             break
 
-    debug_output_dir = os.path.join(project_root, 'mvp_concierge', 'backend_concierge_scripts', 'src', 'output_files', 'respostas_IA', model_name)
+    debug_output_dir = os.path.join(project_root, 'output_files', 'respostas_IA', model_name)
     os.makedirs(debug_output_dir, exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     debug_file_path = os.path.join(debug_output_dir, f"{model_name}_content_json_debug_{timestamp}.json")
