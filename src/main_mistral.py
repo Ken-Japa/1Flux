@@ -1,189 +1,68 @@
 import os
 import json
-import sys
 from datetime import datetime
-from pathlib import Path
+from dotenv import load_dotenv
 
-# Adicionar o diretório pai ao path para importar módulos corretamente
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-from src.utils.prompt_manager.build_mistral_prompt import build_mistral_prompt
-from src.llm_client.mistral_client import generate_text_content
-from src.utils.html_generator.create_briefing_html import create_briefing_html
+from src.data_storage import init_db, insert_brief, get_client_profile, get_all_briefs, insert_client_profile
+from src.content_generator import generate_content_for_client
 from src.utils.pdf_generator.create_briefing_pdf import create_briefing_pdf
-from src.utils.prompt_manager.analyze_briefing_for_strategy import analyze_briefing_for_strategy
-
-def find_latest_summary_file(directory):
-    """
-    Encontra o arquivo de resumo combinado mais recente em um diretório.
-    
-    Args:
-        directory (Path): Caminho do diretório a ser pesquisado
-    
-    Returns:
-        Path: Caminho completo do arquivo mais recente ou None se não encontrar
-    """
-    try:
-        # Verificar se o diretório existe
-        if not directory.exists():
-            print(f"Diretório não encontrado: {directory}")
-            return None
-        
-        # Listar todos os arquivos JSON no diretório que começam com 'combined_summary_'
-        files = [f for f in directory.iterdir() if f.is_file() and f.name.startswith('combined_summary_') and f.name.endswith('.json')]
-        
-        if not files:
-            print(f"Nenhum arquivo de resumo combinado encontrado em: {directory}")
-            return None
-        
-        # Ordenar por data de modificação (mais recente primeiro)
-        files.sort(key=lambda x: x.stat().st_mtime, reverse=True)
-        
-        # Retornar o caminho completo do arquivo mais recente
-        return files[0]
-    
-    except Exception as e:
-        print(f"Erro ao buscar arquivo de resumo mais recente: {str(e)}")
-        return None
+from src.html_generator import create_briefing_html
+from src.utils.briefing_loader import load_briefing_from_json
+from src.utils.prompt_logger import log_prompt
+from src.config import COMPANY_NAME, BASE_DIR
+from src.utils.main_functions.initialize_environment import initialize_environment
+from src.utils.main_functions.collect_and_validate_briefing import collect_and_validate_briefing
+from src.utils.main_functions.get_or_create_client_profile import get_or_create_client_profile
+from src.utils.main_functions.generate_social_media_content import generate_social_media_content
+from src.utils.main_functions.save_content_to_database import save_content_to_database
+from src.utils.main_functions.generate_briefing_pdf import generate_briefing_pdf
+from src.utils.main_functions.generate_briefing_html import generate_briefing_html
+from src.utils.main_functions.display_success_message import display_success_message
 
 def main():
     """
-    Função principal que coordena o processo de consolidação de posts usando a Mistral.
-    1. Carrega o perfil do cliente e diretrizes de nicho
-    2. Carrega o resumo das ideias geradas por outras IAs
-    3. Constrói o prompt para a Mistral
-    4. Chama a API da Mistral
-    5. Salva o prompt e a resposta
-    6. Gera o PDF e HTML com os resultados
+    Função principal que orquestra o fluxo de processamento do Concierge MVP.
+    Inclui inicialização do DB, coleta de briefing, geração de conteúdo,
+    salvamento no DB e geração de PDF.
     """
-    print("Iniciando processo de consolidação de posts com Mistral...")
-    
-    # Definir caminhos
-    base_dir = Path(__file__).parent.parent
-    client_briefing_path = base_dir / "src" / "client_briefing.json"
-    
-    # Encontrar o arquivo de resumo combinado mais recente
-    combined_summary_dir = base_dir / "output_files" / "Resumo" / "Enviar"
-    resumo_path = find_latest_summary_file(combined_summary_dir)
-    
-    if not resumo_path:
-        print("Erro: Nenhum arquivo de resumo combinado encontrado.")
+    print("\n--- Iniciando Concierge MVP ---")
+
+    output_dir = initialize_environment()
+
+    brief_data, nome_do_cliente, subnicho, informacoes_de_contato, \
+    publico_alvo, tom_de_voz, exemplos_de_nicho, tipo_de_conteudo, \
+    conteudos_semanais, objetivos_de_marketing = collect_and_validate_briefing()
+
+    if nome_do_cliente is None:
         return
 
-    logs_dir = base_dir / "output_files" / "logs_para_IA"
-    respostas_dir = base_dir / "output_files" / "respostas_IA" / "Mistral"
-    briefings_dir = base_dir / "output_files" / "briefings" / "Mistral"
-    
-    # Criar diretórios se não existirem
-    os.makedirs(logs_dir, exist_ok=True)
-    os.makedirs(respostas_dir, exist_ok=True)
-    os.makedirs(briefings_dir, exist_ok=True)
-    
-    # Verificar se o arquivo de resumo existe
-    if not resumo_path.exists():
-        print(f"Erro: Arquivo de resumo não encontrado em {resumo_path}")
-        return
-    
-    # Carregar o briefing do cliente
-    try:
-        with open(client_briefing_path, 'r', encoding='utf-8') as f:
-            client_briefing = json.load(f)
-    except Exception as e:
-        print(f"Erro ao carregar o briefing do cliente: {e}")
-        return
-    
-    # Extrair informações do briefing
-    # Extrair informações do briefing
-    client_profile = {
-        "nome_do_cliente": client_briefing.get("nome_do_cliente", ""),
-        "subnicho": client_briefing.get("subnicho", ""),
-        "informacoes_de_contato": client_briefing.get("informacoes_de_contato", ""),
-        "publico_alvo": client_briefing.get("publico_alvo", ""),
-        "tom_de_voz": client_briefing.get("tom_de_voz", ""),
-        "estilo_de_comunicacao": client_briefing.get("estilo_de_comunicacao", ""),
-        "vocabulario_da_marca": client_briefing.get("vocabulario_da_marca", []),
-        "exemplos_de_nicho": client_briefing.get("exemplos_de_nicho", []),
-        "informacoes_adicionais": client_briefing.get("informacoes_adicionais", "")
-    }
-    niche_guidelines = {
-        "subnicho": client_briefing.get("subnicho", ""),
-        "exemplos_de_nicho": client_briefing.get("exemplos_de_nicho", [])
-    }
-    content_type = client_briefing.get("tipo_de_conteudo", "")
-    weekly_themes_raw = client_briefing.get("conteudos_semanais", [])
-    weekly_themes = [item.get("objetivo_do_conteudo_individual", "") for item in weekly_themes_raw]
-    weekly_goal = client_briefing.get("objetivos_de_marketing", "")
-    campaign_type = client_briefing.get("tipo_de_campanha", "")
-    strategic_analysis = analyze_briefing_for_strategy(client_profile, niche_guidelines)
-
-    
-    # Extrair informações adicionais necessárias para o PDF
-    publico_alvo = client_profile.get("publico_alvo", "")
-    tom_de_voz = client_profile.get("tom_de_voz", "")
-    objetivos_de_marketing = client_briefing.get("objetivos_de_marketing", [])
-    
-    # Construir o prompt para a Mistral
-    prompt = build_mistral_prompt(
-        client_profile=client_profile,
-        niche_guidelines=niche_guidelines,
-        content_type=content_type,
-        weekly_themes=weekly_themes,
-        weekly_goal=weekly_goal,
-        campaign_type=campaign_type,
-        strategic_analysis=strategic_analysis,
-        resumo_path=str(resumo_path)
+    client_profile = get_or_create_client_profile(
+        nome_do_cliente,
+        informacoes_de_contato,
+        publico_alvo,
+        tom_de_voz,
+        exemplos_de_nicho
     )
-    
-    # Salvar o prompt enviado
-    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-    prompt_filename = logs_dir / f"mistral_prompt_{timestamp}.txt"
-    with open(prompt_filename, 'w', encoding='utf-8') as f:
-        f.write(prompt)
-    print(f"Prompt salvo em: {prompt_filename}")
-    
-    # Chamar a API da Mistral
-    print("Chamando a API da Mistral...")
-    response = generate_text_content(prompt)
-    
-    # Verificar se a resposta foi bem-sucedida
-    if response["status"] == "success":
-        # Salvar a resposta da IA
-        response_filename = respostas_dir / f"mistral_response_{timestamp}.json"
-        with open(response_filename, 'w', encoding='utf-8') as f:
-            json.dump(response["generated_content"], f, ensure_ascii=False, indent=4)
-        print(f"Resposta da IA salva em: {response_filename}")
-        
-        # Gerar HTML e PDF
-        html_filename = briefings_dir / f"mistral_briefing_{timestamp}.html"
-        pdf_filename = briefings_dir / f"mistral_briefing_{timestamp}.pdf"
-        
-        try:
-            # Gerar HTML
-            create_briefing_html(
-                content_json=response["generated_content"],
-                client_name=client_profile.get("nome_do_cliente", "Cliente"),
-                output_filename=str(html_filename)
-            )
-            print(f"HTML gerado em: {html_filename}")
-            
-            # Gerar PDF
-            create_briefing_pdf(
-                content_json=response["generated_content"],
-                client_name=client_profile.get("nome_do_cliente", "Cliente"),
-                output_filename=str(pdf_filename),
-                model_name="Mistral",
-                target_audience=publico_alvo,
-                tone_of_voice=tom_de_voz,
-                marketing_objectives=objetivos_de_marketing
-            )
-            print(f"PDF gerado em: {pdf_filename}")
-            
-            print("Processo concluído com sucesso!")
-            
-        except Exception as e:
-            print(f"Erro ao gerar HTML/PDF: {e}")
-    else:
-        print(f"Erro na resposta da IA: {response['message']}")
+
+    generated_content, prompt_used_for_content_generation, tokens_consumed, api_cost_usd = \
+        generate_social_media_content(brief_data, nome_do_cliente, tipo_de_conteudo, conteudos_semanais, objetivos_de_marketing, model_name="Mistral")
+
+    if generated_content is None:
+        return
+
+    save_content_to_database(brief_data, nome_do_cliente, generated_content, prompt_used_for_content_generation, tokens_consumed, api_cost_usd, model_name="Mistral")
+
+    # 6. Gerar PDF
+    output_pdf_filename = generate_briefing_pdf(generated_content, nome_do_cliente, output_dir, publico_alvo, tom_de_voz, objetivos_de_marketing, model_name="Mistral")
+    if output_pdf_filename is None:
+        return
+
+    # 7. Gerar HTML
+    output_html_filename = generate_briefing_html(generated_content, nome_do_cliente, output_dir, model_name="Mistral")
+    if output_html_filename is None:
+        return
+
+    display_success_message(output_pdf_filename, api_cost_usd)
 
 if __name__ == "__main__":
     main()

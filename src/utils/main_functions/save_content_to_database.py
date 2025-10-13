@@ -22,7 +22,7 @@ def save_content_to_database(brief_data, nome_do_cliente, generated_content, pro
         
         # Salvar a resposta da IA em um arquivo JSON
         project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
-        output_ia_dir = os.path.join(project_root, "output_files", "repostas_IA", model_name)
+        output_ia_dir = os.path.join(project_root, "output_files", "respostas_IA", model_name)
         os.makedirs(output_ia_dir, exist_ok=True)
         ia_response_filename = f"{model_name}_resposta_ia_{nome_do_cliente.replace(' ', '_')}_{timestamp}.json"
         ia_response_filepath = os.path.join(output_ia_dir, ia_response_filename)

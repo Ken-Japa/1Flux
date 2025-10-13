@@ -120,7 +120,18 @@ def create_briefing_pdf(content_json: dict, client_name: str, output_filename: s
         weekly_strategy_summary_dict = weekly_strategy_summary_content
     else:
         weekly_strategy_summary_dict = {}
-    story.extend(_build_executive_summary(styles, weekly_strategy_summary_dict, target_audience, tone_of_voice, marketing_objectives))
+    future_strategy = content_json.get('future_strategy', '')
+    market_references = content_json.get('market_references', None)
+
+    story.extend(_build_executive_summary(
+        styles,
+        weekly_strategy_summary_dict,
+        target_audience,
+        tone_of_voice,
+        marketing_objectives,
+        future_strategy=future_strategy,
+        market_references=market_references
+    ))
 
     # --- Seção de Posts ---
     story.append(PageBreak()) 

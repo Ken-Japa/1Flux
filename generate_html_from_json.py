@@ -52,6 +52,8 @@ def main():
         target_audience = content_json.get('publico_alvo', '')
         tone_of_voice = content_json.get('tom_de_voz', '')
         marketing_objectives = content_json.get('objetivos_de_marketing', '')
+        future_strategy = content_json.get('future_strategy', '')
+        market_references = content_json.get('market_references', [])
 
         create_briefing_html(
             client_name=client_name,
@@ -59,7 +61,9 @@ def main():
             output_filename=html_output_path,
             target_audience=target_audience,
             tone_of_voice=tone_of_voice,
-            marketing_objectives=marketing_objectives
+            marketing_objectives=marketing_objectives,
+            future_strategy=future_strategy,
+            market_references=market_references
         )
         print(f"HTML gerado com sucesso em: {html_output_path}")
     except Exception as e:

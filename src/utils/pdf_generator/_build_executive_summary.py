@@ -1,39 +1,54 @@
-from reportlab.platypus import Paragraph, Spacer, NextPageTemplate
+import json
+from reportlab.platypus import Paragraph, Spacer
+from reportlab.lib.styles import ParagraphStyle
+from reportlab.lib.enums import TA_LEFT
+from reportlab.lib.colors import black
 
-def _build_executive_summary(styles: dict, weekly_strategy_summary: dict, target_audience: str, tone_of_voice: str, marketing_objectives: str) -> list:
-    """
-    Constrói a seção de sumário executivo do PDF.
+def _build_executive_summary(styles, weekly_strategy_summary_dict, target_audience, tone_of_voice, marketing_objectives, future_strategy="", market_references=None):
+    # Debug print for future_strategy and market_references
+    print(f"DEBUG: _build_executive_summary - future_strategy: {future_strategy}")
+    print(f"DEBUG: _build_executive_summary - market_references: {market_references}")
 
-    Args:
-        styles (dict): Dicionário de estilos do ReportLab.
-        weekly_strategy_summary (dict): Dicionário com o resumo da estratégia semanal.
-        target_audience (str): O público-alvo do briefing.
-        tone_of_voice (str): O tom de voz a ser utilizado no briefing.
-        marketing_objectives (str): Os objetivos de marketing do briefing.
+    story = []
+    story.append(Paragraph("Sumário Executivo", styles['Title']))
+    story.append(Spacer(1, 0.2 * 2.54 * 72)) # 0.2 inch spacer
 
-    Returns:
-        list: Uma lista de elementos Story para o sumário executivo.
-    """
-    summary_story = []
-    summary_story.append(NextPageTemplate('NormalPage'))
+    # Weekly Strategy Summary
+    summary_text = weekly_strategy_summary_dict.get('summary', 'N/A')
+    story.append(Paragraph("Visão Geral da Semana:", styles['h2']))
+    story.append(Paragraph(summary_text, styles['Normal']))
+    story.append(Spacer(1, 0.2 * 2.54 * 72))
 
-    summary_story.append(Paragraph("Sumário Executivo", styles['SectionTitle']))
-    summary_story.append(Spacer(1, 21.6))
+    # Target Audience
+    story.append(Paragraph("Público-Alvo:", styles['h2']))
+    story.append(Paragraph(target_audience, styles['Normal']))
+    story.append(Spacer(1, 0.2 * 2.54 * 72))
 
-    summary_story.append(Paragraph("Resumo da Estratégia Semanal:", styles['SummaryTitle']))
-    summary_story.append(Paragraph(weekly_strategy_summary.get('summary', 'N/A'), styles['SummaryText']))
-    summary_story.append(Spacer(1, 14.4))
+    # Tone of Voice
+    story.append(Paragraph("Tom de Voz:", styles['h2']))
+    story.append(Paragraph(tone_of_voice, styles['Normal']))
+    story.append(Spacer(1, 0.2 * 2.54 * 72))
 
-    summary_story.append(Paragraph("Objetivos:", styles['SummaryTitle']))
-    summary_story.append(Paragraph(marketing_objectives if marketing_objectives else "N/A", styles['SummaryText']))
-    summary_story.append(Spacer(1, 14.4))
+    # Marketing Objectives
+    story.append(Paragraph("Objetivos de Marketing:", styles['h2']))
+    story.append(Paragraph(marketing_objectives, styles['Normal']))
+    story.append(Spacer(1, 0.2 * 2.54 * 72))
 
-    summary_story.append(Paragraph("Público-Alvo:", styles['SummaryTitle']))
-    summary_story.append(Paragraph(target_audience if target_audience else "N/A", styles['SummaryText']))
-    summary_story.append(Spacer(1, 14.4))
+    # Future Strategy
+    if future_strategy:
+        story.append(Paragraph("Sugestões para Depois da Campanha:", styles['h2']))
+        story.append(Paragraph(future_strategy, styles['Normal']))
+        story.append(Spacer(1, 0.2 * 2.54 * 72))
 
-    summary_story.append(Paragraph("Tom de Voz:", styles['SummaryTitle']))
-    summary_story.append(Paragraph(tone_of_voice if tone_of_voice else "N/A", styles['SummaryText']))
-    summary_story.append(Spacer(1, 36))
+    # Market References
+    if market_references:
+        story.append(Paragraph("Referências de Mercado (Concorrentes/Inspirações):", styles['h2']))
+        for reference in market_references:
+            story.append(Paragraph(f"<b>Nome/Handle:</b> {reference.get('Nome/Handle', 'N/A')}", styles['Normal']))
+            story.append(Paragraph(f"<b>Diferenciais:</b> {reference.get('Diferenciais', 'N/A')}", styles['Normal']))
+            story.append(Paragraph(f"<b>Oportunidades:</b> {reference.get('Oportunidades', 'N/A')}", styles['Normal']))
+            story.append(Paragraph(f"<b>Posicionamento do Cliente:</b> {reference.get('Posicionamento do Cliente', 'N/A')}", styles['Normal']))
+            story.append(Spacer(1, 0.1 * 2.54 * 72)) # Small spacer between references
+        story.append(Spacer(1, 0.2 * 2.54 * 72))
 
-    return summary_story
+    return story
