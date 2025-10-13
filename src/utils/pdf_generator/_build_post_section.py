@@ -101,7 +101,10 @@ def _build_post_section(styles: dict, post: dict, post_number: int) -> list:
     # Adiciona o título para o prompt da IA
     post_story.append(Paragraph("Prompt para IA Geradora de Imagens:", styles['StrongPurpleSubtitle']))
     post_story.append(Spacer(1, 3.6))
-    post_story.append(Paragraph(post.get('visual_prompt_suggestion', 'N/A'), styles['PostContent']))
+    visual_prompt_suggestion = post.get('visual_prompt_suggestion')
+    if visual_prompt_suggestion is None:
+        visual_prompt_suggestion = ''
+    post_story.append(Paragraph(visual_prompt_suggestion, styles['PostContent']))
     post_story.append(Spacer(1, 14.4))
 
     return post_story

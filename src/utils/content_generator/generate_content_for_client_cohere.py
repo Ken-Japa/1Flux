@@ -32,7 +32,7 @@ def generate_content_for_client(
 
     prompt_manager = PromptManager(client_data, niche_data)
     strategic_analysis = prompt_manager.analyze_briefing_for_strategy()
-    prompt = prompt_manager.build_prompt(content_type=content_type, weekly_themes=weekly_themes, weekly_goal=weekly_goal, campaign_type=campaign_type, strategic_analysis=strategic_analysis)
+    prompt = prompt_manager.build_prompt_cohere(content_type=content_type, weekly_themes=weekly_themes, weekly_goal=weekly_goal, campaign_type=campaign_type, strategic_analysis=strategic_analysis)
 
     # Tenta carregar do cache primeiro
     cache_key_data = {

@@ -21,15 +21,14 @@ def generate_text_content(prompt: str) -> dict:
         # Extrair apenas o primeiro bloco JSON completo (incluindo chaves aninhadas)
         json_match = re.search(r'\{.*\}', content, re.DOTALL)
         if json_match:
-            json_string = json_match.group(0)
-            # Corrigir possíveis quebras de linha ou formatação
-            json_string = json_string.replace('\n', '').replace('\\"', '"')
+            json_string = json_match.group(0).strip()
+
             try:
                 generated_content = json.loads(json_string)
                 return {"status": "success", "generated_content": generated_content}
             except json.JSONDecodeError as e:
                 # Se ainda falhar, salvar para depuração
-                raw_responses_dir = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'raw_cohere_responses')
+                raw_responses_dir = os.path.join(os.path.dirname(__file__), 'raw_cohere_responses')
                 os.makedirs(raw_responses_dir, exist_ok=True)
                 timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
                 filename = os.path.join(raw_responses_dir, f"mistral_raw_response_{timestamp}.txt")
