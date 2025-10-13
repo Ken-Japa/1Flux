@@ -3,12 +3,12 @@
 Este documento resume as principais atividades e desenvolvimentos realizados no projeto `mvp_concierge`.
 
 Popular o client_briefing.json com os dados do cliente.
-Ir para a pasta backend_concierge_scripts e executar o script "python -m src.main"
-cd plataforma_automacao_ia_generativa
-cd mvp_concierge
-cd backend_concierge_scripts
-
-ou modal run -m llama_modal.py
+Roda o processo todo (gemini - cohere - resumo - mistral consolidado)
+python main.py
+Limpa os arquivos na pasta output_files
+python clear.py
+Escolhe qual IA rodar individualmente
+python individual.py
 
 ## Visão Geral do Projeto
 

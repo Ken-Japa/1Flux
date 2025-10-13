@@ -48,6 +48,15 @@ def _build_post_section(styles: dict, post: dict, post_number: int) -> list:
     post_story.append(Paragraph(" ".join(post.get('hashtags', [])), styles['PostHashtag']))
     post_story.append(Spacer(1, 7.2))
 
+    # Adiciona indicador_principal
+    indicador_principal = post.get('indicador_principal', '')
+    if indicador_principal:
+        post_story.append(Paragraph("Indicador Principal:", styles['BlackSubtitle']))
+        post_story.append(Spacer(1, 3.6))
+        post_story.append(Paragraph(indicador_principal, styles['PostContent']))
+        post_story.append(Spacer(1, 7.2))
+        
+    
     post_story.append(Paragraph("Chamada para Ação Individual:", styles['BlackSubtitle']))
     post_story.append(Spacer(1, 3.6))
     post_story.append(Paragraph(post.get('cta_individual'), styles['PostContent']))
@@ -59,7 +68,34 @@ def _build_post_section(styles: dict, post: dict, post_number: int) -> list:
         post_story.append(Spacer(1, 3.6))
         post_story.append(Paragraph(post.get('interacao'), styles['PostContent']))
         post_story.append(Spacer(1, 7.2))
+    
+        # Adiciona o response_script
+    response_script = post.get('response_script', [])
+    if response_script:
+        post_story.append(Paragraph("Roteiro de Respostas:", styles['StrongPurpleSubtitle']))
+        post_story.append(Spacer(1, 3.6))
+        for script_item in response_script:
+            post_story.append(Paragraph(f"<b>Comentário Genérico:</b> {script_item.get('comentario_generico', 'N/A')}", styles['PostContent']))
+            post_story.append(Paragraph(f"<b>Resposta Sugerida:</b> {script_item.get('resposta_sugerida', 'N/A')}", styles['PostContent']))
+            post_story.append(Paragraph(f"<b>Comentário Negativo:</b> {script_item.get('comentario_negativo', 'N/A')}", styles['PostContent']))
+            post_story.append(Paragraph(f"<b>Resposta para Negativo:</b> {script_item.get('resposta_negativo', 'N/A')}", styles['PostContent']))
+            post_story.append(Spacer(1, 7.2))
+        post_story.append(Spacer(1, 14.4))
         
+    # Adiciona a descrição em português da imagem
+    visual_description = post.get('visual_description_portuguese', 'N/A')
+    if visual_description != 'N/A':
+        post_story.append(Paragraph(visual_description, styles['PostContent']))
+        post_story.append(Spacer(1, 7.2))
+
+    # Adiciona o campo text_in_image
+    text_in_image = post.get('text_in_image', '')
+    if text_in_image:
+        post_story.append(Paragraph("Texto na Imagem/Vídeo:", styles['BlackSubtitle']))
+        post_story.append(Spacer(1, 3.6))
+        post_story.append(Paragraph(text_in_image, styles['PostContent']))
+        post_story.append(Spacer(1, 7.2))
+                
     post_story.append(Paragraph("Sugestão de Formato:", styles['DarkGreenSubtitle']))
     post_story.append(Spacer(1, 3.6))
     post_story.append(Paragraph(post.get('sugestao_formato', 'N/A'), styles['PostContent']))
@@ -91,20 +127,6 @@ def _build_post_section(styles: dict, post: dict, post_number: int) -> list:
 
     post_story.append(Paragraph("Sugestões Visuais Detalhadas:", styles['BrownSubtitle']))
     post_story.append(Spacer(1, 3.6))
-    
-    # Adiciona a descrição em português da imagem
-    visual_description = post.get('visual_description_portuguese', 'N/A')
-    if visual_description != 'N/A':
-        post_story.append(Paragraph(visual_description, styles['PostContent']))
-        post_story.append(Spacer(1, 7.2))
-
-    # Adiciona o campo text_in_image
-    text_in_image = post.get('text_in_image', '')
-    if text_in_image:
-        post_story.append(Paragraph("Texto na Imagem/Vídeo:", styles['BlackSubtitle']))
-        post_story.append(Spacer(1, 3.6))
-        post_story.append(Paragraph(text_in_image, styles['PostContent']))
-        post_story.append(Spacer(1, 7.2))
 
     # Adiciona o título para o prompt da IA
     post_story.append(Paragraph("Prompt para IA Geradora de Imagens:", styles['StrongPurpleSubtitle']))
@@ -115,20 +137,6 @@ def _build_post_section(styles: dict, post: dict, post_number: int) -> list:
     post_story.append(Paragraph(visual_prompt_suggestion, styles['PostContent']))
     post_story.append(Spacer(1, 14.4))
 
-    # Adiciona o response_script
-    response_script = post.get('response_script', [])
-    if response_script:
-        post_story.append(Paragraph("Sugestões de Interação/Engajamento:", styles['BlackSubtitle']))
-        post_story.append(Spacer(1, 3.6))
-        post_story.append(Paragraph("Roteiro de Respostas:", styles['StrongPurpleSubtitle']))
-        for script_item in response_script:
-            post_story.append(Paragraph(f"<b>Comentário Genérico:</b> {script_item.get('comentario_generico', 'N/A')}", styles['PostContent']))
-            post_story.append(Paragraph(f"<b>Resposta Sugerida:</b> {script_item.get('resposta_sugerida', 'N/A')}", styles['PostContent']))
-            post_story.append(Paragraph(f"<b>Comentário Negativo:</b> {script_item.get('comentario_negativo', 'N/A')}", styles['PostContent']))
-            post_story.append(Paragraph(f"<b>Resposta para Negativo:</b> {script_item.get('resposta_negativo', 'N/A')}", styles['PostContent']))
-            post_story.append(Spacer(1, 7.2))
-        post_story.append(Spacer(1, 14.4))
-
     # Adiciona ab_test_suggestions
     ab_test_suggestions = post.get('ab_test_suggestions', '')
     if ab_test_suggestions:
@@ -137,13 +145,6 @@ def _build_post_section(styles: dict, post: dict, post_number: int) -> list:
         post_story.append(Paragraph(ab_test_suggestions, styles['PostContent']))
         post_story.append(Spacer(1, 7.2))
 
-    # Adiciona indicador_principal
-    indicador_principal = post.get('indicador_principal', '')
-    if indicador_principal:
-        post_story.append(Paragraph("Indicador Principal:", styles['BlackSubtitle']))
-        post_story.append(Spacer(1, 3.6))
-        post_story.append(Paragraph(indicador_principal, styles['PostContent']))
-        post_story.append(Spacer(1, 7.2))
 
     # Adiciona optimization_triggers
     optimization_triggers = post.get('optimization_triggers', '')

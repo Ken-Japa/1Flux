@@ -5,10 +5,6 @@ from reportlab.lib.enums import TA_LEFT
 from reportlab.lib.colors import black
 
 def _build_executive_summary(styles, weekly_strategy_summary_dict, target_audience, tone_of_voice, marketing_objectives, future_strategy="", market_references=None):
-    # Debug print for future_strategy and market_references
-    print(f"DEBUG: _build_executive_summary - future_strategy: {future_strategy}")
-    print(f"DEBUG: _build_executive_summary - market_references: {market_references}")
-
     story = []
     story.append(Paragraph("Sumário Executivo", styles['Title']))
     story.append(Spacer(1, 0.2 * 2.54 * 72)) # 0.2 inch spacer
@@ -19,6 +15,12 @@ def _build_executive_summary(styles, weekly_strategy_summary_dict, target_audien
     story.append(Paragraph(summary_text, styles['Normal']))
     story.append(Spacer(1, 0.2 * 2.54 * 72))
 
+    # Future Strategy
+    if future_strategy:
+        story.append(Paragraph("Sugestões para Depois da Campanha:", styles['h2']))
+        story.append(Paragraph(future_strategy, styles['Normal']))
+        story.append(Spacer(1, 0.2 * 2.54 * 72))
+    
     # Target Audience
     story.append(Paragraph("Público-Alvo:", styles['h2']))
     story.append(Paragraph(target_audience, styles['Normal']))
@@ -34,11 +36,6 @@ def _build_executive_summary(styles, weekly_strategy_summary_dict, target_audien
     story.append(Paragraph(marketing_objectives, styles['Normal']))
     story.append(Spacer(1, 0.2 * 2.54 * 72))
 
-    # Future Strategy
-    if future_strategy:
-        story.append(Paragraph("Sugestões para Depois da Campanha:", styles['h2']))
-        story.append(Paragraph(future_strategy, styles['Normal']))
-        story.append(Spacer(1, 0.2 * 2.54 * 72))
 
     # Market References
     if market_references:

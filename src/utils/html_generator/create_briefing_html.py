@@ -52,10 +52,10 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
             summary_html += f"        <h3>Análise de Concorrentes e Referências de Sucesso:</h3>\n"
             summary_html += "        <ul>\n"
             for ref in market_references:
-                summary_html += f"            <li><strong>Nome/Handle:</strong> {ref.get('Nome/Handle', 'N/A')}<br>\n"
-                summary_html += f"                <strong>Diferenciais:</strong> {ref.get('Diferenciais', 'N/A')}<br>\n"
-                summary_html += f"                <strong>Oportunidades:</strong> {ref.get('Oportunidades', 'N/A')}<br>\n"
-                summary_html += f"                <strong>Posicionamento do Cliente:</strong> {ref.get('Posicionamento do Cliente', 'N/A')}</li>\n"
+                summary_html += f"            <li><strong>Nome/Handle:</strong> {ref.get('Nome/Handle', 'N/A')}<br>\n\n"
+                summary_html += f"                <strong>Diferenciais:</strong> {ref.get('Diferenciais', 'N/A')}<br>\n\n"
+                summary_html += f"                <strong>Oportunidades:</strong> {ref.get('Oportunidades', 'N/A')}<br>\n\n"
+                summary_html += f"                <strong>Posicionamento do Cliente:</strong> {ref.get('Posicionamento do Cliente', 'N/A')}</li>\n\n"
             summary_html += "        </ul>\n"
 
         if target_audience:
@@ -178,55 +178,36 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
                 <p><strong>Briefing:</strong> {post.get("micro_briefing", "N/A")}</p>
                 <p><strong>Legenda:</strong> {post.get("legenda_principal", "N/A")}</p>
                 <p><strong>Variações:</strong></p>
+                <ul>
         """
         for variation in post.get("variacoes_legenda", []):
-            html_content += f"                <li>{variation}</li>\n"
+            html_content += f"                    <li>{variation}</li>\n"
         html_content += f"""
                 </ul>
-                <p><strong>Hashtags:</strong> {" ".join(post.get("hashtags", []))}</p>
+                {f"<p><strong>Hashtags:</strong> {" ".join(post.get("hashtags", []))}</p>" if post.get("hashtags") else ""}
+                {f"<p><strong>Indicador Principal:</strong> {post.get("indicador_principal", "N/A")}</p>" if post.get("indicador_principal") else ""}
                 {f"<p><strong>Chamada para Ação (CTA):</strong> {post.get("cta_individual", "N/A")}</p>" if post.get("cta_individual") else ""}
                 {f"<p><strong>Sugestões de Interação/Engajamento:</strong> {post.get("interacao", "N/A")}</p>" if post.get("interacao") else ""}
-                <p><strong>Formato Sugerido:</strong> {post.get("sugestao_formato", "N/A")}</p>
-                <p><strong>Sugestões Visuais (Português):</strong> {post.get("visual_description_portuguese", "N/A")}</p>
-                {f"<p><strong>Texto na Imagem/Vídeo:</strong> {post.get("text_in_image", "N/A")}</p>" if post.get("text_in_image") else ""}
-                <p><strong>Sugestões Visuais (English Prompt):</strong> {post.get("visual_prompt_suggestion", "N/A")}</p>
         """
         response_script = post.get("response_script", [])
-        interacao_sugestao = post.get("interacao", "")
-        if response_script or interacao_sugestao:
+        if response_script:
             html_content += f"""
-                <h4>Sugestões de Interação/Engajamento:</h4>
-            """
-            if interacao_sugestao:
-                html_content += f"""
-                <p>{interacao_sugestao}</p>
-                """
-            if response_script:
-                html_content += f"""
                 <p><strong>Roteiro de Respostas:</strong></p>
                 <ul>
             """
-                for script_item in response_script:
-                    html_content += f"                    <li><strong>Comentário Genérico:</strong> {script_item.get('comentario_generico', 'N/A')}<br>"
-                    html_content += f"                        <strong>Resposta Sugerida:</strong> {script_item.get('resposta_sugerida', 'N/A')}</li>\n"
-                    html_content += f"                    <li><strong>Comentário Negativo:</strong> {script_item.get('comentario_negativo', 'N/A')}<br>"
-                    html_content += f"                        <strong>Resposta para Negativo:</strong> {script_item.get('resposta_negativo', 'N/A')}</li>\n"
-                html_content += f"""
+            for script_item in response_script:
+                html_content += f"                    <li><strong>Comentário Genérico:</strong> {script_item.get('comentario_generico', 'N/A')}<br>"
+                html_content += f"                        <strong>Resposta Sugerida:</strong> {script_item.get('resposta_sugerida', 'N/A')}</li>\n"
+                html_content += f"                    <li><strong>Comentário Negativo:</strong> {script_item.get('comentario_negativo', 'N/A')}<br>"
+                html_content += f"                        <strong>Resposta para Negativo:</strong> {script_item.get('resposta_negativo', 'N/A')}</li>\n"
+            html_content += f"""
                 </ul>
             """
-
-        ab_test_suggestions = post.get("ab_test_suggestions", '')
-        if ab_test_suggestions:
-            html_content += f"                <p><strong>Testes A/B:</strong> {ab_test_suggestions}</p>\n"
-
-        indicador_principal = post.get("indicador_principal", '')
-        if indicador_principal:
-            html_content += f"                <p><strong>Indicador Principal:</strong> {indicador_principal}</p>\n"
-
-        optimization_triggers = post.get("optimization_triggers", '')
-        if optimization_triggers:
-            html_content += f"                <p><strong>Como Corrigir a Rota (Gatilhos de Otimização):</strong> {optimization_triggers}</p>\n"
-
+        html_content += f"""
+                {f"<p><strong>Sugestões Visuais (Português):</strong> {post.get("visual_description_portuguese", "N/A")}</p>" if post.get("visual_description_portuguese") else ""}
+                {f"<p><strong>Texto na Imagem/Vídeo:</strong> {post.get("text_in_image", "N/A")}</p>" if post.get("text_in_image") else ""}
+                <p><strong>Formato Sugerido:</strong> {post.get("sugestao_formato", "N/A")}</p>
+        """
         if post.get("sugestao_formato") == "Carrossel de imagens":
             html_content += f"""
                 <h4>Slides do Carrossel:</h4>
@@ -243,11 +224,14 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
                 <ol>
             """
             for cena in post.get("micro_roteiro", []):
-                html_content += f"                    <li><strong>Cena:</strong> {cena.get("cena", "")} - <strong>Descrição Visual:</strong> {cena.get("descricao_visual", "")} - <strong>Texto/Locução:</strong> {cena.get("texto_locucao", "")}</li>\n"
+                html_content += f"                    <li><strong>Cena:</strong> {cena.get("cena", "")} - <strong>Descrição Visual:</strong> {cena.get("descricao", "")} - <strong>Fala:</strong> {cena.get("fala", "")}</li>\n"
             html_content += f"""
                 </ol>
             """
         html_content += f"""
+                {f"<p><strong>Sugestões Visuais (English Prompt):</strong> {post.get("visual_prompt_suggestion", "N/A")}</p>" if post.get("visual_prompt_suggestion") else ""}
+                {f"<p><strong>Testes A/B:</strong> {post.get("ab_test_suggestions", "N/A")}</p>" if post.get("ab_test_suggestions") else ""}
+                {f"<p><strong>Como Corrigir a Rota (Gatilhos de Otimização):</strong> {post.get("optimization_triggers", "N/A")}</p>" if post.get("optimization_triggers") else ""}
                 <p><strong>Checklist de Publicação:</strong></p>
                 <ul class="checklist">
                     <li>Revisar texto e gramática.</li>
