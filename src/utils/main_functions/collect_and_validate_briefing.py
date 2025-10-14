@@ -13,7 +13,7 @@ def collect_and_validate_briefing():
                      caso contrário, retorna None para todos os valores.
     """
     print("\n--- Coleta de Briefing do Cliente (via JSON) ---")
-    briefing_filepath = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'client_briefing.json')
+    briefing_filepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', 'client_briefing.json'))
     brief_data = load_briefing_from_json(briefing_filepath)
 
     if not brief_data:

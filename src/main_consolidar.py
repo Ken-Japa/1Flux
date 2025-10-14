@@ -60,7 +60,7 @@ def main():
     
     # Definir caminhos
     base_dir = Path(__file__).parent.parent
-    client_briefing_path = base_dir / "src" / "client_briefing.json"
+    client_briefing_path = base_dir / "client_briefing.json"
     
     # Encontrar o arquivo de resumo combinado mais recente
     combined_summary_dir = base_dir / "output_files" / "Resumo" / "Enviar"

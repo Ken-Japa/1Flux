@@ -7,7 +7,7 @@ def debug_build_prompt():
     """
     Carrega o client_briefing.json, chama a função build_prompt e salva o resultado.
     """
-    briefing_path = os.path.join(os.path.dirname(__file__), "client_briefing.json")
+    briefing_path = os.path.join(os.path.dirname(__file__), '..', "client_briefing.json")
     output_path = os.path.join(os.path.dirname(__file__), "generated_prompt.txt")
 
     try:

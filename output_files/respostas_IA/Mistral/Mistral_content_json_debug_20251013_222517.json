@@ -1,0 +1,439 @@
+{
+    "weekly_strategy_summary": "Esta campanha semanal foi desenhada como uma jornada narrativa para educar e converter o público-alvo. Começamos na sexta-feira, validando a dor principal (a dificuldade de criar conteúdo), e progredimos ao longo do fim de semana apresentando o Fluxo Criativo como a solução ideal e seus benefícios diretos. A segunda-feira traz uma prova social através de storytelling para gerar identificação e confiança. A campanha culmina na quarta-feira com um CTA forte e direto, capitalizando toda a conscientização e desejo construídos nos posts anteriores, visando maximizar a geração de leads e cadastros na plataforma.",
+    "future_strategy": {
+        "proximos_passos": "Após a campanha de conversão, o foco deve ser nutrir os novos leads e reengajar quem não converteu. A estratégia se divide em três frentes: nutrição contínua, remarketing inteligente e construção de comunidade a longo prazo.",
+        "posts_nutricao": [
+            {
+                "tema": "Tutorial Avançado: Personalizando a voz da sua marca no Fluxo Criativo",
+                "formato": "Vídeo Curto (Reel)",
+                "objetivo": "Aumentar a retenção de usuários ativos, demonstrando funcionalidades de maior valor e reforçando o diferencial de 'posts personalizados'."
+            },
+            {
+                "tema": "Bastidores: Como nossa IA gera ideias que realmente conectam com seu público",
+                "formato": "Carrossel Explicativo",
+                "objetivo": "Construir autoridade e transparência, desmistificando a 'magia' da IA e gerando mais confiança na tecnologia."
+            },
+            {
+                "tema": "Estudo de Caso Real: O antes e depois de [Nome do Cliente]",
+                "formato": "Blog Post + Carrossel no LinkedIn",
+                "objetivo": "Fornecer prova social detalhada, validando os resultados prometidos e nutrindo leads mais avançados no funil de decisão."
+            }
+        ],
+        "remarketing": [
+            {
+                "estrategia": "Oferecer um e-book gratuito ('O Guia Definitivo para um Calendário de Conteúdo Infinito com IA') para quem visitou a landing page mas não se cadastrou. O objetivo é capturar o email e iniciar um fluxo de nutrição.",
+                "canal": "Anúncios no Instagram/Facebook"
+            },
+            {
+                "estrategia": "Exibir anúncios com depoimentos em vídeo de usuários satisfeitos para o público que interagiu com a campanha, mas não clicou no link da bio.",
+                "canal": "Anúncios no LinkedIn/YouTube"
+            }
+        ],
+        "long_term": {
+            "comunidade": "Criar um grupo exclusivo no Telegram ou Facebook para usuários do Fluxo Criativo. O espaço servirá para compartilhar dicas de uso, cases de sucesso, receber feedback e anunciar novidades em primeira mão, fortalecendo a lealdade à marca.",
+            "parcerias": "Estabelecer colaborações com influenciadores digitais e especialistas em marketing para pequenos negócios. Oferecer acesso gratuito à plataforma em troca de reviews, tutoriais ou co-criação de conteúdo, ampliando o alcance e a credibilidade."
+        }
+    },
+    "market_references": [
+        {
+            "Nome/Handle": "Jasper (anteriormente Jarvis/Jasper.ai)",
+            "Diferenciais": "Foco em copywriting de alta performance para equipes de marketing e empresas maiores, com integrações robustas e funcionalidades avançadas para SEO e blog posts longos.",
+            "Oportunidades": "Jasper pode parecer complexo e caro para o profissional autônomo ou pequeno negócio. A comunicação é mais corporativa.",
+            "Posicionamento do Cliente": "O Fluxo Criativo é o parceiro criativo acessível e intuitivo do empreendedor individual. Nosso foco não é apenas gerar texto, mas criar conteúdo estratégico para mídias sociais, com a voz da sua marca, de forma simples e rápida."
+        },
+        {
+            "Nome/Handle": "Copy.ai",
+            "Diferenciais": "Oferece uma vasta gama de templates para tarefas específicas (emails, anúncios, posts) e possui uma interface amigável para iniciantes.",
+            "Oportunidades": "Apesar da variedade, pode levar o usuário a uma paralisia de escolha e foca em peças de conteúdo isoladas, sem uma visão estratégica integrada.",
+            "Posicionamento do Cliente": "Enquanto outros oferecem ferramentas, o Fluxo Criativo oferece uma estratégia. Nossa 'automação criativa' vai além de preencher templates; ela entende seu briefing para sugerir um fluxo de posts coeso e alinhado aos seus objetivos."
+        },
+        {
+            "Nome/Handle": "Simplified",
+            "Diferenciais": "Plataforma 'tudo-em-um' que combina escrita com IA, design gráfico, edição de vídeo e agendamento de posts.",
+            "Oportunidades": "A abordagem 'faz-tudo' pode resultar em funcionalidades menos aprofundadas em cada área. A qualidade da geração de conteúdo pode não ser tão especializada.",
+            "Posicionamento do Cliente": "Somos especialistas em uma coisa: criação inteligente de conteúdo para social media. Garantimos a mais alta qualidade na geração de ideias, legendas e estratégias, permitindo que você use suas ferramentas de design favoritas ou foque no que realmente importa: seu negócio."
+        }
+    ],
+    "posts": [
+        {
+            "titulo": "A Tela em Branco: Seu Maior Inimigo?",
+            "tema": "Apresentação do Problema: A dificuldade e o bloqueio criativo na hora de criar conteúdo consistente.",
+            "legenda_principal": "Sexta-feira. Você sabe que precisa postar, mas a inspiração simplesmente não vem. Aquele cursor piscando na tela em branco parece zombar de você.\n\nA gente entende. Manter a consistência, ter ideias novas TODOS os dias, criar legendas que conectam... é um trabalho em tempo integral. E quando você é a sua própria equipe de marketing, essa pressão pode ser esmagadora.\n\nVocê já se sentiu assim? Preso entre a necessidade de estar presente online e a falta de tempo (ou de ideias) para fazer isso acontecer com qualidade? Você não está sozinho. Esse é o desafio número 1 para 7 em cada 10 empreendedores digitais.\n\nMas e se eu te dissesse que esse bloqueio criativo tem solução e ela não envolve contratar uma agência inteira?",
+            "variacoes_legenda": [
+                "Aquele sentimento quando você tem 1000 tarefas e uma delas é 'criar post para amanhã'. A tela em branco te encara de volta. A frustração bate. Manter um perfil ativo e estratégico parece uma montanha impossível de escalar sozinho, né? A boa notícia é que a tecnologia pode ser sua aliada para vencer esse gigante.",
+                "Fim de semana chegando e seu calendário de conteúdo continua vazio. A pressão para ser criativo, relevante e consistente é real. Muitos empreendedores sentem que estão em uma esteira sem fim, apenas postando por postar. Se você se identifica, saiba que existe uma forma mais inteligente de trabalhar."
+            ],
+            "hashtags": [
+                "#MarketingDeConteudo",
+                "#BloqueioCriativo",
+                "#EmpreendedorismoDigital",
+                "#PequenosNegocios",
+                "#MarketingParaAutonomos",
+                "#ConteudoEstrategico"
+            ],
+            "horario_de_postagem": "Sexta-feira, 18:00",
+            "sugestao_formato": "Carrossel de imagens (5 slides)",
+            "carrossel_slides": [
+                {
+                    "titulo_slide": "SLIDE 1",
+                    "texto_slide": "Aquela sensação de olhar para uma tela em branco...",
+                    "sugestao_visual_slide": "Uma pessoa com uma expressão levemente frustrada, olhando para um laptop com um editor de texto vazio. A iluminação é um pouco mais fria."
+                },
+                {
+                    "titulo_slide": "SLIDE 2",
+                    "texto_slide": "Você precisa ser: Estrategista, Designer, Redator, Social Media...",
+                    "sugestao_visual_slide": "A mesma pessoa agora com vários 'chapéus' ou ícones ao redor da cabeça representando as diferentes funções do marketing."
+                },
+                {
+                    "titulo_slide": "SLIDE 3",
+                    "texto_slide": "Resultado? Inconsistência. Posts aleatórios. E a sensação de estar sempre apagando incêndio.",
+                    "sugestao_visual_slide": "Um calendário de conteúdo com vários dias em branco e alguns posts isolados, sem conexão visual entre eles."
+                },
+                {
+                    "titulo_slide": "SLIDE 4",
+                    "texto_slide": "Cerca de 70% dos pequenos negócios lutam para manter a consistência em suas redes sociais.",
+                    "sugestao_visual_slide": "Um gráfico de pizza simples e clean mostrando a estatística de forma visualmente impactante."
+                },
+                {
+                    "titulo_slide": "SLIDE 5",
+                    "texto_slide": "Mas e se a sua próxima grande ideia estivesse a um clique de distância?",
+                    "sugestao_visual_slide": "Close-up em uma mão prestes a clicar no mouse, com uma lâmpada brilhante (símbolo de ideia) aparecendo na tela do computador. A iluminação agora é mais quente e otimista."
+                }
+            ],
+            "micro_roteiro": [],
+            "post_strategy_rationale": "Este post inicial é a 'fundação' da nossa narrativa semanal. O objetivo é criar uma conexão imediata com a audiência ao validar sua dor mais comum: o bloqueio criativo e a pressão por consistência. Ao usar dados e uma linguagem empática, estabelecemos autoridade e preparamos o terreno para apresentar a solução nos próximos dias. O CTA focado em interação (compartilhar desafios) gera engajamento inicial e nos fornece insights valiosos sobre o público.",
+            "micro_briefing": "Validar o principal ponto de dor do público-alvo (dificuldade em criar conteúdo) para gerar identificação e preparar o terreno para a solução.",
+            "visual_prompt_suggestion": "Cinematic shot, a thoughtful entrepreneur sitting at a minimalist wooden desk, staring at a blank laptop screen. Soft, slightly dramatic lighting from a window highlights their contemplative expression. The room is tidy but feels charged with creative tension. A single vibrant green plant sits on the desk, symbolizing potential growth.",
+            "text_in_image": "Sua criatividade travou de novo?",
+            "visual_description_portuguese": "Foto de um empreendedor pensativo em uma mesa minimalista, encarando a tela em branco de um notebook. A iluminação é suave e um pouco dramática, vinda de uma janela, destacando a expressão contemplativa. Uma planta verde na mesa simboliza o potencial de crescimento.",
+            "cta_individual": "Qual é o seu maior desafio na hora de criar conteúdo? Compartilhe nos comentários!",
+            "ab_test_suggestions": "Texto na imagem principal → 'Sua criatividade travou de novo?' vs 'A síndrome da página em branco te pegou?' → Métrica de sucesso: Taxa de cliques (CTR) e Salvamentos.",
+            "indicador_principal": "Número de Comentários e Salvamentos",
+            "optimization_triggers": "1) Alerta: Menos de 1% de taxa de engajamento (comentários+salvamentos/alcance). 2) Ação: Impulsionar o post para públicos semelhantes aos que engajaram. 3) Sucesso: Acima de 3% de taxa de engajamento.",
+            "interacao": "Peça para as pessoas compartilharem qual das etapas da criação de conteúdo (ideia, texto, design) é a mais difícil para elas.",
+            "response_script": [
+                {
+                    "comentario_generico": "Nossa, é exatamente assim que eu me sinto! Principalmente na hora de ter ideias.",
+                    "resposta_sugerida": "Ficamos felizes em saber que você se identificou! A fase de ideação pode ser mesmo a mais desafiadora. Fique de olho nos nossos próximos posts, vamos falar sobre como a automação criativa pode resolver isso! 😉",
+                    "comentario_negativo": "Ah, mais um perfil falando a mesma coisa. Nenhuma novidade.",
+                    "resposta_negativo": "Olá! Entendemos que o tema é bastante discutido, justamente por ser uma dor real para muitos. Nosso objetivo é ir além do problema e apresentar uma solução tecnológica e estratégica nos próximos dias. Esperamos que o conteúdo que preparamos possa te surpreender! 😊"
+                },
+                {
+                    "comentario_generico": "A parte mais difícil pra mim é escrever as legendas.",
+                    "resposta_sugerida": "Super te entendemos! Criar legendas que conectam e vendem é uma arte. A boa notícia é que a tecnologia pode ser uma grande aliada nisso. Acompanhe nossos próximos conteúdos que vamos te mostrar como! ✨",
+                    "comentario_negativo": "Isso aí é falta de planejamento, não de ferramenta.",
+                    "resposta_negativo": "Você tocou num ponto crucial! O planejamento é a base de tudo. O desafio que muitos enfrentam é justamente executar esse plano com consistência e criatividade. Nossa proposta é oferecer uma ferramenta que potencia o planejamento, e não que o substitui. Obrigado pelo comentário!"
+                }
+            ]
+        },
+        {
+            "titulo": "Sua Fábrica de Conteúdo Inteligente",
+            "tema": "Introdução da Solução: Apresentação do Fluxo Criativo como a ferramenta que transforma o caos em criatividade.",
+            "legenda_principal": "E se você pudesse transformar um simples briefing na sua próxima semana de conteúdo? 🤔\n\nChega de encarar a tela em branco. Apresentamos o Fluxo Criativo: a plataforma de automação criativa que funciona como o seu estrategista de marketing particular.\n\nCom nossa criação inteligente, você insere seus objetivos e a voz da sua marca, e a nossa IA desenvolve ideias, legendas e até sequências de posts que fazem sentido para o seu negócio.\n\nÉ como ter uma equipe de marketing trabalhando para você, 24/7. Menos estresse, mais estratégia. Menos tempo no operacional, mais tempo fazendo o que você ama.\n\nQuer dar uma espiada em como essa mágica acontece? ✨",
+            "variacoes_legenda": [
+                "Imagina ter um parceiro que nunca fica sem ideias? Esse é o Fluxo Criativo. Nossa plataforma usa inteligência artificial para entender seu negócio e gerar posts personalizados que realmente falam com seu público. Diga adeus ao 'o que eu posto hoje?' e olá para a criação de conteúdo estratégica e sem esforço.",
+                "Transforme o caos criativo em um fluxo contínuo de ideias. O Fluxo Criativo não é só um gerador de texto, é seu novo braço direito estratégico. Alimente nossa IA com seus objetivos e veja campanhas inteiras nascerem em minutos. Simples assim. Bem-vindo à era da automação criativa."
+            ],
+            "hashtags": [
+                "#InteligenciaArtificial",
+                "#AutomacaoCriativa",
+                "#FerramentaDeMarketing",
+                "#SocialMediaTools",
+                "#FluxoCriativo",
+                "#InovacaoDigital"
+            ],
+            "horario_de_postagem": "Sábado, 11:00",
+            "sugestao_formato": "Vídeo curto (Reel)",
+            "carrossel_slides": [],
+            "micro_roteiro": [
+                {
+                    "cena": 1,
+                    "descricao": "Cena rápida mostrando a tela em branco do post anterior. Em seguida, um SWIPE rápido revela a interface limpa e moderna do Fluxo Criativo.",
+                    "texto_tela": "Do bloqueio...",
+                    "fala": ""
+                },
+                {
+                    "cena": 2,
+                    "descricao": "Screen recording mostrando o usuário digitando um briefing simples em um campo. Ex: 'Lançamento de e-book sobre finanças para autônomos'.",
+                    "texto_tela": "...para um briefing simples.",
+                    "fala": ""
+                },
+                {
+                    "cena": 3,
+                    "descricao": "Animação de 'processamento' com ícones de cérebro e engrenagens. A tela carrega rapidamente.",
+                    "texto_tela": "Nossa IA entra em ação...",
+                    "fala": ""
+                },
+                {
+                    "cena": 4,
+                    "descricao": "A tela agora mostra vários cards com ideias de posts gerados, com títulos e imagens sugeridas. O usuário scrolla rapidamente, mostrando a variedade.",
+                    "texto_tela": "...e gera uma semana de posts!",
+                    "fala": ""
+                },
+                {
+                    "cena": 5,
+                    "descricao": "Close no rosto de uma pessoa sorrindo, satisfeita, olhando para a tela (fora de quadro).",
+                    "texto_tela": "Fluxo Criativo: Sua criação inteligente.",
+                    "fala": ""
+                }
+            ],
+            "post_strategy_rationale": "Após estabelecer o problema, este post introduz o Fluxo Criativo como o 'herói' da história. O formato de Reel é ideal para capturar a atenção no fim de semana e demonstrar a facilidade e rapidez da ferramenta de forma dinâmica. O objetivo é gerar o 'momento uau', mostrando a transição do problema (tela em branco) para a solução (conteúdo gerado) em segundos, criando desejo e curiosidade.",
+            "micro_briefing": "Apresentar o Fluxo Criativo de forma visual e dinâmica, mostrando sua capacidade de transformar um briefing simples em conteúdo pronto, gerando curiosidade e desejo.",
+            "visual_prompt_suggestion": "Dynamic and clean product demonstration video. A seamless screen recording of a user interacting with a sleek, futuristic user interface. The UI has a dark mode theme with vibrant teal and purple accents. The user's cursor moves smoothly, highlighting key features. The transitions are fluid and quick, with subtle glowing effects as the AI generates content. The background is a blurred, abstract animation of data streams and neural networks.",
+            "text_in_image": "",
+            "visual_description_portuguese": "Vídeo dinâmico de demonstração do produto. Uma gravação de tela fluida de um usuário interagindo com uma interface elegante e futurista. A interface tem um tema escuro com detalhes em azul-petróleo e roxo. O cursor se move suavemente, destacando recursos. As transições são rápidas, com efeitos sutis de brilho enquanto a IA gera o conteúdo.",
+            "cta_individual": "Curioso para ver como o Fluxo Criativo pode se adaptar ao seu nicho? Comente 'EU QUERO' e te chamo na DM!",
+            "ab_test_suggestions": "CTA no vídeo → 'Comente EU QUERO' vs 'Clique no link da bio para testar' → Métrica de sucesso: Taxa de conversão (comentários ou cliques).",
+            "indicador_principal": "Visualizações de Vídeo e Comentários",
+            "optimization_triggers": "1) Alerta: Taxa de retenção do vídeo abaixo de 20% nos primeiros 3 segundos. 2) Ação: Revisar os 3 primeiros segundos do vídeo para a próxima campanha. 3) Sucesso: Mais de 50 comentários pedindo o link.",
+            "interacao": "Faça uma pergunta direta no final do vídeo: 'Qual tarefa de marketing você mais gostaria de automatizar?'",
+            "response_script": [
+                {
+                    "comentario_generico": "EU QUERO",
+                    "resposta_sugerida": "Opa! Que demais seu interesse! Acabei de te enviar uma mensagem no direct com umas informações especiais para você começar a usar o Fluxo Criativo. Confere lá! 🚀",
+                    "comentario_negativo": "Parece igual a todas as outras IAs.",
+                    "resposta_negativo": "Olá! Agradecemos o comentário. Embora existam outras ferramentas de IA, nosso foco é na 'automação criativa estratégica'. Não apenas geramos textos, mas sugerimos um fluxo de conteúdo alinhado à voz e aos objetivos da sua marca. A diferença está na inteligência por trás da criação. Que tal fazer um teste e ver na prática? 😉"
+                },
+                {
+                    "comentario_generico": "Uau, que incrível! Parece muito fácil.",
+                    "resposta_sugerida": "Ficamos muito felizes que você achou! Nosso principal objetivo é exatamente esse: tornar a criação de conteúdo estratégico algo fácil e acessível para todos. Se quiser experimentar, é só falar! ✨",
+                    "comentario_negativo": "Isso vai tirar o emprego dos social medias.",
+                    "resposta_negativo": "Essa é uma preocupação válida e que levamos a sério. Vemos o Fluxo Criativo como uma ferramenta de empoderamento, não de substituição. Ele automatiza as tarefas repetitivas (como a busca por ideias) para que os profissionais possam focar na parte mais estratégica e humana do trabalho: análise, relacionamento e criatividade de alto nível."
+                }
+            ]
+        },
+        {
+            "titulo": "Mais Tempo, Mais Qualidade, Mais Resultados.",
+            "tema": "Detalhamento dos Benefícios: Foco nos três pilares da solução - Economia de tempo, consistência de marca e escala de resultados.",
+            "legenda_principal": "Ok, você viu que o Fluxo Criativo é rápido. Mas o que isso significa para o seu negócio NA PRÁTICA?\n\nImagine este cenário:\n\n⏳ **MAIS TEMPO:** Você economiza, em média, 8 horas por semana. É um dia inteiro de trabalho que você ganha de volta para focar em seus clientes, em novos produtos ou... em você.\n\n🎯 **MAIS CONSISTÊNCIA:** Chega de posts aleatórios. Nossa IA aprende a voz da sua marca e cria um conteúdo coeso, que fortalece sua autoridade e mantém seu público engajado, dia após dia.\n\n📈 **MAIS RESULTADOS:** Com conteúdo estratégico e posts personalizados, você não está apenas 'marcando presença'. Você está construindo um funil de vendas, atraindo os clientes certos e gerando mais oportunidades de negócio. É a escala de resultados que você sempre buscou.\n\nAutomação criativa não é sobre fazer menos. É sobre fazer mais do que importa.",
+            "variacoes_legenda": [
+                "Vamos falar de benefícios reais? 1. Liberdade: recupere horas preciosas da sua semana. 2. Autoridade: construa uma marca forte com posts consistentes e alinhados. 3. Crescimento: transforme seu conteúdo em uma máquina de atrair clientes. É isso que a criação inteligente do Fluxo Criativo faz pelo seu negócio.",
+                "Não se trata apenas de postar mais. Trata-se de postar melhor, com menos esforço. Com o Fluxo Criativo, você ganha o superpoder da consistência, economiza um tempo valioso e vê seus resultados de marketing decolarem. É a união perfeita entre inteligência artificial e estratégia de negócio."
+            ],
+            "hashtags": [
+                "#Produtividade",
+                "#MarketingDigitalBrasil",
+                "#CrescimentoDeNegocios",
+                "#ConteudoDeValor",
+                "#InteligenciaArtificialMarketing",
+                "#Resultados"
+            ],
+            "horario_de_postagem": "Domingo, 20:00",
+            "sugestao_formato": "Carrossel de imagens / Infográfico (4 slides)",
+            "carrossel_slides": [
+                {
+                    "titulo_slide": "SLIDE 1",
+                    "texto_slide": "O verdadeiro poder da Automação Criativa",
+                    "sugestao_visual_slide": "Um design clean e impactante com o logo do Fluxo Criativo e os três ícones principais (relógio, alvo, gráfico) em destaque."
+                },
+                {
+                    "titulo_slide": "SLIDE 2",
+                    "texto_slide": "Economize até 8h/semana. O que você faria com um dia extra de trabalho?",
+                    "sugestao_visual_slide": "Ícone de um relógio com o sinal de '+' ao lado. Uma ilustração mostrando uma pessoa relaxando em uma cadeira de praia com um laptop, simbolizando trabalho flexível e mais tempo livre."
+                },
+                {
+                    "titulo_slide": "SLIDE 3",
+                    "texto_slide": "Mantenha a voz da sua marca 100% consistente. Construa autoridade e confiança.",
+                    "sugestao_visual_slide": "Ícone de um alvo ou megafone. Uma sequência de 3 posts de exemplo, visualmente coesos e com a mesma 'pegada' de texto, mostrando consistência."
+                },
+                {
+                    "titulo_slide": "SLIDE 4",
+                    "texto_slide": "Transforme conteúdo em clientes. Escale seus resultados de forma inteligente.",
+                    "sugestao_visual_slide": "Ícone de um gráfico de crescimento. Uma ilustração de um funil de vendas, onde posts de redes sociais (topo) se transformam em clientes (base)."
+                }
+            ],
+            "micro_roteiro": [],
+            "post_strategy_rationale": "Este post aprofunda a proposta de valor. No domingo à noite, as pessoas estão planejando a semana e são mais receptivas a soluções que prometem produtividade e resultados. O formato de carrossel infográfico permite detalhar os benefícios de forma clara e digerível. O objetivo é mover o público da curiosidade ('o que é isso?') para o desejo ('eu preciso disso'), conectando as funcionalidades da ferramenta a resultados de negócio tangíveis (tempo, consistência, vendas).",
+            "micro_briefing": "Educar a audiência sobre os benefícios concretos do Fluxo Criativo, focando em economia de tempo, consistência de marca e escala de resultados.",
+            "visual_prompt_suggestion": "A set of minimalist infographic icons with a consistent color palette of deep blue, vibrant teal, and clean white. One icon is a clock with a fast-forward arrow. Another is a series of perfectly aligned speech bubbles. The third is a sleek bar chart trending upwards. The style is flat design, with subtle shadows to give depth. The background is a light gray texture.",
+            "text_in_image": "Menos esforço. Mais impacto.",
+            "visual_description_portuguese": "Conjunto de ícones infográficos minimalistas com uma paleta de cores consistentes de azul escuro, azul-petróleo vibrante e branco. Um ícone é um relógio com uma seta de avanço rápido. Outro é uma série de balões de fala perfeitamente alinhados. O terceiro é um gráfico de barras elegante com tendência de alta. O estilo é de design plano, com sombras sutis para dar profundidade.",
+            "cta_individual": "Qual desses 3 benefícios transformaria o seu negócio hoje? Conta pra gente nos comentários!",
+            "ab_test_suggestions": "Título do Slide 2 → 'Economize até 8h/semana' vs 'Ganhe 1 dia de trabalho por semana' → Métrica de sucesso: Taxa de avanço no carrossel e Salvamentos.",
+            "indicador_principal": "Compartilhamentos e Salvamentos",
+            "optimization_triggers": "1) Alerta: Taxa de conclusão do carrossel abaixo de 30%. 2) Ação: Analisar em qual slide as pessoas estão desistindo e otimizá-lo para a próxima vez. 3) Sucesso: Mais de 2% de taxa de compartilhamento (compartilhamentos/alcance).",
+            "interacao": "Peça para a audiência marcar um amigo empreendedor que precisa ver esses benefícios.",
+            "response_script": [
+                {
+                    "comentario_generico": "Com certeza o tempo! É o que mais me falta.",
+                    "resposta_sugerida": "Totalmente! Tempo é nosso ativo mais precioso. Ficamos felizes em saber que a economia de tempo é algo que te ajudaria. O Fluxo Criativo foi pensado exatamente para devolver essas horas para você. 😉",
+                    "comentario_negativo": "Duvido que economize 8 horas. Propaganda enganosa.",
+                    "resposta_negativo": "Olá! Entendemos o ceticismo. Esse número é baseado no tempo médio que um empreendedor leva para pesquisar, planejar, escrever e agendar o conteúdo de uma semana. Ao automatizar a parte de ideação e redação, a economia é significativa. O impacto exato varia, claro, mas te convidamos a fazer um teste gratuito e cronometrar. Você pode se surpreender! 😊"
+                },
+                {
+                    "comentario_generico": "A consistência! Manter o padrão é muito difícil.",
+                    "resposta_sugerida": "Verdade! Consistência é chave para construir uma marca forte. É incrível como o Fluxo Criativo ajuda a manter a linha editorial, mesmo nos dias sem inspiração. Obrigado por compartilhar!",
+                    "comentario_negativo": "Mas aí o conteúdo fica robotizado, sem alma.",
+                    "resposta_negativo": "Ótimo ponto! É aí que entra a nossa 'criação inteligente'. Você alimenta a IA com a voz da sua marca, seus valores e seu tom. Ela não cria um texto genérico, mas sim posts personalizados com a sua 'alma'. A tecnologia é o ponto de partida, o seu toque final humano é o que faz a mágica acontecer. ✨"
+                }
+            ]
+        },
+        {
+            "titulo": "A Jornada da Ana: Do Caos ao Controle.",
+            "tema": "Prova Social / Caso de Sucesso Fictício: Storytelling mostrando a transformação de uma profissional autônoma.",
+            "legenda_principal": "Essa é a Ana, coach de carreira. Talentosa, apaixonada, mas... sobrecarregada.\n\nO 'antes' da Ana era uma luta diária com as redes sociais. Posts de última hora, semanas sem postar, e a sensação de que seu conteúdo não refletia a qualidade do seu trabalho.\n\nAté que ela descobriu a automação criativa com o Fluxo Criativo.\n\nO 'depois' da Ana? Um perfil vibrante e consistente que atrai clientes qualificados. Ela agora planeja o conteúdo do mês em uma tarde, e usa o tempo que economizou para criar novos workshops e atender mais clientes.\n\nA Ana passou de reativa para estratégica. De apagadora de incêndios para CEO do seu negócio. A história dela não é um caso isolado. É a transformação que a criação inteligente pode proporcionar.\n\nSua jornada de transformação pode começar agora. Se identificou com a Ana?",
+            "variacoes_legenda": [
+                "Conheça a Ana. Antes do Fluxo Criativo, seu Instagram era uma fonte de estresse. Depois, virou sua principal ferramenta de captação de clientes. A diferença? Um fluxo de conteúdo estratégico e automatizado que trabalha por ela. A tecnologia não substituiu a Ana, ela potencializou a Ana. E pode potencializar você também.",
+                "Toda história de sucesso tem um ponto de virada. Para a Ana, coach de carreira, foi quando ela parou de tentar fazer tudo sozinha. Ao adotar o Fluxo Criativo, ela não só ganhou tempo, mas também a confiança de ter um conteúdo de alto nível, todos os dias. Veja o carrossel e inspire-se na transformação dela."
+            ],
+            "hashtags": [
+                "#CaseDeSucesso",
+                "#AntesEDepois",
+                "#MarketingParaCoaches",
+                "#EmpreendedorismoFeminino",
+                "#TransformacaoDigital",
+                "#HistoriaInspiradora"
+            ],
+            "horario_de_postagem": "Segunda-feira, 09:00",
+            "sugestao_formato": "Carrossel de imagens com storytelling (6 slides)",
+            "carrossel_slides": [
+                {
+                    "titulo_slide": "SLIDE 1",
+                    "texto_slide": "Esta é a Ana. Uma coach incrível, mas sobrecarregada com o marketing.",
+                    "sugestao_visual_slide": "Foto de uma mulher com aparência profissional e amigável (representando a 'Ana'), mas com uma expressão de cansaço, sentada em frente ao seu notebook."
+                },
+                {
+                    "titulo_slide": "SLIDE 2",
+                    "texto_slide": "O perfil dela ANTES: Posts inconsistentes, pouco engajamento, muito estresse.",
+                    "sugestao_visual_slide": "Montagem de um feed de Instagram 'fake' bagunçado, com posts esporádicos e visualmente desconexos."
+                },
+                {
+                    "titulo_slide": "SLIDE 3",
+                    "texto_slide": "O ponto de virada: Ana descobriu o Fluxo Criativo e a automação criativa.",
+                    "sugestao_visual_slide": "A 'Ana' agora com uma expressão de 'aha!', olhando para a tela do notebook onde aparece a logo do Fluxo Criativo."
+                },
+                {
+                    "titulo_slide": "SLIDE 4",
+                    "texto_slide": "Ela programou 1 mês de conteúdo em 2 horas. E a IA cuidou das ideias e legendas.",
+                    "sugestao_visual_slide": "Um calendário de conteúdo agora totalmente preenchido, com posts agendados e organizados. 'Ana' aparece ao fundo, sorrindo e tomando um café tranquilamente."
+                },
+                {
+                    "titulo_slide": "SLIDE 5",
+                    "texto_slide": "O perfil dela DEPOIS: Consistente, profissional e atraindo os clientes certos.",
+                    "sugestao_visual_slide": "Outra montagem de feed 'fake', mas desta vez harmonioso, com uma identidade visual forte, posts frequentes e com prévias de legendas engajadoras."
+                },
+                {
+                    "titulo_slide": "SLIDE 6",
+                    "texto_slide": "A história da Ana pode ser a sua. Pronta para a sua transformação? Clique no link da bio.",
+                    "sugestao_visual_slide": "A 'Ana' agora de pé, com uma postura confiante e sorridente. Ao lado, o texto 'O próximo case de sucesso é você.' e uma seta apontando para a bio."
+                }
+            ],
+            "micro_roteiro": [],
+            "post_strategy_rationale": "As pessoas se conectam com histórias, não com funcionalidades. Este post utiliza o poder do storytelling para criar uma conexão emocional e demonstrar o valor do produto de uma forma tangível e aspiracional. Ao criar um personagem (Ana) com quem o público-alvo pode se identificar, a solução se torna mais crível e desejável. A estrutura 'antes e depois' é clássica e eficaz para ilustrar uma transformação clara, movendo o lead para mais perto da conversão.",
+            "micro_briefing": "Gerar identificação e confiança através de um caso de sucesso fictício, mostrando a transformação real que o Fluxo Criativo pode proporcionar na vida de um profissional autônomo.",
+            "visual_prompt_suggestion": "A sequence of images telling a story. Image 1: A female career coach in her late 30s, looking stressed in a cluttered home office. Image 2: A close-up of her face, a moment of realization, lit by the glow of a laptop screen. Image 3: The same woman, now in a bright, organized office, smiling confidently at the camera. The visual style should be warm, authentic, and cinematic, like a short film.",
+            "text_in_image": "De sobrecarregada a estrategista.",
+            "visual_description_portuguese": "Uma sequência de imagens contando uma história. Imagem 1: Uma coach de carreira na casa dos 30 anos, parecendo estressada em um escritório bagunçado. Imagem 2: Close-up do rosto dela, um momento de 'aha!', iluminado pelo brilho da tela do notebook. Imagem 3: A mesma mulher, agora em um escritório claro e organizado, sorrindo com confiança para a câmera. O estilo visual é quente, autêntico e cinematográfico.",
+            "cta_individual": "Se identificou com a jornada da Ana? Comece a sua transformação hoje. Link na bio!",
+            "ab_test_suggestions": "Título do post → 'A Jornada da Ana: Do Caos ao Controle.' vs 'Como a Ana (Coach) economizou 8h/semana e dobrou seus leads.' → Métrica de sucesso: Cliques no Link da Bio.",
+            "indicador_principal": "Cliques no Link da Bio",
+            "optimization_triggers": "1) Alerta: CTR (Click-Through Rate) no link da bio abaixo de 1%. 2) Ação: Analisar os comentários para entender se a história gerou identificação e, se necessário, impulsionar o post para um público mais nichado (ex: coaches). 3) Sucesso: CTR acima de 3%.",
+            "interacao": "Pergunte: 'Qual parte da história da Ana mais se parece com o seu momento atual?'",
+            "response_script": [
+                {
+                    "comentario_generico": "Nossa, essa Ana sou eu todinha! Preciso disso pra ontem.",
+                    "resposta_sugerida": "Que bom que você se identificou! A história da Ana é o reflexo de muitos empreendedores. A boa notícia é que a solução está ao seu alcance! Clica no link da nossa bio pra começar sua própria jornada de transformação. Estamos aqui pra ajudar! 😊",
+                    "comentario_negativo": "História inventada para vender. Ninguém programa 1 mês em 2 horas.",
+                    "resposta_negativo": "Olá! A Ana é uma persona que representa os desafios de muitos clientes nossos. O tempo de '1 mês em 2 horas' se refere à parte de ideação e criação dos rascunhos, que é a mais demorada. Com a IA gerando a base, a parte de revisão, design e agendamento se torna muito mais rápida. É uma forma de ilustrar um ganho de produtividade real. Que tal testar e ver quanto tempo você economiza? 😉"
+                },
+                {
+                    "comentario_generico": "Amei a história! Muito inspiradora.",
+                    "resposta_sugerida": "Ficamos felizes em inspirar! Acreditamos que a tecnologia deve servir para liberar nosso potencial, assim como aconteceu com a Ana. Obrigado pelo carinho! ✨",
+                    "comentario_negativo": "Isso só funciona pra coach, meu nicho é diferente.",
+                    "resposta_negativo": "Ótima observação! Usamos o exemplo de uma coach, mas a beleza da nossa IA é que ela se adapta a QUALQUER nicho. Você informa seu público, seus produtos e seus objetivos, e ela cria conteúdo específico para a sua realidade, seja você um dentista, um arquiteto ou um vendedor de e-commerce. O desafio da criação de conteúdo é universal! 😊"
+                }
+            ]
+        },
+        {
+            "titulo": "Sua Vez de Criar com Inteligência.",
+            "tema": "Chamada para Ação (CTA) Final: Convite direto e claro para experimentar a plataforma.",
+            "legenda_principal": "Você viu o problema. Conheceu a solução. Entendeu os benefícios. Se inspirou com a transformação.\n\nAgora, a única coisa que separa você de um fluxo de conteúdo estratégico e constante é uma decisão.\n\nChega de adiar. Chega de se contentar com posts inconsistentes. Chega de sentir que está sempre para trás na sua estratégia digital.\n\nEstá na hora de tomar o controle.\n\nClique no link da nossa bio e experimente o Fluxo Criativo. Descubra como é ter ideias ilimitadas, legendas que conectam e uma estratégia de conteúdo que trabalha para você, não o contrário.\n\nSua criação inteligente começa agora.",
+            "variacoes_legenda": [
+                "A jornada que mostramos nesta semana termina aqui, mas a sua pode começar agora. Cansado de lutar contra o bloqueio criativo? Dê o primeiro passo para a automação criativa. Teste o Fluxo Criativo e sinta a diferença que a inteligência artificial estratégica pode fazer no seu negócio. Link na bio.",
+                "Ok, vamos ser diretos. Você quer mais tempo, mais consistência e mais resultados? Então você precisa experimentar o Fluxo Criativo. Deixe nossa IA fazer o trabalho pesado e foque no que você faz de melhor. A oportunidade de transformar seu marketing de conteúdo está a um clique de distância. Link na bio."
+            ],
+            "hashtags": [
+                "#CTA",
+                "#ExperimenteAgora",
+                "#MarketingInteligente",
+                "#FuturoDoMarketing",
+                "#PequenosNegociosBrasil",
+                "#FerramentasDigitais"
+            ],
+            "horario_de_postagem": "Quarta-feira, 12:00",
+            "sugestao_formato": "Imagem única com texto forte ou GIF/Vídeo curto (5-10s)",
+            "carrossel_slides": [],
+            "micro_roteiro": [
+                {
+                    "cena": 1,
+                    "descricao": "Animação de texto rápida e dinâmica. A palavra 'BLOQUEIO' aparece e é riscada.",
+                    "texto_tela": "",
+                    "fala": ""
+                },
+                {
+                    "cena": 2,
+                    "descricao": "A palavra 'INCONSISTÊNCIA' aparece e é riscada.",
+                    "texto_tela": "",
+                    "fala": ""
+                },
+                {
+                    "cena": 3,
+                    "descricao": "A palavra 'SOBRECARGA' aparece e é riscada.",
+                    "texto_tela": "",
+                    "fala": ""
+                },
+                {
+                    "cena": 4,
+                    "descricao": "A tela fica limpa e o logo 'Fluxo Criativo' aparece com a frase abaixo.",
+                    "texto_tela": "Sua criação inteligente começa agora.",
+                    "fala": ""
+                },
+                {
+                    "cena": 5,
+                    "descricao": "CTA final aparece na tela.",
+                    "texto_tela": "Clique no Link da Bio",
+                    "fala": ""
+                }
+            ],
+            "post_strategy_rationale": "Este é o clímax da campanha. Após uma semana construindo conscientização, desejo e confiança, o objetivo deste post é um só: conversão. A mensagem é direta, clara e urgente. O horário de quarta-feira ao meio-dia busca capturar a audiência em um momento de pico de atividade. O formato visual simples e impactante garante que a chamada para ação não se perca. Todo o esforço da semana converge para este post, que deve ser o principal impulsionador de tráfego para a landing page.",
+            "micro_briefing": "Realizar uma chamada para ação direta e poderosa, capitalizando a narrativa construída durante a semana para converter seguidores em leads/usuários.",
+            "visual_prompt_suggestion": "A high-contrast, minimalist and bold graphic. A single, glowing call-to-action button with the text 'COMEÇAR AGORA' in the center of the screen. The button is a vibrant teal color, pulsing subtly. The background is a very dark, near-black, textured surface. The overall feeling is modern, urgent, and incredibly focused.",
+            "text_in_image": "Sua criação inteligente começa com um clique.",
+            "visual_description_portuguese": "Um gráfico minimalista, ousado e de alto contraste. Um único botão de CTA brilhante com o texto 'COMEÇAR AGORA' no centro da tela. O botão tem uma cor azul-petróleo vibrante e pulsa sutilmente. O fundo é uma superfície texturizada muito escura, quase preta. A sensação geral é moderna, urgente e incrivelmente focada.",
+            "cta_individual": "Chega de esperar a inspiração. Crie com inteligência. Clique no link da bio e experimente o Fluxo Criativo.",
+            "ab_test_suggestions": "Texto do CTA na legenda → 'Clique no link da bio e experimente' vs 'Comece seu teste gratuito no link da bio' → Métrica de sucesso: Taxa de Conversão na Landing Page.",
+            "indicador_principal": "Taxa de Conversão na Landing Page",
+            "optimization_triggers": "1) Alerta: Taxa de conversão da landing page (visitantes que se cadastram) abaixo de 5%. 2) Ação: Revisar a landing page para garantir que a mensagem esteja alinhada com a campanha e que o processo de cadastro seja simples. 3) Sucesso: Taxa de conversão acima de 15%.",
+            "interacao": "Peça para as pessoas que se cadastraram comentarem com um emoji de foguete (🚀) para criar um efeito de prova social em tempo real.",
+            "response_script": [
+                {
+                    "comentario_generico": "🚀",
+                    "resposta_sugerida": "Uhuul! Seja muito bem-vindo(a) ao Fluxo Criativo! Estamos animados para ver o que você vai criar. Qualquer dúvida, é só chamar! ✨",
+                    "comentario_negativo": "É pago? Tem que colocar cartão de crédito?",
+                    "resposta_negativo": "Olá! Temos um período de teste gratuito para você experimentar as principais funcionalidades, sem compromisso e sem precisar cadastrar cartão de crédito. Queremos que você sinta o poder da ferramenta na prática antes de qualquer decisão. O link para o teste está na bio! 😊"
+                },
+                {
+                    "comentario_generico": "Me cadastrei! Ansiosa pra testar.",
+                    "resposta_sugerida": "Que notícia ótima! Temos certeza que você vai adorar a facilidade. Comece com um briefing simples sobre seu negócio e veja a mágica acontecer. Se precisar de ajuda, nosso suporte está à disposição!",
+                    "comentario_negativo": "O link não está funcionando.",
+                    "resposta_negativo": "Poxa, obrigado por avisar! Acabamos de testar aqui e parece estar tudo certo. Você poderia tentar novamente, por favor? Se o erro persistir, nos chame no direct que te enviamos o link por lá. Pedimos desculpas pelo inconveniente!"
+                }
+            ]
+        }
+    ],
+    "metricas_de_sucesso_sugeridas": {
+        "objetivo_principal": "Gerar cadastros e leads qualificados para o Fluxo Criativo, educando o público sobre o poder da IA na criação de conteúdo.",
+        "indicadores_chave": [
+            "Número de Novos Cadastros (Trials)",
+            "Custo por Lead (CPL) / Custo por Aquisição (CPA)",
+            "Taxa de Conversão da Landing Page (Visitantes -> Cadastros)",
+            "Taxa de Cliques (CTR) no Link da Bio (especialmente nos Posts 4 e 5)"
+        ],
+        "metricas_secundarias": [
+            "Alcance total da campanha",
+            "Taxa de Engajamento por Post (comentários, salvamentos, compartilhamentos)",
+            "Visualizações de Vídeo (Post 2)",
+            "Crescimento do número de seguidores durante a semana da campanha"
+        ]
+    }
+}
