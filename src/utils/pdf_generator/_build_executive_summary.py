@@ -67,6 +67,7 @@ def _build_executive_summary(styles, weekly_strategy_summary_dict, target_audien
 
     # Market References
     if market_references:
+        story.append(PageBreak())
         story.append(Paragraph("Referências de Mercado (Concorrentes/Inspirações):", styles['h2']))
         for reference in market_references:
             story.append(Paragraph(f"<b>Nome/Handle:</b> {reference.get('Nome/Handle', 'N/A')}", styles['Normal']))

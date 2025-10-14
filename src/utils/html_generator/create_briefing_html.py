@@ -3,7 +3,7 @@ from datetime import datetime
 from src.utils.pdf_generator.calendar_logic import generate_publication_calendar
 from src.utils.pdf_generator.checklist_logic import generate_publication_checklist
 
-def create_briefing_html(content_json: dict, client_name: str, output_filename: str = "briefing.html", target_audience: str = "", tone_of_voice: str = "", marketing_objectives: str = "", future_strategy: str = "", market_references: list = None):
+def create_briefing_html(content_json: dict, client_name: str, output_filename: str = "briefing.html", target_audience: str = "", tone_of_voice: str = "", marketing_objectives: str = "", future_strategy: str = "", market_references: list = None, suggested_metrics: dict = None):
     """
     Gera um arquivo HTML de briefing profissional a partir de um JSON de conteúdo.
     O `content_json` deve conter uma lista de posts dentro da chave 'generated_content' -> 'posts'.
@@ -67,7 +67,6 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
 
     # --- Métricas Sugeridas ---
     metrics_html = ""
-    suggested_metrics = content_json.get("metricas_de_sucesso_sugeridas", {})
 
     if suggested_metrics:
         metrics_html += "        <h2>Métricas Sugeridas</h2>\n"

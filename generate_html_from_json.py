@@ -34,10 +34,22 @@ def main():
         print(f"Erro ao ler o arquivo JSON: {e}")
         sys.exit(1)
 
+    # Carrega client_briefing.json para obter publico_alvo, tom_de_voz, objetivos_de_marketing
+    client_briefing_path = os.path.join(os.path.dirname(__file__), 'client_briefing.json')
+    client_briefing_data = {}
+    if os.path.exists(client_briefing_path):
+        try:
+            with open(client_briefing_path, 'r', encoding='utf-8') as f:
+                client_briefing_data = json.load(f)
+        except json.JSONDecodeError as e:
+            print(f"Aviso: Erro ao decodificar client_briefing.json: {e}. Continuando sem dados do briefing do cliente.")
+        except Exception as e:
+            print(f"Aviso: Erro ao ler client_briefing.json: {e}. Continuando sem dados do briefing do cliente.")
+
     try:
         # Extrai modelo da IA a partir do caminho do arquivo (ex: output_files/respostas_IA/Gemini/...)
         model_name = os.path.basename(os.path.dirname(os.path.dirname(json_file_path)))
-        client_name = content_json.get('client_name', 'Cliente Desconhecido')
+        client_name = content_json.get('client_name', client_briefing_data.get('client_name', 'Cliente Desconhecido'))
         generation_date = content_json.get('generation_date', datetime.now().strftime("%Y%m%d"))
 
         output_dir = os.path.join(os.path.dirname(__file__), 'output_files', 'briefings_testes', model_name)
@@ -46,11 +58,12 @@ def main():
         html_output_path = os.path.join(output_dir, f"briefing_{client_name.replace(' ', '_')}_{generation_date}.html")
 
         # Extrai parâmetros necessários do JSON (compatível com main_gemini.py)
-        target_audience = content_json.get('publico_alvo', '')
-        tone_of_voice = content_json.get('tom_de_voz', '')
-        marketing_objectives = content_json.get('objetivos_de_marketing', '')
+        target_audience = content_json.get('publico_alvo', client_briefing_data.get('publico_alvo', ''))
+        tone_of_voice = content_json.get('tom_de_voz', client_briefing_data.get('tom_de_voz', ''))
+        marketing_objectives = content_json.get('objetivos_de_marketing', client_briefing_data.get('objetivos_de_marketing', ''))
         future_strategy = content_json.get('future_strategy', '')
         market_references = content_json.get('market_references', [])
+        suggested_metrics = content_json.get('metricas_de_sucesso_sugeridas', {}) # Adicionado
 
         create_briefing_html(
             client_name=client_name,
@@ -60,7 +73,8 @@ def main():
             tone_of_voice=tone_of_voice,
             marketing_objectives=marketing_objectives,
             future_strategy=future_strategy,
-            market_references=market_references
+            market_references=market_references,
+            suggested_metrics=suggested_metrics # Adicionado
         )
         print(f"HTML gerado com sucesso em: {html_output_path}")
     except Exception as e:

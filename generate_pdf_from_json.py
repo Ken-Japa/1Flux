@@ -49,7 +49,7 @@ def main():
     try:
         # Extrai modelo da IA a partir do caminho do arquivo (ex: output_files/respostas_IA/Gemini/...)
         model_name = os.path.basename(os.path.dirname(os.path.dirname(json_file_path)))
-        client_name = content_json.get('client_name', 'Cliente Desconhecido')
+        client_name = content_json.get('client_name', client_briefing_data.get('client_name', 'Cliente Desconhecido'))
         generation_date = content_json.get('generation_date', datetime.now().strftime("%Y%m%d"))
 
         output_dir = os.path.join(os.path.dirname(__file__), 'output_files', 'briefings_testes', model_name)
