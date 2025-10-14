@@ -1,7 +1,7 @@
 import json
 import sys
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # Adiciona o diretório 'src' ao sys.path para que as importações funcionem
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), 'src')))
@@ -50,12 +50,21 @@ def main():
         # Extrai modelo da IA a partir do caminho do arquivo (ex: output_files/respostas_IA/Gemini/...)
         model_name = os.path.basename(os.path.dirname(os.path.dirname(json_file_path)))
         client_name = content_json.get('client_name', client_briefing_data.get('client_name', 'Cliente Desconhecido'))
-        generation_date = content_json.get('generation_date', datetime.now().strftime("%Y%m%d"))
+        
+        # Extrai e formata as datas
+        start_date_str = content_json.get('start_date', datetime.now().strftime("%Y-%m-%d"))
+        end_date_str = content_json.get('end_date', (datetime.now() + timedelta(days=6)).strftime("%Y-%m-%d"))
+
+        start_date = datetime.strptime(start_date_str, "%Y-%m-%d")
+        end_date = datetime.strptime(end_date_str, "%Y-%m-%d")
+
+        formatted_period = f"{start_date.strftime('%d de %B de %Y')} - {end_date.strftime('%d de %B de %Y')}"
+        formatted_generation_date = datetime.now().strftime("%d de %B de %Y")
 
         output_dir = os.path.join(os.path.dirname(__file__), 'output_files', 'briefings_testes', model_name)
         os.makedirs(output_dir, exist_ok=True)
 
-        pdf_output_path = os.path.join(output_dir, f"briefing_{client_name.replace(' ', '_')}_{generation_date}.pdf")
+        pdf_output_path = os.path.join(output_dir, f"briefing_{client_name.replace(' ', '_')}_{start_date.strftime('%Y%m%d')}.pdf")
 
         # Extrai parâmetros necessários do JSON (compatível com main_gemini.py)
         target_audience = content_json.get('publico_alvo', client_briefing_data.get('publico_alvo', ''))
@@ -70,6 +79,8 @@ def main():
             client_name=client_name,
             content_json=content_json,
             output_filename=pdf_output_path,
+            formatted_period=formatted_period,
+            formatted_generation_date=formatted_generation_date,
             target_audience=target_audience,
             tone_of_voice=tone_of_voice,
             marketing_objectives=marketing_objectives,
@@ -77,8 +88,9 @@ def main():
             suggested_metrics=suggested_metrics # Adicionado
         )
         print(f"PDF gerado com sucesso em: {pdf_output_path}")
-    except Exception as e:
-        print(f"Erro ao gerar o PDF: {e}")
+    except Exception:
+        import traceback
+        traceback.print_exc()
         sys.exit(1)
 
 if __name__ == "__main__":

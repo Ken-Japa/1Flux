@@ -21,7 +21,7 @@ def get_pdf_styles():
                                fontSize=24, 
                                leading=28, 
                                alignment=TA_CENTER, 
-                               spaceAfter=30,
+                               spaceAfter=0,
                                fontName='DejaVuSans-Bold',
                                textColor=HexColor('#1A237E'))) # Azul escuro
     # Subtítulo
@@ -29,7 +29,7 @@ def get_pdf_styles():
                                fontSize=18, 
                                leading=22, 
                                alignment=TA_CENTER, 
-                               spaceAfter=20,
+                               spaceAfter=0,
                                fontName='DejaVuSans',
                                textColor=HexColor('#3F51B5'))) # Azul médio
 
@@ -49,46 +49,35 @@ def get_pdf_styles():
         styles.add(ParagraphStyle(name=f'ChecklistPostar_Post{i}',
                                    fontSize=10,
                                    leading=12,
-                                   spaceBefore=3,
-                                   spaceAfter=3,
+                                   spaceBefore=0,
+                                   spaceAfter=0,
                                    fontName='DejaVuSans-Bold',
                                    textColor=POST_COLORS[i]["strong"]))
         # Estilo para Preparar (cor média)
         styles.add(ParagraphStyle(name=f'ChecklistPreparar_Post{i}',
                                    fontSize=10,
                                    leading=12,
-                                   spaceBefore=3,
-                                   spaceAfter=3,
+                                   spaceBefore=1,
+                                   spaceAfter=1,
                                    fontName='DejaVuSans',
                                    textColor=POST_COLORS[i]["medium"]))
         # Estilo para Responder (cor clara)
         styles.add(ParagraphStyle(name=f'ChecklistResponder_Post{i}',
                                    fontSize=10,
                                    leading=12,
-                                   spaceBefore=3,
-                                   spaceAfter=3,
+                                   spaceBefore=1,
+                                   spaceAfter=1,
                                    fontName='DejaVuSans-Oblique',
                                    textColor=POST_COLORS[i]["light"]))
 
 
 
-    # Título da Seção
-    styles.add(ParagraphStyle(name='SectionTitle',
-                               fontSize=22,
-                               leading=26,
-                               spaceBefore=30,
-                               spaceAfter=15,
-                               fontName='DejaVuSans-Bold',
-                               textColor=HexColor('#1A237E'), # Azul escuro
-                               alignment=TA_CENTER,
-                               borderPadding=6,
-                               backColor=HexColor('#E8EAF6'), # Fundo azul claro
-                               borderRadius=5))
+    styles.add(ParagraphStyle(name='SectionTitle', fontSize=18, leading=22, textColor=HexColor('#1A237E'), spaceAfter=12))
     # Texto Normal
     styles.add(ParagraphStyle(name='NormalText', 
                            fontSize=11, 
                            leading=14, 
-                           spaceAfter=6,
+                           spaceAfter=0,
                            fontName='DejaVuSans',
                            textColor=HexColor('#212121'))) # Quase preto
 
@@ -96,7 +85,7 @@ def get_pdf_styles():
     styles.add(ParagraphStyle(name='HashtagStyle', 
                            fontSize=11, 
                            leading=14, 
-                           spaceAfter=6,
+                           spaceAfter=0,
                            fontName='DejaVuSans-Bold',
                            textColor=HexColor('#3F51B5'))) # Azul médio
     styles.add(ParagraphStyle(name='SummaryTitle', 
@@ -104,26 +93,20 @@ def get_pdf_styles():
                            leading=20, 
                            fontName='DejaVuSans-Bold', 
                            alignment=TA_LEFT, 
-                           spaceAfter=10,
+                           spaceAfter=4,
                            textColor=HexColor('#212121'))) # Título do Sumário
     styles.add(ParagraphStyle(name='SummaryText', 
                            fontSize=10, 
                            leading=14, 
                            fontName='DejaVuSans', 
-                           spaceAfter=6,
+                           spaceAfter=4,
                            textColor=HexColor('#424242'))) # Texto do Sumário
-    styles.add(ParagraphStyle(name='PostTitle', 
-                           fontSize=18, 
-                           leading=22, 
-                           fontName='DejaVuSans-Bold', 
-                           alignment=TA_CENTER, # Centralizado
-                           spaceAfter=12,
-                           textColor=HexColor('#3F51B5'))) # Azul médio para o título do Post
+    styles.add(ParagraphStyle(name='PostTitle', fontSize=14, bold=True, backColor=colors.lightgrey, borderWidth=0.5, borderColor=colors.grey, borderPadding=6))
     # Novo estilo para o bloco de post (para ser usado com Table)
     styles.add(ParagraphStyle(name='PostSection',
                             fontSize=11,
                             leading=14,
-                            spaceAfter=15,
+                            spaceAfter=0,
                             fontName='DejaVuSans',
                             backColor=HexColor('#F5F5F5'), # Cinza muito claro
                             borderPadding=10,
@@ -136,15 +119,15 @@ def get_pdf_styles():
                             fontSize=12,
                             leading=16,
                             fontName='DejaVuSans-Bold',
-                            spaceBefore=10,
-                            spaceAfter=4,
+                            spaceBefore=0,
+                            spaceAfter=0,
                             textColor=HexColor('#1A237E'))) # Azul escuro primário
     styles.add(ParagraphStyle(name='ColoredPostSubtitle', # Novo estilo para subtítulos coloridos (azul)
                            fontSize=12, 
                            leading=16, 
                            fontName='DejaVuSans-Bold', 
-                           spaceBefore=10, 
-                           spaceAfter=4,
+                           spaceBefore=0, 
+                           spaceAfter=0,
                            textColor=HexColor('#3F51B5'))) # Azul médio para subtítulos
     styles.add(ParagraphStyle(name='NeutralPostSubtitle', fontName='DejaVuSans-Bold', fontSize=11, leading=12, textColor=colors.HexColor('#616161')))
     styles.add(ParagraphStyle(name='BlackSubtitle', fontName='DejaVuSans-Bold', fontSize=11, leading=12, textColor=colors.black))
@@ -156,13 +139,13 @@ def get_pdf_styles():
                            fontSize=10, 
                            leading=14, 
                            fontName='DejaVuSans', 
-                           spaceAfter=4,
+                           spaceAfter=0,
                            textColor=HexColor('#424242'))) # Texto do Post
     styles.add(ParagraphStyle(name='PostContent', # Novo estilo para o conteúdo das subsessões
                            fontSize=10, 
                            leading=14, 
                            fontName='DejaVuSans', 
-                           spaceAfter=4,
+                           spaceAfter=0,
                            leftIndent=12, # Recuo para o conteúdo
                            textColor=HexColor('#424242'))) 
     styles.add(ParagraphStyle(name='PostHashtag', 
@@ -174,13 +157,13 @@ def get_pdf_styles():
                            fontSize=10, 
                            leading=14, 
                            fontName='DejaVuSans-Oblique', 
-                           spaceAfter=4,
+                           spaceAfter=0,
                            textColor=HexColor('#616161'))) # Formato do Post
     styles.add(ParagraphStyle(name='PostVisuals', 
                            fontSize=10, 
                            leading=14, 
                            fontName='DejaVuSans', 
-                           spaceAfter=12,
+                           spaceAfter=0,
                            textColor=HexColor('#424242'))) # Sugestões Visuais do Post
     styles.add(ParagraphStyle(name='ChecklistTitle', 
                                fontSize=16, 
@@ -219,4 +202,22 @@ def get_pdf_styles():
                                fontName='DejaVuSans', 
                                spaceAfter=4,
                                textColor=HexColor('#424242'))) # Entrada do Calendário
+    
+    # Para tables
+    styles.add(ParagraphStyle(name='TableHeader', fontSize=12, bold=True, alignment=TA_CENTER, textColor=HexColor('#FFFFFF'), backColor=HexColor('#1A237E')))
+    styles.add(ParagraphStyle(name='TableCell', fontSize=10, alignment=TA_LEFT, textColor=HexColor('#000000')))
+    
+    # Para charts (titles)
+    styles.add(ParagraphStyle(name='ChartTitle', fontSize=14, bold=True, alignment=TA_CENTER, spaceAfter=10, textColor=HexColor('#3F51B5')))
+
+    styles.add(ParagraphStyle(name='TableGradientStyle', parent=styles['Normal']))
+    styles['TableGradientStyle']._table_style = get_table_style_for_gradient_row()
+    
     return styles
+
+def get_table_style_for_gradient_row():
+    from reportlab.platypus import TableStyle
+    from reportlab.lib.colors import HexColor
+    return TableStyle([
+        ('BACKGROUND', (0, 0), (-1, -1), colors.HexColor('#E8EAF6')),  # Single color for entire table
+    ])

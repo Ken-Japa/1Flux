@@ -1,4 +1,6 @@
-from reportlab.platypus import Paragraph, Spacer, NextPageTemplate, PageBreak
+from reportlab.platypus import Paragraph, Spacer, NextPageTemplate, PageBreak, Table, TableStyle
+from reportlab.lib import colors
+from reportlab.lib.units import inch
 
 def _build_publication_checklist(styles: dict, publication_checklist: list) -> list:
     """
@@ -12,48 +14,47 @@ def _build_publication_checklist(styles: dict, publication_checklist: list) -> l
         list: Uma lista de elementos Story para o checklist de publicação.
     """
     checklist_story = []
-    checklist_story.append(NextPageTemplate('NormalPage'))
-    checklist_story.append(PageBreak())
     checklist_story.append(Paragraph("Checklist de Publicação", styles['SectionTitle']))
-    checklist_story.append(Spacer(1, 21.6))
+    checklist_story.append(Spacer(1, 0.2*inch))
 
     if not publication_checklist:
         checklist_story.append(Paragraph("Nenhum checklist de publicação disponível.", styles['NormalText']))
         return checklist_story
 
+    data = [['Data', 'Tipo', 'Tarefa']]
+    task_order = {"Postar":1,"Preparar":2,"Responder comentários":3,"Responder 2ª vez comentários":4}
+
     for day_entry in publication_checklist:
-        checklist_story.append(Paragraph(f"<b>{day_entry['date']}</b>", styles['ChecklistDate']))
-        
-        # Definir a ordem de prioridade para os tipos de tarefa
-        task_order = {"Postar": 1, "Preparar": 2, "Responder comentários": 3, "Responder 2ª vez comentários": 4}
-        
-        # Ordenar as tarefas com base na prioridade
-        sorted_tasks = sorted(day_entry['tasks'], key=lambda x: task_order.get(x['type'], 99))
-
+        date = day_entry['date']
+        sorted_tasks = sorted(day_entry['tasks'], key=lambda x: task_order.get(x['type'],99))
         for task in sorted_tasks:
-            task_type = task['type']
-            post_number = task['post_number']
-            task_title = task['title']
+            type_ = task['type']
+            post_num = task['post_number']
+            title = task['title']
+            task_str = f"{type_} Post {post_num}: '{title}'"
+            # Use style for color
+            style_name = f'Checklist{type_.split()[0]}_Post{post_num}'  # Adapt
+            data.append([date, type_, Paragraph(task_str, styles.get(style_name, 'ChecklistItem'))])
+            date = ''
 
-            if task_type == "Preparar":
-                task_type_key = "Preparar"
-                formatted_task_title = f"Preparar Post {post_number}: '{task_title}'"
-            elif task_type == "Postar":
-                task_type_key = "Postar"
-                formatted_task_title = f"Postar Post {post_number}: '{task_title}'"
-            elif task_type == "Responder comentários":
-                task_type_key = "Responder"
-                formatted_task_title = f"Responder comentários do Post {post_number}: '{task_title}'"
-            elif task_type == "Responder 2ª vez comentários":
-                task_type_key = "Responder"
-                formatted_task_title = f"Responder 2ª vez comentários do Post {post_number}: '{task_title}'"
-            
-            style_name = f'Checklist{task_type_key}_Post{post_number}'
-            if style_name in styles:
-                checklist_story.append(Paragraph(formatted_task_title, styles[style_name]))
-            else:
-                # Fallback to a generic style if the specific one is not found
-                checklist_story.append(Paragraph(formatted_task_title, styles['ChecklistItem']))
-        checklist_story.append(Spacer(1, 7.2)) # Espaço após cada dia
+    table = Table(data, colWidths=[1*inch, 1.5*inch, 4*inch])
+    ts = [
+        ('GRID', (0,0), (-1,-1), 0.5, colors.grey),
+        ('BACKGROUND', (0,0), (-1,0), colors.HexColor('#3F51B5')),
+        ('TEXTCOLOR', (0,0), (-1,0), colors.white),
+        ('ALIGN', (0,0), (-1,-1), 'LEFT'),
+        ('FONTNAME', (0,0), (-1,0), 'DejaVuSans-Bold'),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 12),
+        ('TOPPADDING', (0,0), (-1,-1), 12),
+        ('LEFTPADDING', (0,0), (-1,-1), 12),
+        ('RIGHTPADDING', (0,0), (-1,-1), 12),
+        ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
+        ('ROWBACKGROUNDS', (0,1), (-1,-1), [colors.white, colors.HexColor('#E8EAF6')]),
+        ('ROUNDEDCORNERS', [10, 10, 10, 10]),
+        ('BACKGROUND', (0,1), (-1,-1), colors.HexColor('#E8EAF6')),
+    ]
+    table.setStyle(TableStyle(ts))
+    checklist_story.append(table)
+    checklist_story.append(Spacer(1, 0.2*inch))
 
     return checklist_story

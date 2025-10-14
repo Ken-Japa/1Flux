@@ -25,7 +25,22 @@ def generate_briefing_pdf(content_json: dict, client_name: str, output_dir: str,
     output_filepath = os.path.join(model_output_dir, pdf_filename)
 
     suggested_metrics = content_json.get('metricas_de_sucesso_sugeridas', {})
+    
+    # Extrair datas do content_json e formatar o período
+    start_date_str = content_json.get('start_date')
+    end_date_str = content_json.get('end_date')
 
+    formatted_period = ""
+    if start_date_str and end_date_str:
+        try:
+            start_date = datetime.strptime(start_date_str, "%Y-%m-%d")
+            end_date = datetime.strptime(end_date_str, "%Y-%m-%d")
+            formatted_period = f"Período {start_date.strftime('%d/%m/%y')} a {end_date.strftime('%d/%m/%y')}"
+        except ValueError:
+            print("Aviso: Formato de data inválido no content_json. formatted_period não será gerado.")
+
+    formatted_generation_date = datetime.now().strftime("%d de %B de %Y") # Gerar formatted_generation_date
+    
     create_briefing_pdf(
         content_json=content_json,
         client_name=client_name,
@@ -34,7 +49,9 @@ def generate_briefing_pdf(content_json: dict, client_name: str, output_dir: str,
         tone_of_voice=tone_of_voice,
         marketing_objectives=marketing_objectives,
         suggested_metrics=suggested_metrics,
-        model_name=model_name
+        model_name=model_name,
+        formatted_period=formatted_period, # Passar formatted_period
+        formatted_generation_date=formatted_generation_date # Passar formatted_generation_date
     )
 
     return output_filepath

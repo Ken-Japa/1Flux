@@ -2,12 +2,15 @@ import os
 import json
 from datetime import datetime
 from reportlab.lib.pagesizes import letter, A4
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image, PageBreak, Table, TableStyle, PageTemplate, Frame
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image, PageBreak, Table, TableStyle, PageTemplate, Frame, NextPageTemplate, KeepTogether, HRFlowable
 from src.utils.pdf_generator.styles.pdf_styles import get_pdf_styles
 from src.utils.pdf_generator._build_cover_page import _build_cover_page
 from reportlab.lib.units import inch
 from src.utils.pdf_generator._build_executive_summary import _build_executive_summary
 from src.utils.pdf_generator._build_post_section import _build_post_section
+import reportlab.graphics.shapes as shapes
+import reportlab.graphics.charts.barcharts as barcharts
+from reportlab.graphics.charts.piecharts import Pie
 from src.utils.pdf_generator._build_publication_calendar import _build_publication_calendar
 from src.utils.pdf_generator._build_publication_checklist import _build_publication_checklist
 from src.utils.pdf_generator._header_footer import _header_footer
@@ -17,17 +20,31 @@ from src.utils.pdf_generator._build_success_metrics import _build_success_metric
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.lib import colors # Importar colors
+# from reportlab.graphics.renderPDF import LinearGradient # Importar LinearGradient
 
 def _cover_page_background(canvas, doc):
     """
     Desenha o fundo colorido para a página de capa.
     """
     canvas.saveState()
-    canvas.setFillColor(colors.HexColor('#1A237E')) # Azul escuro
-    canvas.rect(0, 0, doc.width, doc.height, fill=1)
+    canvas.linearGradient(0, 0, 0, doc.height, [colors.HexColor('#1A237E'), colors.HexColor('#0D47A1')])
     canvas.restoreState()
 
-def create_briefing_pdf(content_json: dict, client_name: str, output_filename: str, model_name: str = "Unknown", target_audience: str = "", tone_of_voice: str = "", marketing_objectives: str = "", suggested_metrics: dict = {}, posting_time: str = ""):
+def create_briefing_pdf(content_json: dict, client_name: str, output_filename: str, formatted_period: str, formatted_generation_date: str, model_name: str = "Unknown", target_audience: str = "", tone_of_voice: str = "", marketing_objectives: str = "", suggested_metrics: dict = {}, posting_time: str = ""):
+    """
+    Converte o JSON de conteúdo gerado em um "PDF de Briefing Profissional".
+
+    Args:
+        content_json (dict): O objeto JSON com os posts, legendas, variações, hashtags e formatos.
+        client_name (str): Nome do cliente para personalizar o PDF.
+        output_filename (str): Nome do arquivo PDF a ser salvo.
+        formatted_period (str): Período formatado para o briefing (ex: "13 de Outubro de 2025 - 20 de Outubro de 2025").
+        formatted_generation_date (str): Data de geração formatada para o briefing (ex: "13 de Outubro de 2025").
+        model_name (str): Nome do modelo de IA que gerou o conteúdo (ex: "Gemini", "Mistral").
+        target_audience (str): O público-alvo do briefing.
+        tone_of_voice (str): O tom de voz a ser utilizado no briefing.
+        marketing_objectives (str): Os objetivos de marketing do briefing.
+    """
     """
     Converte o JSON de conteúdo gerado em um "PDF de Briefing Profissional".
 
@@ -77,61 +94,22 @@ def create_briefing_pdf(content_json: dict, client_name: str, output_filename: s
 
     styles = get_pdf_styles()
     story = []
-    frame_width = letter[0] - 2 * inch
-    frame_height = letter[1] - 2 * inch
-    normal_frame = Frame(inch,
-                         inch,
-                         frame_width,
-                         frame_height,
-                         id='normal')
+    
+    doc = SimpleDocTemplate(output_filename, pagesize=A4, rightMargin=72, leftMargin=72, topMargin=72, bottomMargin=36)
+    
+    # Templates 
+    cover_template = PageTemplate(id='CoverPage', frames=Frame(doc.leftMargin, doc.bottomMargin, doc.width, doc.height, id='cover'), onPage=_cover_page_background) 
+    normal_frame = Frame(doc.leftMargin, doc.bottomMargin + 0.5*inch, doc.width, doc.height - 1.5*inch, id='normal')  # Espaço header 
+    normal_template = PageTemplate(id='NormalPage', frames=[normal_frame], onPage=_header_footer) 
+    doc.addPageTemplates([cover_template, normal_template]) 
 
-    normal_page_template = PageTemplate(id='NormalPage', frames=normal_frame, onPage=_header_footer)
-
-    doc = SimpleDocTemplate(output_filename, pagesize=A4, leftMargin=50, rightMargin=50, topMargin=50, bottomMargin=50)
-    story = []
-
-    # Define frames para a capa
-    cover_frame = Frame(doc.leftMargin, doc.bottomMargin, doc.width, doc.height,
-                        leftPadding=0, bottomPadding=0, rightPadding=0, topPadding=0,
-                        id='cover_frame')
-
-    # Registra o PageTemplate para a capa
-    cover_template = PageTemplate(id='CoverPage', frames=[cover_frame], onPage=_cover_page_background)
-    doc.addPageTemplates([cover_template, normal_page_template])
-
-    today = datetime.now()
-    formatted_generation_date = today.strftime('%d/%m/%y')
-
-    # --- Calendário de Publicação ---
-    # Gerar o calendário de publicação com base na data atual e na lista de posts
-    publication_calendar = generate_publication_calendar(today, posts)
-
-    # Extrair a última data do calendário de publicação para o período final
-    latest_date = None
-    if publication_calendar:
-        for entry in publication_calendar:
-            # A data está na string 'day', por exemplo "Sexta-feira, 26/07"
-            day_str = entry['day'].split(', ')[1] # Pega "26/07"
-            # Adiciona o ano atual para criar um objeto datetime completo
-            current_calendar_date = datetime.strptime(f"{day_str}/{today.year}", "%d/%m/%Y")
-            if latest_date is None or current_calendar_date > latest_date:
-                latest_date = current_calendar_date
-
-    start_date = datetime.now()
-    if latest_date:
-        # Formata a data para o padrão DD/MM/AA
-        formatted_period = f"{start_date.strftime('%d/%m/%y')} a {latest_date.strftime('%d/%m/%y')}"
-    else:
-        formatted_period = f"{start_date.strftime('%d/%m/%y')}"
-
-    # --- Página de Rosto ---
-    story.append(PageBreak()) # Inicia a capa em uma nova página
-    doc.pageTemplate = 'CoverPage' # Define o template da capa
-    story.extend(_build_cover_page(styles, client_name, formatted_period, formatted_generation_date))
+    # Capa 
+    story.append(NextPageTemplate('CoverPage')) 
+    story.extend(_build_cover_page(styles, client_name, formatted_period, formatted_generation_date)) 
+    story.append(NextPageTemplate('NormalPage')) 
+    story.append(PageBreak())  # Após capa 
 
     # --- Sumário Executivo / Visão Geral da Semana ----
-    story.append(PageBreak()) # Adiciona quebra de página antes do sumário executivo
-    doc.pageTemplate = 'NormalPage' # Retorna ao template normal para as próximas páginas
     weekly_strategy_summary_content = content_json.get('weekly_strategy_summary', '')
     if isinstance(weekly_strategy_summary_content, str):
         # Se for uma string, tenta carregar como JSON. Se falhar, usa a string como summary.
@@ -155,11 +133,10 @@ def create_briefing_pdf(content_json: dict, client_name: str, output_filename: s
         future_strategy=future_strategy,
         market_references=market_references
     ))
+    story.append(HRFlowable(width="100%", thickness=0.5, color=colors.HexColor('#3F51B5'), spaceBefore=12, spaceAfter=12))
 
     # --- Seção de Posts ---
-    story.append(PageBreak()) 
-    story.append(Paragraph("Ideias de Conteúdo para a Semana", styles['SectionTitle']))
-    story.append(Spacer(1, 36)) 
+    story.append(PageBreak())
 
     for i, post in enumerate(posts):
         # Garante que cada 'post' individual é um dicionário
@@ -171,35 +148,63 @@ def create_briefing_pdf(content_json: dict, client_name: str, output_filename: s
         elif not isinstance(post, dict):
             post = {}
         
-        post_elements = _build_post_section(styles, post, i + 1)
-        
-        # Cria uma tabela de uma célula para envolver o conteúdo do post com estilo
-        table_data = []
-        for element in post_elements:
-            table_data.append([element])
-        post_table = Table(table_data, colWidths=[doc.width - doc.leftMargin - doc.rightMargin])
-        post_table.setStyle(TableStyle([
-            ('BACKGROUND', (0,0), (-1,-1), styles['PostSection'].backColor),
-            ('BOX', (0,0), (-1,-1), styles['PostSection'].borderWidth, styles['PostSection'].borderColor), # Borda
-            ('LEFTPADDING', (0,0), (-1,-1), styles['PostSection'].borderPadding),
-            ('RIGHTPADDING', (0,0), (-1,-1), styles['PostSection'].borderPadding),
-            ('TOPPADDING', (0,0), (-1,-1), styles['PostSection'].borderPadding),
-            ('BOTTOMPADDING', (0,0), (-1,-1), styles['PostSection'].borderPadding),
-        ]))
-        story.append(post_table)
-        story.append(Spacer(1, 20)) # Adiciona um espaçador entre as seções de postagem
-        if i < len(posts) - 1:
-            story.append(PageBreak())
+        post_content = _build_post_section(styles, post, i + 1)
+        story.append(KeepTogether(post_content))
+        story.append(Spacer(1, 0.3*inch))
+        if i < len(posts):
+            story.append(HRFlowable(width="80%", thickness=0.5, color=colors.grey, hAlign='CENTER', spaceAfter=12))
 
     # --- Calendário de Publicação ---
+    story.append(HRFlowable(width="100%", thickness=0.5, color=colors.HexColor('#3F51B5'), spaceBefore=12))
     # Gerar o calendário de publicação com base na data atual e na lista de posts
+    start_date_str = content_json.get('start_date')
+    if start_date_str:
+        try:
+            start_date_for_calendar = datetime.strptime(start_date_str, '%Y-%m-%d')
+        except ValueError:
+            start_date_for_calendar = datetime.now()
+    else:
+        start_date_for_calendar = datetime.now()
+
+    publication_calendar = generate_publication_calendar(start_date_for_calendar, posts)
     story.extend(_build_publication_calendar(styles, publication_calendar))
     
-        # --- Métricas de Sucesso Sugeridas ---
     story.append(PageBreak())
+    story.append(HRFlowable(width="100%", thickness=0.5, color=colors.HexColor('#3F51B5'), spaceBefore=12))
     story.extend(_build_success_metrics(styles, suggested_metrics))
+
+    # Adicionar gráfico de métricas
+    if suggested_metrics:
+        drawing = shapes.Drawing(400, 200)
+        # Extrair os comprimentos das listas de métricas
+        num_kpis = len(suggested_metrics.get('indicadores_chave', []))
+        num_secondary_metrics = len(suggested_metrics.get('metricas_secundarias', []))
+        
+        data = [[num_kpis, num_secondary_metrics]]
+        labels = ['KPIs', 'Métricas Secundárias']
+
+        bc = barcharts.VerticalBarChart()
+        bc.x = 50
+        bc.y = 50
+        bc.height = 125
+        bc.width = 300
+        bc.data = data
+        bc.valueAxis.valueMin = 0
+        # Usar o maior dos dois comprimentos para definir o valor máximo do eixo
+        bc.valueAxis.valueMax = max(num_kpis, num_secondary_metrics) * 1.2 if (num_kpis or num_secondary_metrics) else 100
+        bc.valueAxis.valueStep = bc.valueAxis.valueMax / 5
+        bc.categoryAxis.labels.boxAnchor = 'ne'
+        bc.categoryAxis.labels.dx = 8
+        bc.categoryAxis.labels.dy = -2
+        bc.categoryAxis.labels.angle = 30
+        bc.categoryAxis.categoryNames = labels
+
+        drawing.add(bc)
+        story.append(drawing)
+        story.append(Spacer(1, 20))
     
     # --- Checklist de Publicação ---
+    story.append(HRFlowable(width="100%", thickness=0.5, color=colors.HexColor('#3F51B5'), spaceBefore=12))
     publication_checklist = generate_publication_checklist(publication_calendar)
     story.extend(_build_publication_checklist(styles, publication_checklist))
 
