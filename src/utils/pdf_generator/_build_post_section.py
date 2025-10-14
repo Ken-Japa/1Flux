@@ -163,16 +163,4 @@ def _build_post_section(styles: dict, post: dict, post_number: int) -> list:
         post_content_elements.append(Paragraph(optimization_triggers, styles['PostContent']))
         post_content_elements.append(Spacer(1, 14.4))
 
-    # Cria uma tabela com o conteúdo do post e aplica o estilo PostBlock
-    post_table = Table([[post_content_elements]])
-    post_table.setStyle(TableStyle([
-        ('BACKGROUND', (0,0), (-1,-1), styles['PostBlock'].backColor),
-        ('ROUNDEDCORNERS', (0,0), (-1,-1), styles['PostBlock'].borderRadius),
-        ('LEFTPADDING', (0,0), (-1,-1), styles['PostBlock'].borderPadding),
-        ('RIGHTPADDING', (0,0), (-1,-1), styles['PostBlock'].borderPadding),
-        ('TOPPADDING', (0,0), (-1,-1), styles['PostBlock'].borderPadding),
-        ('BOTTOMPADDING', (0,0), (-1,-1), styles['PostBlock'].borderPadding),
-        ('BOX', (0,0), (-1,-1), styles['PostBlock'].borderWidth, styles['PostBlock'].borderColor),
-    ]))
-
-    return [post_table, Spacer(1, 20)]
+    return post_content_elements

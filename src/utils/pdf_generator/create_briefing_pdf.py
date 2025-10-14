@@ -1,7 +1,7 @@
 import os
 import json
 from datetime import datetime
-from reportlab.lib.pagesizes import letter
+from reportlab.lib.pagesizes import letter, A4
 from reportlab.platypus import SimpleDocTemplate, Spacer, Paragraph, PageBreak, PageTemplate, Frame
 from src.utils.pdf_generator.styles.pdf_styles import get_pdf_styles
 from src.utils.pdf_generator._build_cover_page import _build_cover_page
@@ -87,7 +87,7 @@ def create_briefing_pdf(content_json: dict, client_name: str, output_filename: s
                         id='cover_frame')
 
     # Registra o PageTemplate para a capa
-    cover_template = CoverPage(id='CoverPage', frames=[cover_frame])
+    cover_template = PageTemplate(id='CoverPage', frames=[cover_frame])
     doc.addPageTemplates([cover_template, normal_page_template])
 
     today = datetime.now()
@@ -162,6 +162,7 @@ def create_briefing_pdf(content_json: dict, client_name: str, output_filename: s
         elif not isinstance(post, dict):
             post = {}
         story.extend(_build_post_section(styles, post, i + 1))
+        story.append(Spacer(1, 20)) # Adiciona um espaçador entre as seções de postagem
         if i < len(posts) - 1:
             story.append(PageBreak())
 
