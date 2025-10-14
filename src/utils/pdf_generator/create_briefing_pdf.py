@@ -135,6 +135,22 @@ def create_briefing_pdf(content_json: dict, client_name: str, output_filename: s
     ))
     story.append(HRFlowable(width="100%", thickness=0.5, color=colors.HexColor('#3F51B5'), spaceBefore=12, spaceAfter=12))
 
+        # --- Calendário de Publicação ---
+    story.append(PageBreak())
+    story.append(HRFlowable(width="100%", thickness=0.5, color=colors.HexColor('#3F51B5'), spaceBefore=12))
+    # Gerar o calendário de publicação com base na data atual e na lista de posts
+    start_date_str = content_json.get('start_date')
+    if start_date_str:
+        try:
+            start_date_for_calendar = datetime.strptime(start_date_str, '%Y-%m-%d')
+        except ValueError:
+            start_date_for_calendar = datetime.now()
+    else:
+        start_date_for_calendar = datetime.now()
+
+    publication_calendar = generate_publication_calendar(start_date_for_calendar, posts)
+    story.extend(_build_publication_calendar(styles, publication_calendar))
+    
     # --- Seção de Posts ---
     story.append(PageBreak())
 
@@ -154,56 +170,14 @@ def create_briefing_pdf(content_json: dict, client_name: str, output_filename: s
         if i < len(posts):
             story.append(HRFlowable(width="80%", thickness=0.5, color=colors.grey, hAlign='CENTER', spaceAfter=12))
 
-    # --- Calendário de Publicação ---
-    story.append(HRFlowable(width="100%", thickness=0.5, color=colors.HexColor('#3F51B5'), spaceBefore=12))
-    # Gerar o calendário de publicação com base na data atual e na lista de posts
-    start_date_str = content_json.get('start_date')
-    if start_date_str:
-        try:
-            start_date_for_calendar = datetime.strptime(start_date_str, '%Y-%m-%d')
-        except ValueError:
-            start_date_for_calendar = datetime.now()
-    else:
-        start_date_for_calendar = datetime.now()
-
-    publication_calendar = generate_publication_calendar(start_date_for_calendar, posts)
-    story.extend(_build_publication_calendar(styles, publication_calendar))
-    
     story.append(PageBreak())
     story.append(HRFlowable(width="100%", thickness=0.5, color=colors.HexColor('#3F51B5'), spaceBefore=12))
     story.extend(_build_success_metrics(styles, suggested_metrics))
-
-    # Adicionar gráfico de métricas
-    if suggested_metrics:
-        drawing = shapes.Drawing(400, 200)
-        # Extrair os comprimentos das listas de métricas
-        num_kpis = len(suggested_metrics.get('indicadores_chave', []))
-        num_secondary_metrics = len(suggested_metrics.get('metricas_secundarias', []))
-        
-        data = [[num_kpis, num_secondary_metrics]]
-        labels = ['KPIs', 'Métricas Secundárias']
-
-        bc = barcharts.VerticalBarChart()
-        bc.x = 50
-        bc.y = 50
-        bc.height = 125
-        bc.width = 300
-        bc.data = data
-        bc.valueAxis.valueMin = 0
-        # Usar o maior dos dois comprimentos para definir o valor máximo do eixo
-        bc.valueAxis.valueMax = max(num_kpis, num_secondary_metrics) * 1.2 if (num_kpis or num_secondary_metrics) else 100
-        bc.valueAxis.valueStep = bc.valueAxis.valueMax / 5
-        bc.categoryAxis.labels.boxAnchor = 'ne'
-        bc.categoryAxis.labels.dx = 8
-        bc.categoryAxis.labels.dy = -2
-        bc.categoryAxis.labels.angle = 30
-        bc.categoryAxis.categoryNames = labels
-
-        drawing.add(bc)
-        story.append(drawing)
-        story.append(Spacer(1, 20))
+    story.append(Spacer(1, 20))
+    
     
     # --- Checklist de Publicação ---
+    story.append(PageBreak())
     story.append(HRFlowable(width="100%", thickness=0.5, color=colors.HexColor('#3F51B5'), spaceBefore=12))
     publication_checklist = generate_publication_checklist(publication_calendar)
     story.extend(_build_publication_checklist(styles, publication_checklist))

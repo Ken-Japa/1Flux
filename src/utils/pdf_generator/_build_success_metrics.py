@@ -27,31 +27,18 @@ def _build_success_metrics(styles, suggested_metrics: dict):
         if indicadores_chave:
             story.append(Paragraph("Indicadores Chave de Performance (KPIs):", styles['h3']))
             for metric in indicadores_chave:
-                story.append(Paragraph(f"• {metric}", styles['Normal']))
+                story.append(Paragraph(f"• {metric}", styles['NormalAdjusted']))
+                story.append(Spacer(1, 0.1 * 1.54 * 36)) 
             story.append(Spacer(1, 0.1*inch))
 
         if metricas_secundarias:
             story.append(Paragraph("Métricas Secundárias:", styles['h3']))
             for metric in metricas_secundarias:
-                story.append(Paragraph(f"• {metric}", styles['Normal']))
+                story.append(Paragraph(f"• {metric}", styles['NormalAdjusted']))
+                story.append(Spacer(1, 0.1 * 1.54 * 36)) 
             story.append(Spacer(1, 0.1*inch))
 
-        # Conditional BarChart (apenas se lengths variam e >1)
-        if len(indicadores_chave) > 1 or len(metricas_secundarias) > 1 and len(indicadores_chave) != len(metricas_secundarias):
-            drawing = shapes.Drawing(400, 200)
-            bc = barcharts.VerticalBarChart()
-            bc.x = 50
-            bc.y = 50
-            bc.height = 125
-            bc.width = 300
-            bc.data = [[len(indicadores_chave), len(metricas_secundarias)]]
-            bc.categoryAxis.labels.angle = 30
-            bc.categoryAxis.categoryNames = ['KPIs', 'Secundárias']
-            bc.bars[0].fillColor = colors.HexColor('#1A237E')
-            drawing.add(bc)
-            story.append(drawing)
-            story.append(Spacer(1, 0.1*inch))
     else:
-        story.append(Paragraph("Nenhuma métrica de sucesso sugerida disponível.", styles['Normal']))
+        story.append(Paragraph("Nenhuma métrica de sucesso sugerida disponível.", styles['NormalAdjusted']))
 
     return story

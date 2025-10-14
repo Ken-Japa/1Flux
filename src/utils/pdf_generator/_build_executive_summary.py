@@ -36,7 +36,7 @@ def _build_executive_summary(styles, weekly_strategy_summary_dict, target_audien
     # Weekly Strategy Summary
     summary_text = weekly_strategy_summary_dict.get('summary', 'N/A')
     story.append(Paragraph("Visão Geral da Semana:", styles['h2']))
-    story.append(Paragraph(summary_text, styles['Normal']))
+    story.append(Paragraph(summary_text, styles['NormalAdjusted']))
     story.append(Spacer(1, 0.2 * 2.54 * 72))
 
     # Future Strategy
@@ -44,36 +44,41 @@ def _build_executive_summary(styles, weekly_strategy_summary_dict, target_audien
         story.append(Paragraph("Sugestões para Depois da Campanha:", styles['h2']))
         if isinstance(future_strategy, dict):
             formatted_future_strategy = _format_future_strategy(future_strategy)
-            story.append(Paragraph(formatted_future_strategy, styles['Normal']))
+            story.append(Paragraph(formatted_future_strategy, styles['NormalAdjusted']))
         else:
-            story.append(Paragraph(future_strategy, styles['Normal']))
+            story.append(Paragraph(future_strategy, styles['NormalAdjusted']))
         story.append(Spacer(1, 0.2 * 2.54 * 72))
     
     # Target Audience
     story.append(Paragraph("Público-Alvo:", styles['h2']))
-    story.append(Paragraph(target_audience, styles['Normal']))
+    story.append(Paragraph(target_audience, styles['NormalAdjustedItalic']))
     story.append(Spacer(1, 0.2 * 2.54 * 72))
 
     # Tone of Voice
     story.append(Paragraph("Tom de Voz:", styles['h2']))
-    story.append(Paragraph(tone_of_voice, styles['Normal']))
+    story.append(Paragraph(tone_of_voice, styles['NormalAdjustedItalic']))
     story.append(Spacer(1, 0.2 * 2.54 * 72))
 
     # Marketing Objectives
     story.append(Paragraph("Objetivos de Marketing:", styles['h2']))
-    story.append(Paragraph(marketing_objectives, styles['Normal']))
+    story.append(Paragraph(marketing_objectives, styles['NormalAdjustedItalic']))
     story.append(Spacer(1, 0.2 * 2.54 * 72))
 
 
     # Market References
     if market_references:
+        story.append(PageBreak())
         story.append(Paragraph("Referências de Mercado (Concorrentes/Inspirações):", styles['h2']))
-        for reference in market_references:
-            story.append(Paragraph(f"<b>Nome/Handle:</b> {reference.get('Nome/Handle', 'N/A')}", styles['Normal']))
-            story.append(Paragraph(f"<b>Diferenciais:</b> {reference.get('Diferenciais', 'N/A')}", styles['Normal']))
-            story.append(Paragraph(f"<b>Oportunidades:</b> {reference.get('Oportunidades', 'N/A')}", styles['Normal']))
-            story.append(Paragraph(f"<b>Posicionamento do Cliente:</b> {reference.get('Posicionamento do Cliente', 'N/A')}", styles['Normal']))
-            story.append(Spacer(1, 0.1 * 2.54 * 72)) # Small spacer between references
         story.append(Spacer(1, 0.2 * 2.54 * 72))
+        for reference in market_references:
+            story.append(Paragraph(f"<b>Nome/Handle:</b> {reference.get('Nome/Handle', 'N/A')}", styles['NormalAdjusted']))
+            story.append(Spacer(1, 0.1 * 1.54 * 36)) 
+            story.append(Paragraph(f"<b>Diferenciais:</b> {reference.get('Diferenciais', 'N/A')}", styles['NormalAdjusted']))
+            story.append(Spacer(1, 0.1 * 1.54 * 36)) 
+            story.append(Paragraph(f"<b>Oportunidades:</b> {reference.get('Oportunidades', 'N/A')}", styles['NormalAdjusted']))
+            story.append(Spacer(1, 0.1 * 1.54 * 36)) 
+            story.append(Paragraph(f"<b>Posicionamento do Cliente:</b> {reference.get('Posicionamento do Cliente', 'N/A')}", styles['NormalAdjusted']))
+            story.append(Spacer(1, 0.25 * 2.54 * 72)) # Small spacer between references
+
 
     return story

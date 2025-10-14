@@ -64,30 +64,30 @@ def _build_post_section(styles: dict, post: dict, post_number: int) -> list:
     for i, variation in enumerate(post.get('variacoes_legenda', [])):
         post_elements.append([Paragraph(f"{i+1}. {variation}", styles['PostContent'])])
         if i < len(post.get('variacoes_legenda', [])) - 1:
-            post_elements.append([Spacer(1, 3.6)]) # Espaço menor entre as variações
-    post_elements.append([Spacer(1, 2)])
+            post_elements.append([Spacer(1, 0)]) # Espaço menor entre as variações
+    post_elements.append([Spacer(1, 0)])
 
     post_elements.append([Paragraph("Hashtags:", styles['PostSubtitle'])])
     post_elements.append([Paragraph(" ".join(post.get('hashtags', [])), styles['PostHashtag'])])
-    post_elements.append([Spacer(1, 2)])
+    post_elements.append([Spacer(1, 0)])
 
     # Adiciona indicador_principal
     indicador_principal = post.get('indicador_principal', '')
     if indicador_principal:
         post_elements.append([Paragraph("Indicador Principal:", styles['PostSubtitle'])])
         post_elements.append([Paragraph(indicador_principal, styles['PostContent'])])
-        post_elements.append([Spacer(1, 2)])
+        post_elements.append([Spacer(1, 0)])
         
     
     post_elements.append([Paragraph("Chamada para Ação Individual:", styles['PostSubtitle'])])
     post_elements.append([Paragraph(post.get('cta_individual'), styles['PostContent'])])
-    post_elements.append([Spacer(1, 2)])
+    post_elements.append([Spacer(1, 0)])
 
     # Adiciona o campo de interação
     if post.get('interacao'):
         post_elements.append([Paragraph("Sugestões de Interação/Engajamento:", styles['PostSubtitle'])])
         post_elements.append([Paragraph(post.get('interacao'), styles['PostContent'])])
-        post_elements.append([Spacer(1, 2)])
+        post_elements.append([Spacer(1, 0)])
     
         # Adiciona o response_script
     response_script = post.get('response_script', [])
@@ -99,25 +99,24 @@ def _build_post_section(styles: dict, post: dict, post_number: int) -> list:
             post_elements.append([Paragraph(f"<b>Comentário Negativo:</b> {script_item.get('comentario_negativo', 'N/A')}", styles['PostContent'])])
             post_elements.append([Paragraph(f"<b>Resposta para Negativo:</b> {script_item.get('resposta_negativo', 'N/A')}", styles['PostContent'])])
             post_elements.append([Spacer(1, 3.6)])
-        post_elements.append([Spacer(1, 2)])
         
     # Adiciona a descrição em português da imagem
     visual_description = post.get('visual_description_portuguese', '')
     if visual_description and visual_description != 'N/A':
         post_elements.append([Paragraph("Descrição da Imagem:", styles['PostSubtitle'])])
         post_elements.append([Paragraph(visual_description, styles['PostContent'])])
-        post_elements.append([Spacer(1, 2)])
+        post_elements.append([Spacer(1, 0)])
 
     # Adiciona o campo text_in_image
     text_in_image = post.get('text_in_image', '') or ''
     if text_in_image:
         post_elements.append([Paragraph("Texto na Imagem/Vídeo:", styles['PostSubtitle'])])
         post_elements.append([Paragraph(text_in_image, styles['PostContent'])])
-        post_elements.append([Spacer(1, 5)])
+        post_elements.append([Spacer(1, 0)])
                 
     post_elements.append([Paragraph("Sugestão de Formato:", styles['PostSubtitle'])])
     post_elements.append([Paragraph(post.get('sugestao_formato', 'N/A'), styles['PostContent'])])
-    post_elements.append([Spacer(1, 2)])
+    post_elements.append([Spacer(1, 0)])
 
     # Adiciona detalhes específicos do formato, se existirem
     sugestao_formato = post.get('sugestao_formato', '')
@@ -129,8 +128,8 @@ def _build_post_section(styles: dict, post: dict, post_number: int) -> list:
                 post_elements.append([Paragraph(f"<b>Slide {i+1}:</b> {slide.get('titulo_slide', 'N/A')}", styles['PostContent'])])
                 post_elements.append([Paragraph(f"   <b>Texto:</b> {slide.get('texto_slide', 'N/A')}", styles['PostContent'])])
                 post_elements.append([Paragraph(f"   Visual: {slide.get('sugestao_visual_slide', 'N/A')}", styles['PostContent'])])
-                post_elements.append([Spacer(1, 3.6)])
-            post_elements.append([Spacer(1, 2)])
+                post_elements.append([Spacer(1, 2.6)])
+            post_elements.append([Spacer(1, 1)])
     elif "Vídeo" in sugestao_formato or "Reel" in sugestao_formato:
         micro_roteiro = post.get('micro_roteiro', [])
         if micro_roteiro:
@@ -138,8 +137,8 @@ def _build_post_section(styles: dict, post: dict, post_number: int) -> list:
             for i, cena in enumerate(micro_roteiro):
                 post_elements.append([Paragraph(f"<b>Cena {cena.get('cena', i+1)}:</b> {cena.get('descricao', 'N/A')}", styles['PostContent'])])
                 post_elements.append([Paragraph(f"   <b>Texto na Tela:</b> {cena.get('texto_tela', 'N/A')}", styles['PostContent'])])
-                post_elements.append([Spacer(1, 3.6)])
-            post_elements.append([Spacer(1, 2)])
+                post_elements.append([Spacer(1, 2.6)])
+            post_elements.append([Spacer(1, 1)])
 
 
     # Adiciona o título para o prompt da IA
@@ -148,14 +147,14 @@ def _build_post_section(styles: dict, post: dict, post_number: int) -> list:
     if visual_prompt_suggestion is None:
         visual_prompt_suggestion = ''
     post_elements.append([Paragraph(visual_prompt_suggestion, styles['PostContent'])])
-    post_elements.append([Spacer(1, 2)])
+    post_elements.append([Spacer(1, 0)])
 
     # Adiciona ab_test_suggestions
     ab_test_suggestions = post.get('ab_test_suggestions', '')
     if ab_test_suggestions:
         post_elements.append([Paragraph("Testes A/B:", styles['PostSubtitle'])])
         post_elements.append([Paragraph(ab_test_suggestions, styles['PostContent'])])
-        post_elements.append([Spacer(1, 2)])
+        post_elements.append([Spacer(1, 0)])
 
 
     # Adiciona optimization_triggers
@@ -163,7 +162,7 @@ def _build_post_section(styles: dict, post: dict, post_number: int) -> list:
     if optimization_triggers:
         post_elements.append([Paragraph("Como Corrigir a Rota (Gatilhos de Otimização):", styles['PostSubtitle'])])
         post_elements.append([Paragraph(optimization_triggers, styles['PostContent'])])
-        post_elements.append([Spacer(1, 2)])
+        post_elements.append([Spacer(1, 0)])
 
     # Cria a tabela com o conteúdo do post e aplica o estilo de gradiente
     post_table = Table(post_elements, colWidths=[7.0 * inch])

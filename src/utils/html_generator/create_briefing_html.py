@@ -253,7 +253,7 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
                 <p><strong>Briefing:</strong> {post.get("micro_briefing", "N/A")}</p>
                 <p><strong>Legenda:</strong> {post.get("legenda_principal", "N/A")}</p>
                 <details>
-                    <summary>Clique para expandir variações</summary>
+                    <summary style="text-decoration: underline; font-style: italic; color: #0000EE;">Clique para expandir variações</summary>
                     <p><strong>Variações:</strong></p>
                     <ul>
         """
@@ -276,7 +276,7 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
         if response_script:
             html_content += f"""
                 <details>
-                    <summary>Clique para expandir roteiro de respostas</summary>
+                    <summary style="text-decoration: underline; font-style: italic; color: #0000EE;">Clique para expandir roteiro de respostas</summary>
                     <p><strong>Roteiro de Respostas:</strong></p>
                     <ul>
             """
@@ -294,7 +294,7 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
                 {f"<p><strong>Texto na Imagem/Vídeo:</strong> {post.get("text_in_image", "N/A")}</p>" if post.get("text_in_image") else ""}
                 <p><strong>Formato Sugerido:</strong> {post.get("sugestao_formato", "N/A")}</p>
         """
-        if post.get("sugestao_formato") == "Carrossel de imagens":
+        if post.get("carrossel_slides") and len(post["carrossel_slides"]) > 0:
             html_content += f"""
                 <h4>Slides do Carrossel:</h4>
                 <ol>
@@ -304,7 +304,7 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
             html_content += f"""
                 </ol>
             """
-        elif post.get("sugestao_formato") == "Vídeo":
+        elif post.get("micro_roteiro") and len(post["micro_roteiro"]) > 0:
             html_content += f"""
                 <h4>Micro Roteiro (Vídeo):</h4>
                 <ol>
