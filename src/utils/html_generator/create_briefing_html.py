@@ -204,7 +204,7 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
                 </ul>
             """
         html_content += f"""
-                {f"<p><strong>Sugestões Visuais (Português):</strong> {post.get("visual_description_portuguese", "N/A")}</p>" if post.get("visual_description_portuguese") else ""}
+                {f"<p><strong>Sugestões Visuais:</strong> {post.get("visual_description_portuguese", "N/A")}</p>" if post.get("visual_description_portuguese") else ""}
                 {f"<p><strong>Texto na Imagem/Vídeo:</strong> {post.get("text_in_image", "N/A")}</p>" if post.get("text_in_image") else ""}
                 <p><strong>Formato Sugerido:</strong> {post.get("sugestao_formato", "N/A")}</p>
         """
@@ -229,7 +229,7 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
                 </ol>
             """
         html_content += f"""
-                {f"<p><strong>Sugestões Visuais (English Prompt):</strong> {post.get("visual_prompt_suggestion", "N/A")}</p>" if post.get("visual_prompt_suggestion") else ""}
+                {f"<p><strong>Prompt para IA Geradora de Imagens:</strong> {post.get("visual_prompt_suggestion", "N/A")}</p>" if post.get("visual_prompt_suggestion") else ""}
                 {f"<p><strong>Testes A/B:</strong> {post.get("ab_test_suggestions", "N/A")}</p>" if post.get("ab_test_suggestions") else ""}
                 {f"<p><strong>Como Corrigir a Rota (Gatilhos de Otimização):</strong> {post.get("optimization_triggers", "N/A")}</p>" if post.get("optimization_triggers") else ""}
                 <p><strong>Checklist de Publicação:</strong></p>

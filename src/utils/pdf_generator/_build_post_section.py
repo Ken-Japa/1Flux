@@ -83,13 +83,15 @@ def _build_post_section(styles: dict, post: dict, post_number: int) -> list:
         post_story.append(Spacer(1, 14.4))
         
     # Adiciona a descrição em português da imagem
-    visual_description = post.get('visual_description_portuguese', 'N/A')
-    if visual_description != 'N/A':
+    visual_description = post.get('visual_description_portuguese', '')
+    if visual_description and visual_description != 'N/A':
+        post_story.append(Paragraph("Descrição da Imagem:", styles['BlackSubtitle']))
+        post_story.append(Spacer(1, 3.6))
         post_story.append(Paragraph(visual_description, styles['PostContent']))
         post_story.append(Spacer(1, 7.2))
 
     # Adiciona o campo text_in_image
-    text_in_image = post.get('text_in_image', '')
+    text_in_image = post.get('text_in_image', '') or ''
     if text_in_image:
         post_story.append(Paragraph("Texto na Imagem/Vídeo:", styles['BlackSubtitle']))
         post_story.append(Spacer(1, 3.6))
@@ -125,8 +127,6 @@ def _build_post_section(styles: dict, post: dict, post_number: int) -> list:
                 post_story.append(Spacer(1, 3.6))
             post_story.append(Spacer(1, 7.2))
 
-    post_story.append(Paragraph("Sugestões Visuais Detalhadas:", styles['BrownSubtitle']))
-    post_story.append(Spacer(1, 3.6))
 
     # Adiciona o título para o prompt da IA
     post_story.append(Paragraph("Prompt para IA Geradora de Imagens:", styles['StrongPurpleSubtitle']))
