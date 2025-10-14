@@ -133,22 +133,55 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roteiro de Publicações para {client_name}</title>
     <style>
-        body {{ font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f4; }}
-        .container {{ width: 80%; margin: 20px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }}
-        .cover {{ text-align: center; padding: 50px 0; background-color: #0056b3; color: #fff; border-radius: 8px 8px 0 0; margin-bottom: 30px; }}
-        .cover h1 {{ margin: 0; font-size: 2.5em; }}
-        .cover p {{ font-size: 1.2em; margin-top: 10px; }}
-        h2 {{ color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 10px; margin-top: 40px; }}
-        h3 {{ color: #0056b3; margin-top: 30px; }}
-        .post-section {{ background-color: #e9f5ff; border-left: 5px solid #0056b3; padding: 20px; margin-bottom: 20px; border-radius: 5px; }}
-        .post-section p {{ margin: 5px 0; }}
-        .checklist {{ list-style-type: none; padding: 0; }}
-        .checklist li {{ background: #f0f0f0; margin-bottom: 5px; padding: 10px; border-radius: 3px; }}
-        .checklist li:before {{ content: "☐ "; color: #0056b3; font-weight: bold; }} /* Adiciona um quadrado antes do item */
-        .calendar-table {{ width: 100%; border-collapse: collapse; margin-top: 20px; }}
-        .calendar-table th, .calendar-table td {{ border: 1px solid #ddd; padding: 8px; text-align: left; }}
-        .calendar-table th {{ background-color: #f2f2f2; }}
-        .footer {{ text-align: center; margin-top: 50px; font-size: 0.9em; color: #777; }}
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f4; }
+        .container { width: 80%; margin: 20px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        /* Capa - Mudar para a cor primária do PDF */
+        .cover {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #1A237E; /* Azul Escuro */
+            color: #fff;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 30px;
+        }
+        .cover h1 { margin: 0; font-size: 2.5em; }
+        .cover p { font-size: 1.2em; margin-top: 10px; }
+        /* Títulos de Seção */
+        h2 {
+            color: #1A237E; /* Azul Escuro */
+            border-bottom: 3px solid #5C6BC0; /* Azul Médio */
+            padding-bottom: 10px;
+            margin-top: 40px;
+            font-size: 1.8em;
+        }
+        /* Bloco de Post */
+        .post-section {
+            background-color: #F5F5F5; /* Cinza muito claro */
+            border-left: 6px solid #1A237E; /* Linha de destaque */
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Sombra sutil */
+        }
+        /* Subtítulos dentro do Post */
+        .post-section h3 {
+            color: #1A237E; /* Azul Escuro */
+            border-bottom: 1px solid #E0E0E0;
+            padding-bottom: 5px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        /* Destaque para os rótulos (Tema, Legenda, etc.) */
+        .post-section p strong {
+            color: #5C6BC0; /* Azul Médio */
+        }
+        .checklist { list-style-type: none; padding: 0; }
+        .checklist li { background: #f0f0f0; margin-bottom: 5px; padding: 10px; border-radius: 3px; }
+        .checklist li:before { content: "☐ "; color: #0056b3; font-weight: bold; } /* Adiciona um quadrado antes do item */
+        .calendar-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .calendar-table th, .calendar-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        .calendar-table th { background-color: #f2f2f2; }
+        .footer { text-align: center; margin-top: 50px; font-size: 0.9em; color: #777; }
     </style>
 </head>
 <body>

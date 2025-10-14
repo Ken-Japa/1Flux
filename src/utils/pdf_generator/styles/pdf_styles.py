@@ -119,13 +119,26 @@ def get_pdf_styles():
                            alignment=TA_CENTER, # Centralizado
                            spaceAfter=12,
                            textColor=HexColor('#3F51B5'))) # Azul médio para o título do Post
-    styles.add(ParagraphStyle(name='PostSubtitle', 
-                           fontSize=12, 
-                           leading=16, 
-                           fontName='DejaVuSans-Bold', 
-                           spaceBefore=10, 
-                           spaceAfter=4,
-                           textColor=HexColor('#424242'))) # Subtítulo do Post (cor padrão)
+    # Novo estilo para o bloco de post (para ser usado com Table)
+    styles.add(ParagraphStyle(name='PostBlock',
+                            fontSize=11,
+                            leading=14,
+                            spaceAfter=15,
+                            fontName='DejaVuSans',
+                            backColor=HexColor('#F5F5F5'), # Cinza muito claro
+                            borderPadding=10,
+                            borderRadius=6,
+                            borderColor=HexColor('#E0E0E0'),
+                            borderWidth=1))
+
+    # Ajuste no PostSubtitle para usar a cor primária
+    styles.add(ParagraphStyle(name='PostSubtitle',
+                            fontSize=12,
+                            leading=16,
+                            fontName='DejaVuSans-Bold',
+                            spaceBefore=10,
+                            spaceAfter=4,
+                            textColor=HexColor('#1A237E'))) # Azul escuro primário
     styles.add(ParagraphStyle(name='ColoredPostSubtitle', # Novo estilo para subtítulos coloridos (azul)
                            fontSize=12, 
                            leading=16, 
