@@ -22,13 +22,18 @@ def _build_cover_page(styles: dict, client_name: str, formatted_period: str, for
         list: Uma lista de elementos Story para a capa.
     """
     cover_story = []
-    cover_story.append(Spacer(1, 120))
-    cover_story.append(Paragraph(f"Calendário Semanal de Conteúdo", styles['TitleStyle']))
-    cover_story.append(Paragraph(f"para {client_name}", styles['SubtitleStyle']))
-    cover_story.append(Spacer(1, 14.4))
-    cover_story.append(Paragraph(formatted_period, styles['SubtitleStyle']))
-    cover_story.append(Spacer(1, 36))
-    cover_story.append(Paragraph(COMPANY_NAME, styles['SubtitleStyle']))
+
+    # Definir estilos para a capa com texto branco
+    cover_title_style = ParagraphStyle(name='CoverTitle', parent=styles['TitleStyle'], textColor=HexColor('#FFFFFF'), alignment=1)
+    cover_subtitle_style = ParagraphStyle(name='CoverSubtitle', parent=styles['SubtitleStyle'], textColor=HexColor('#FFFFFF'), alignment=1)
+
+    cover_story.append(Spacer(1, 150)) # Espaçamento maior no topo
+    cover_story.append(Paragraph(f"Calendário Semanal de Conteúdo", cover_title_style))
+    cover_story.append(Paragraph(f"para {client_name}", cover_subtitle_style))
+    cover_story.append(Spacer(1, 24)) # Espaçamento ajustado
+    cover_story.append(Paragraph(formatted_period, cover_subtitle_style))
+    cover_story.append(Spacer(1, 48)) # Espaçamento ajustado
+    cover_story.append(Paragraph(COMPANY_NAME, cover_subtitle_style))
 
     
     # Inserir Logo
@@ -36,18 +41,18 @@ def _build_cover_page(styles: dict, client_name: str, formatted_period: str, for
         try:
             logo = Image(LOGO_PATH)
             # Ajusta o tamanho do logo para caber na página, mantendo a proporção
-            logo_width = 180  
+            logo_width = 250  # Aumenta o tamanho do logo
             logo_height = logo.drawHeight * (logo_width / logo.drawWidth)
             logo.drawWidth = logo_width
             logo.drawHeight = logo_height
             logo.hAlign = 'CENTER'
             cover_story.append(logo)
-            cover_story.append(Spacer(1, 36))
+            cover_story.append(Spacer(1, 48)) # Espaçamento ajustado
         except Exception as e:
             print(f"Erro ao carregar o logo: {e}")
-            cover_story.append(Paragraph("[ERRO AO CARREGAR LOGO]", styles['SubtitleStyle']))
+            cover_story.append(Paragraph("[ERRO AO CARREGAR LOGO]", cover_subtitle_style))
     else:
-        cover_story.append(Paragraph("[LOGO NÃO ENCONTRADO]", styles['SubtitleStyle']))
-    cover_story.append(Spacer(1, 36))
-    cover_story.append(Paragraph(f"Gerado em: {formatted_generation_date}", styles['SubtitleStyle']))
+        cover_story.append(Paragraph("[LOGO NÃO ENCONTRADO]", cover_subtitle_style))
+    cover_story.append(Spacer(1, 48)) # Espaçamento ajustado
+    cover_story.append(Paragraph(f"Gerado em: {formatted_generation_date}", cover_subtitle_style))
     return cover_story

@@ -78,8 +78,17 @@ def create_briefing_pdf(content_json: dict, client_name: str, output_filename: s
 
     normal_page_template = PageTemplate(id='NormalPage', frames=normal_frame, onPage=_header_footer)
 
-    doc = SimpleDocTemplate(output_filename, pagesize=letter)
-    doc.addPageTemplates([normal_page_template])
+    doc = SimpleDocTemplate(output_filename, pagesize=A4)
+    story = []
+
+    # Define frames para a capa
+    cover_frame = Frame(doc.leftMargin, doc.bottomMargin, doc.width, doc.height,
+                        leftPadding=0, bottomPadding=0, rightPadding=0, topPadding=0,
+                        id='cover_frame')
+
+    # Registra o PageTemplate para a capa
+    cover_template = CoverPage(id='CoverPage', frames=[cover_frame])
+    doc.addPageTemplates([cover_template, normal_page_template])
 
     today = datetime.now()
     formatted_generation_date = today.strftime('%d/%m/%y')
@@ -107,10 +116,13 @@ def create_briefing_pdf(content_json: dict, client_name: str, output_filename: s
         formatted_period = f"{start_date.strftime('%d/%m/%y')}"
 
     # --- Página de Rosto ---
+    story.append(PageBreak()) # Inicia a capa em uma nova página
+    doc.pageTemplate = 'CoverPage' # Define o template da capa
     story.extend(_build_cover_page(styles, client_name, formatted_period, formatted_generation_date))
 
-    # --- Sumário Executivo / Visão Geral da Semana ---
+    # --- Sumário Executivo / Visão Geral da Semana ----
     story.append(PageBreak()) # Adiciona quebra de página antes do sumário executivo
+    doc.pageTemplate = 'NormalPage' # Retorna ao template normal para as próximas páginas
     weekly_strategy_summary_content = content_json.get('weekly_strategy_summary', '')
     if isinstance(weekly_strategy_summary_content, str):
         # Se for uma string, tenta carregar como JSON. Se falhar, usa a string como summary.
