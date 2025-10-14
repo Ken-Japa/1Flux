@@ -20,6 +20,14 @@ def _build_post_section(styles: dict, post: dict, post_number: int) -> list:
     post_story.append(Paragraph(f"{post.get('tema')}", styles['NormalText']))
     post_story.append(Spacer(1, 7.2))
 
+    # Adiciona o horário de postagem
+    horario_de_postagem = post.get('horario_de_postagem', '')
+    if horario_de_postagem:
+        post_story.append(Paragraph("Horário de Postagem:", styles['BlackSubtitle']))
+        post_story.append(Spacer(1, 3.6))
+        post_story.append(Paragraph(horario_de_postagem, styles['PostContent']))
+        post_story.append(Spacer(1, 7.2))
+
     post_story.append(Paragraph("Justificativa Estratégica:", styles['BlackSubtitle']))
     post_story.append(Spacer(1, 3.6))
     post_story.append(Paragraph(post.get('post_strategy_rationale', 'N/A'), styles['PostContent']))

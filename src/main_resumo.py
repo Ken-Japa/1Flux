@@ -6,9 +6,6 @@ import json
 import os
 import sys
 from datetime import datetime
-from src.utils.prompt_manager.build_summary_prompt import build_summary_prompt
-from src.llm_client.gemini_client import generate_content as generate_gemini_content
-from src.llm_client.cohere_client import generate_content as generate_cohere_content
 
 def find_latest_posts_file(directory):
     """
@@ -93,113 +90,54 @@ def save_summary(summary_data, ia_name, output_dir):
         print(f"Erro ao salvar resumo: {str(e)}")
         return None
 
-def process_gemini_summary(posts_file_path=None):
-    """
-    Processa o resumo dos posts da Gemini.
-    
-    Args:
-        posts_file_path (str, optional): Caminho do arquivo de posts. Se None, usa o mais recente.
-    
-    Returns:
-        str: Caminho do arquivo de resumo salvo ou None se ocorrer um erro
-    """
-    # Diretórios
-    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-    gemini_posts_dir = os.path.join(base_dir, "output_files", "respostas_IA", "Gemini", "Resumo")
-    gemini_summary_dir = os.path.join(base_dir, "output_files", "Resumo", "Gemini")
-    
-    # Encontrar o arquivo de posts mais recente se não for especificado
-    if not posts_file_path:
-        posts_file_path = find_latest_posts_file(gemini_posts_dir)
-        if not posts_file_path:
-            return None
-    
-    # Carregar os dados de posts
-    posts_data = load_posts_data(posts_file_path)
-    if not posts_data:
-        return None
-    
-    # Construir o prompt para resumo
-    prompt = build_summary_prompt(posts_data, "Gemini")
-    
-    # Gerar o resumo usando a API da Gemini
-    print("Gerando resumo com a Gemini...")
-    summary_response = generate_gemini_content(prompt)
-    
-    # Processar a resposta para extrair o JSON
-    try:
-        # Tentar carregar diretamente como JSON
-        summary_data = json.loads(summary_response)
-    except json.JSONDecodeError:
-        # Se falhar, tentar extrair o JSON da resposta de texto
-        import re
-        json_match = re.search(r'```json\s*([\s\S]*?)\s*```', summary_response)
-        if json_match:
-            try:
-                summary_data = json.loads(json_match.group(1))
-            except json.JSONDecodeError:
-                print("Erro ao extrair JSON da resposta da Gemini")
-                return None
-        else:
-            print("Formato de resposta da Gemini não reconhecido")
-            return None
-    
-    # Salvar o resumo
-    return save_summary(summary_data, "Gemini", gemini_summary_dir)
 
-def process_cohere_summary(posts_file_path=None):
+
+def process_pre_summarized_file(ia_name, posts_dir, summary_output_dir):
     """
-    Processa o resumo dos posts da Cohere.
+    Processa um arquivo de posts já resumido, carregando-o e salvando-o no diretório de resumo.
     
     Args:
-        posts_file_path (str, optional): Caminho do arquivo de posts. Se None, usa o mais recente.
+        ia_name (str): Nome da IA (Gemini ou Cohere).
+        posts_dir (str): Diretório onde os arquivos de posts resumidos estão localizados.
+        summary_output_dir (str): Diretório onde o arquivo de resumo final será salvo.
     
     Returns:
-        str: Caminho do arquivo de resumo salvo ou None se ocorrer um erro
+        str: Caminho do arquivo de resumo salvo ou None se ocorrer um erro.
     """
-    # Diretórios
-    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-    cohere_posts_dir = os.path.join(base_dir, "output_files", "respostas_IA", "Cohere", "Resumo")
-    cohere_summary_dir = os.path.join(base_dir, "output_files", "Resumo", "Cohere")
+    print(f"Processando arquivo de posts pré-resumido para {ia_name}...")
     
-    # Encontrar o arquivo de posts mais recente se não for especificado
+    # Encontrar o arquivo de posts mais recente
+    posts_file_path = find_latest_posts_file(posts_dir)
     if not posts_file_path:
-        posts_file_path = find_latest_posts_file(cohere_posts_dir)
-        if not posts_file_path:
-            return None
+        print(f"Nenhum arquivo de posts encontrado para {ia_name} em {posts_dir}")
+        return None
     
     # Carregar os dados de posts
     posts_data = load_posts_data(posts_file_path)
     if not posts_data:
+        print(f"Falha ao carregar dados do arquivo {posts_file_path}")
         return None
     
-    # Construir o prompt para resumo
-    prompt = build_summary_prompt(posts_data, "Cohere")
+    # Filtrar as propriedades de cada post
+    filtered_posts = []
+    for post in posts_data.get("posts", []):
+        filtered_post = {
+            "titulo": post.get("titulo"),
+            "tema": post.get("tema"),
+            "legenda_principal": post.get("legenda_principal"),
+            "hashtags": post.get("hashtags", [])[:2], # Limitar a 2 hashtags
+            "post_strategy_rationale": post.get("post_strategy_rationale"),
+            "micro_briefing": post.get("micro_briefing") or post.get("carrossel_slides"), # Priorizar micro_briefing, senão usar carrossel_slides
+            "cta_individual": post.get("cta_individual"),
+            "interacao": post.get("interacao")
+        }
+        filtered_posts.append(filtered_post)
     
-    # Gerar o resumo usando a API da Cohere
-    print("Gerando resumo com a Cohere...")
-    summary_response = generate_cohere_content(prompt)
-    
-    # Processar a resposta para extrair o JSON
-    try:
-        # Tentar carregar diretamente como JSON
-        summary_data = json.loads(summary_response)
-    except json.JSONDecodeError:
-        # Se falhar, tentar extrair o JSON da resposta de texto
-        import re
-        json_match = re.search(r'```json\s*([\s\S]*?)\s*```', summary_response)
-        if json_match:
-            try:
-                summary_data = json.loads(json_match.group(1))
-            except json.JSONDecodeError:
-                print("Erro ao extrair JSON da resposta da Cohere")
-                return None
-        else:
-            print("Formato de resposta da Cohere não reconhecido")
-            return None
-    
-    # Salvar o resumo
-    return save_summary(summary_data, "Cohere", cohere_summary_dir)
+    # Criar um novo dicionário com os posts filtrados
+    filtered_summary_data = {"posts": filtered_posts}
+
+    # Salvar o resumo filtrado
+    return save_summary(filtered_summary_data, ia_name, summary_output_dir)
 
 def combine_summaries(gemini_summary_path, cohere_summary_path):
     """
@@ -249,26 +187,38 @@ def combine_summaries(gemini_summary_path, cohere_summary_path):
         print(f"Erro ao combinar resumos: {str(e)}")
         return None
 
+
+
 def main():
     """
     Função principal que processa os resumos da Gemini e Cohere.
     """
-    # Processar resumo da Gemini
-    gemini_summary_path = process_gemini_summary()
+    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+
+    # Diretórios para Gemini
+    gemini_posts_dir = os.path.join(base_dir, "output_files", "respostas_IA", "Gemini", "Resumo")
+    gemini_summary_output_dir = os.path.join(base_dir, "output_files", "Resumo", "Gemini")
+
+    # Diretórios para Cohere
+    cohere_posts_dir = os.path.join(base_dir, "output_files", "respostas_IA", "Cohere", "Resumo")
+    cohere_summary_output_dir = os.path.join(base_dir, "output_files", "Resumo", "Cohere")
+
+    # Processar arquivo pré-resumido da Gemini
+    gemini_summary_path = process_pre_summarized_file("Gemini", gemini_posts_dir, gemini_summary_output_dir)
     if gemini_summary_path:
-        print(f"Resumo da Gemini gerado com sucesso: {gemini_summary_path}")
+        print(f"Resumo da Gemini processado com sucesso: {gemini_summary_path}")
     else:
-        print("Falha ao gerar resumo da Gemini")
+        print("Falha ao processar resumo da Gemini")
         return
-    
-    # Processar resumo da Cohere
-    cohere_summary_path = process_cohere_summary()
+
+    # Processar arquivo pré-resumido da Cohere
+    cohere_summary_path = process_pre_summarized_file("Cohere", cohere_posts_dir, cohere_summary_output_dir)
     if cohere_summary_path:
-        print(f"Resumo da Cohere gerado com sucesso: {cohere_summary_path}")
+        print(f"Resumo da Cohere processado com sucesso: {cohere_summary_path}")
     else:
-        print("Falha ao gerar resumo da Cohere")
+        print("Falha ao processar resumo da Cohere")
         return
-    
+
     # Combinar os resumos em um único JSON
     combined_path = combine_summaries(gemini_summary_path, cohere_summary_path)
     if combined_path:

@@ -131,7 +131,7 @@ def build_prompt_cohere(client_profile: dict, niche_guidelines: dict, content_ty
     user_message_parts.append("- `legenda_principal`: A legenda principal do post.")
     user_message_parts.append("- `variacoes_legenda`: Uma lista de 2-3 variações da legenda principal.")
     user_message_parts.append("- `hashtags`: Uma lista de hashtags relevantes.")
-    user_message_parts.append("- `sugestao_formato`: Sugestão de formato (ex: \"Carrossel de imagens\", \"Vídeo curto\", \"Infográfico\").")
+    user_message_parts.append("            \"sugestao_formato\": \"Sugestão de formato para o post (ex: 'Carrossel de imagens', 'Vídeo', 'Reel', 'Imagem única', 'Infográfico'). Pode adicionar explicações.\",")
     user_message_parts.append("- `post_strategy_rationale`: Uma justificativa estratégica detalhada para este post, explicando como ele se encaixa na narrativa semanal e contribui para os objetivos gerais.")
     user_message_parts.append("- `micro_briefing`: Um breve resumo do objetivo e foco principal do post, para contextualização.")
     user_message_parts.append("- `micro_roteiro`: Se `sugestao_formato` for \"Vídeo curto\" ou \"Reel\", inclua um micro-roteiro detalhando cenas, falas/textos e chamadas para ação.")
