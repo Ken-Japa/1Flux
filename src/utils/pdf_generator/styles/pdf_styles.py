@@ -18,8 +18,8 @@ def get_pdf_styles():
 
     # Título Principal
     styles.add(ParagraphStyle(name='TitleStyle', 
-                               fontSize=32, 
-                               leading=38, 
+                               fontSize=24, 
+                               leading=28, 
                                alignment=TA_CENTER, 
                                spaceAfter=30,
                                fontName='DejaVuSans-Bold',
@@ -120,7 +120,7 @@ def get_pdf_styles():
                            spaceAfter=12,
                            textColor=HexColor('#3F51B5'))) # Azul médio para o título do Post
     # Novo estilo para o bloco de post (para ser usado com Table)
-    styles.add(ParagraphStyle(name='PostBlock',
+    styles.add(ParagraphStyle(name='PostSection',
                             fontSize=11,
                             leading=14,
                             spaceAfter=15,

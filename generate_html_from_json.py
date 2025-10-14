@@ -2,11 +2,18 @@ import json
 import sys
 import os
 from datetime import datetime
+from weasyprint import HTML # Importa a classe HTML do Weasyprint
 
 # Adiciona o diretório 'src' ao sys.path para que as importações funcionem
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), 'src')))
 
 from utils.html_generator.create_briefing_html import create_briefing_html
+
+
+def generate_pdf_from_html(html_filename: str, pdf_filename: str):
+    """
+    Converte um arquivo HTML em PDF usando Weasyprint.
+    """
 
 
 def main():
@@ -77,6 +84,9 @@ def main():
             suggested_metrics=suggested_metrics # Adicionado
         )
         print(f"HTML gerado com sucesso em: {html_output_path}")
+
+
+
     except Exception as e:
         print(f"Erro ao gerar o HTML: {e}")
         sys.exit(1)

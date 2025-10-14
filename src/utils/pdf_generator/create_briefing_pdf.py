@@ -2,7 +2,7 @@ import os
 import json
 from datetime import datetime
 from reportlab.lib.pagesizes import letter, A4
-from reportlab.platypus import SimpleDocTemplate, Spacer, Paragraph, PageBreak, PageTemplate, Frame
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image, PageBreak, Table, TableStyle, PageTemplate, Frame
 from src.utils.pdf_generator.styles.pdf_styles import get_pdf_styles
 from src.utils.pdf_generator._build_cover_page import _build_cover_page
 from reportlab.lib.units import inch
@@ -16,7 +16,16 @@ from src.utils.pdf_generator.checklist_logic import generate_publication_checkli
 from src.utils.pdf_generator._build_success_metrics import _build_success_metrics
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.lib import colors # Importar colors
 
+def _cover_page_background(canvas, doc):
+    """
+    Desenha o fundo colorido para a página de capa.
+    """
+    canvas.saveState()
+    canvas.setFillColor(colors.HexColor('#1A237E')) # Azul escuro
+    canvas.rect(0, 0, doc.width, doc.height, fill=1)
+    canvas.restoreState()
 
 def create_briefing_pdf(content_json: dict, client_name: str, output_filename: str, model_name: str = "Unknown", target_audience: str = "", tone_of_voice: str = "", marketing_objectives: str = "", suggested_metrics: dict = {}, posting_time: str = ""):
     """
@@ -78,7 +87,7 @@ def create_briefing_pdf(content_json: dict, client_name: str, output_filename: s
 
     normal_page_template = PageTemplate(id='NormalPage', frames=normal_frame, onPage=_header_footer)
 
-    doc = SimpleDocTemplate(output_filename, pagesize=A4)
+    doc = SimpleDocTemplate(output_filename, pagesize=A4, leftMargin=50, rightMargin=50, topMargin=50, bottomMargin=50)
     story = []
 
     # Define frames para a capa
@@ -87,7 +96,7 @@ def create_briefing_pdf(content_json: dict, client_name: str, output_filename: s
                         id='cover_frame')
 
     # Registra o PageTemplate para a capa
-    cover_template = PageTemplate(id='CoverPage', frames=[cover_frame])
+    cover_template = PageTemplate(id='CoverPage', frames=[cover_frame], onPage=_cover_page_background)
     doc.addPageTemplates([cover_template, normal_page_template])
 
     today = datetime.now()
@@ -161,7 +170,23 @@ def create_briefing_pdf(content_json: dict, client_name: str, output_filename: s
                 post = {}
         elif not isinstance(post, dict):
             post = {}
-        story.extend(_build_post_section(styles, post, i + 1))
+        
+        post_elements = _build_post_section(styles, post, i + 1)
+        
+        # Cria uma tabela de uma célula para envolver o conteúdo do post com estilo
+        table_data = []
+        for element in post_elements:
+            table_data.append([element])
+        post_table = Table(table_data, colWidths=[doc.width - doc.leftMargin - doc.rightMargin])
+        post_table.setStyle(TableStyle([
+            ('BACKGROUND', (0,0), (-1,-1), styles['PostSection'].backColor),
+            ('BOX', (0,0), (-1,-1), styles['PostSection'].borderWidth, styles['PostSection'].borderColor), # Borda
+            ('LEFTPADDING', (0,0), (-1,-1), styles['PostSection'].borderPadding),
+            ('RIGHTPADDING', (0,0), (-1,-1), styles['PostSection'].borderPadding),
+            ('TOPPADDING', (0,0), (-1,-1), styles['PostSection'].borderPadding),
+            ('BOTTOMPADDING', (0,0), (-1,-1), styles['PostSection'].borderPadding),
+        ]))
+        story.append(post_table)
         story.append(Spacer(1, 20)) # Adiciona um espaçador entre as seções de postagem
         if i < len(posts) - 1:
             story.append(PageBreak())
@@ -175,8 +200,6 @@ def create_briefing_pdf(content_json: dict, client_name: str, output_filename: s
     story.extend(_build_success_metrics(styles, suggested_metrics))
     
     # --- Checklist de Publicação ---
-    story.append(Spacer(1, 36))
-
     publication_checklist = generate_publication_checklist(publication_calendar)
     story.extend(_build_publication_checklist(styles, publication_checklist))
 

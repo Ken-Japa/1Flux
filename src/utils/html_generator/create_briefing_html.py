@@ -186,8 +186,8 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
         .checklist {{ list-style-type: none; padding: 0; }}
         .checklist li {{ background: #f0f0f0; margin-bottom: 5px; padding: 10px; border-radius: 3px; }}
         .checklist li:before {{ content: "\f058"; font-family: "Font Awesome 6 Free"; color: #2E7D32; font-weight: bold; margin-right: 8px; }}
-        .calendar-table {{ width: 100%; border-collapse: collapse; margin-top: 20px; }}
-        .calendar-table th, .calendar-table td {{ border: 2px solid #999; padding: 8px; text-align: left; }}
+        .calendar-table {{ width: 100%; border-collapse: separate; border-spacing: 2px; margin-top: 20px; }}
+        .calendar-table th, .calendar-table td {{ border: 2px solid #333; padding: 12px; text-align: left; }}
         .calendar-table th {{ background-color: #3F51B5; color: #fff; }} /* Cabeçalho mais vibrante */
         .calendar-table tr:nth-child(even) {{ background-color: #E8EAF6; }} /* Azul claro alternado */
         .calendar-table tr:hover {{ background-color: #C5CAE9; transition: background 0.3s; }} /* Hover para destaque */
@@ -222,7 +222,7 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
             .container {{ width: 95%; padding: 15px; }}
             .post-section {{ padding: 15px; }}
             .calendar-table {{ font-size: 0.9em; }}
-            .calendar-table th, .calendar-table td {{ padding: 6px; }}
+            .calendar-table th, .calendar-table td {{ padding: 8px; }}
         }}
     </style>
 </head>
