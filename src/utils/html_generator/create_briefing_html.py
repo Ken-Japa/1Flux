@@ -131,21 +131,27 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roteiro de Publicações para {client_name}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body {{ font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f4; }}
+        body {{ font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f4; }}
         .container {{ width: 80%; margin: 20px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }}
         /* Capa - Mudar para a cor primária do PDF */
         .cover {{
             text-align: center;
             padding: 50px 0;
-            background-color: #1A237E; /* Azul Escuro */
+            background: linear-gradient(to bottom, #1A237E, #3949AB);
             color: #fff;
             border-radius: 8px 8px 0 0;
             margin-bottom: 30px;
         }}
         .cover h1 {{ margin: 0; font-size: 2.5em; }}
-        .cover p {{ font-size: 1.2em; margin-top: 10px; }}
+        .cover p {{ margin: 0; font-size: 1.2em; margin-top: 10px; }}
         /* Títulos de Seção */
+        h1, h2, h3 {{
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }}
         h2 {{
             color: #1A237E; /* Azul Escuro */
             border-bottom: 3px solid #5C6BC0; /* Azul Médio */
@@ -157,8 +163,8 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
         .post-section {{
             background-color: #F5F5F5; /* Cinza muito claro */
             border-left: 6px solid #1A237E; /* Linha de destaque */
-            padding: 20px;
-            margin-bottom: 25px;
+            padding: 25px;
+            margin-bottom: 30px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Sombra sutil */
         }}
@@ -173,14 +179,30 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
         /* Destaque para os rótulos (Tema, Legenda, etc.) */
         .post-section p strong {{
             color: #5C6BC0; /* Azul Médio */
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 1.1em;
         }}
         .checklist {{ list-style-type: none; padding: 0; }}
         .checklist li {{ background: #f0f0f0; margin-bottom: 5px; padding: 10px; border-radius: 3px; }}
-        .checklist li:before {{ content: "✅ "; color: #2E7D32; font-weight: bold; }} /* Ou "☐ " se for para ser preenchido */
+        .checklist li:before {{ content: "\f058"; font-family: "Font Awesome 6 Free"; color: #2E7D32; font-weight: bold; margin-right: 8px; }}
         .calendar-table {{ width: 100%; border-collapse: collapse; margin-top: 20px; }}
         .calendar-table th, .calendar-table td {{ border: 1px solid #ddd; padding: 8px; text-align: left; }}
         .calendar-table th {{ background-color: #F5F5F5; }} /* Fundo claro para o cabeçalho da tabela */
-        .footer {{ text-align: center; margin-top: 50px; font-size: 0.9em; color: #777; }}
+        .footer {{
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #777;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }}
+        @media (max-width: 768px) {{
+            .container {{ width: 95%; padding: 15px; }}
+            .post-section {{ padding: 15px; }}
+            .calendar-table {{ font-size: 0.9em; }}
+            .cover {{ padding: 30px 0; }}
+        }}
     </style>
 </head>
 <body>
