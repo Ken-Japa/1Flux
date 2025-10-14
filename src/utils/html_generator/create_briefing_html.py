@@ -50,7 +50,7 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
         market_references = content_json.get('market_references', []) 
         if market_references:
             summary_html += f"        <h3>Análise de Concorrentes e Referências de Sucesso:</h3>\n"
-            summary_html += "        <ul>\n"
+            summary_html += "        <ul class=\"competitor-list\">\n"
             for ref in market_references:
                 summary_html += f"            <li><strong>Nome/Handle:</strong> {ref.get('Nome/Handle', 'N/A')}<br>\n\n"
                 summary_html += f"                <strong>Diferenciais:</strong> {ref.get('Diferenciais', 'N/A')}<br>\n\n"
@@ -187,21 +187,42 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
         .checklist li {{ background: #f0f0f0; margin-bottom: 5px; padding: 10px; border-radius: 3px; }}
         .checklist li:before {{ content: "\f058"; font-family: "Font Awesome 6 Free"; color: #2E7D32; font-weight: bold; margin-right: 8px; }}
         .calendar-table {{ width: 100%; border-collapse: collapse; margin-top: 20px; }}
-        .calendar-table th, .calendar-table td {{ border: 1px solid #ddd; padding: 8px; text-align: left; }}
-        .calendar-table th {{ background-color: #F5F5F5; }} /* Fundo claro para o cabeçalho da tabela */
+        .calendar-table th, .calendar-table td {{ border: 2px solid #999; padding: 8px; text-align: left; }}
+        .calendar-table th {{ background-color: #3F51B5; color: #fff; }} /* Cabeçalho mais vibrante */
+        .calendar-table tr:nth-child(even) {{ background-color: #E8EAF6; }} /* Azul claro alternado */
+        .calendar-table tr:hover {{ background-color: #C5CAE9; transition: background 0.3s; }} /* Hover para destaque */
         .footer {{
-            text-align: center;
+            width: 100%;
             margin-top: 50px;
             font-size: 0.9em;
             color: #777;
             border-top: 1px solid #ddd;
             padding-top: 20px;
         }}
+        .footer p {{
+            display: block;
+            text-align: right;
+        }}
+        .checklist li {{ padding: 12px; margin-bottom: 8px; display: flex; align-items: center; }}
+        .checklist ul {{ margin-left: 20px; list-style-type: disc; }} /* Sub-listas com bullets */
+        ul.competitor-list li {{ border-bottom: 1px solid #E0E0E0; padding-bottom: 10px; margin-bottom: 10px; }}
+        ul.competitor-list li:before {{ content: "\f091"; font-family: "Font Awesome 6 Free"; color: #FF5722; margin-right: 8px; }} /* Ícone de trophy para refs */
+        details {{ margin-bottom: 15px; }}
+        summary {{ cursor: pointer; font-weight: bold; color: #5C6BC0; }}
+        .post-section p strong:before {{ font-family: "Font Awesome 6 Free"; margin-right: 6px; }}
+        .post-section p strong[data-icon="theme"]:before {{ content: "\f249"; }} 
+        .post-section p strong[data-icon="cta"]:before {{ content: "\f0a1"; }} 
+        .post-section p {{ word-break: break-word; max-width: 100%; }} 
+        @media print {{ 
+            .container {{ width: 100%; box-shadow: none; }} 
+            .cover {{ page-break-after: always; }} 
+            .post-section {{ page-break-inside: avoid; }} 
+        }} 
         @media (max-width: 768px) {{
             .container {{ width: 95%; padding: 15px; }}
             .post-section {{ padding: 15px; }}
             .calendar-table {{ font-size: 0.9em; }}
-            .cover {{ padding: 30px 0; }}
+            .calendar-table th, .calendar-table td {{ padding: 6px; }}
         }}
     </style>
 </head>
@@ -227,35 +248,46 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
         html_content += f"""
             <div class="post-section">
                 <h3>Post #{i + 1}: {post.get("titulo", "Sem Título")}</h3>
-                {f"<p><strong>Tema:</strong> {post.get("tema", "N/A")}</p>" if post.get("tema") else ""}
+                {f"<p><strong data-icon=\"theme\">Tema:</strong> {post.get("tema", "N/A")}</p>" if post.get("tema") else ""}
                 <p><strong>Justificativa Estratégica:</strong> {post.get("post_strategy_rationale", "N/A")}</p>
                 <p><strong>Briefing:</strong> {post.get("micro_briefing", "N/A")}</p>
                 <p><strong>Legenda:</strong> {post.get("legenda_principal", "N/A")}</p>
-                <p><strong>Variações:</strong></p>
-                <ul>
+                <details>
+                    <summary>Clique para expandir variações</summary>
+                    <p><strong>Variações:</strong></p>
+                    <ul>
         """
         for variation in post.get("variacoes_legenda", []):
             html_content += f"                    <li>{variation}</li>\n"
         html_content += f"""
-                </ul>
-                {f"<p><strong>Hashtags:</strong> {" ".join(post.get("hashtags", []))}</p>" if post.get("hashtags") else ""}
+                    </ul>
+                </details>
+                {f"""
+                <details>
+                    <summary>Clique para expandir hashtags</summary>
+                    <p><strong>Hashtags:</strong> {" ".join(post.get("hashtags", []))}</p>
+                </details>
+                """ if post.get("hashtags") and len(post.get("hashtags", [])) > 10 else f"<p><strong>Hashtags:</strong> {" ".join(post.get("hashtags", []))}</p>" if post.get("hashtags") else ""}
                 {f"<p><strong>Indicador Principal:</strong> {post.get("indicador_principal", "N/A")}</p>" if post.get("indicador_principal") else ""}
-                {f"<p><strong>Chamada para Ação (CTA):</strong> {post.get("cta_individual", "N/A")}</p>" if post.get("cta_individual") else ""}
+                {f"<p><strong data-icon=\"cta\">Chamada para Ação (CTA):</strong> {post.get("cta_individual", "N/A")}</p>" if post.get("cta_individual") else ""}
                 {f"<p><strong>Sugestões de Interação/Engajamento:</strong> {post.get("interacao", "N/A")}</p>" if post.get("interacao") else ""}
         """
         response_script = post.get("response_script", [])
         if response_script:
             html_content += f"""
-                <p><strong>Roteiro de Respostas:</strong></p>
-                <ul>
+                <details>
+                    <summary>Clique para expandir roteiro de respostas</summary>
+                    <p><strong>Roteiro de Respostas:</strong></p>
+                    <ul>
             """
             for script_item in response_script:
-                html_content += f"                    <li><strong>Comentário Genérico:</strong> {script_item.get('comentario_generico', 'N/A')}<br>"
+                html_content += f"                    <li><strong>Comentário Genérico:</strong> {script_item.get('comentario_generico', 'N/A')}<br>\n"
                 html_content += f"                        <strong>Resposta Sugerida:</strong> {script_item.get('resposta_sugerida', 'N/A')}</li>\n"
-                html_content += f"                    <li><strong>Comentário Negativo:</strong> {script_item.get('comentario_negativo', 'N/A')}<br>"
+                html_content += f"                    <li><strong>Comentário Negativo:</strong> {script_item.get('comentario_negativo', 'N/A')}<br>\n"
                 html_content += f"                        <strong>Resposta para Negativo:</strong> {script_item.get('resposta_negativo', 'N/A')}</li>\n"
             html_content += f"""
-                </ul>
+                    </ul>
+                </details>
             """
         html_content += f"""
                 {f"<p><strong>Sugestões Visuais:</strong> {post.get("visual_description_portuguese", "N/A")}</p>" if post.get("visual_description_portuguese") else ""}
