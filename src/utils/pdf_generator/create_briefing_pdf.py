@@ -14,6 +14,8 @@ from src.utils.pdf_generator._header_footer import _header_footer
 from src.utils.pdf_generator.calendar_logic import generate_publication_calendar
 from src.utils.pdf_generator.checklist_logic import generate_publication_checklist
 from src.utils.pdf_generator._build_success_metrics import _build_success_metrics
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
 
 
 def create_briefing_pdf(content_json: dict, client_name: str, output_filename: str, model_name: str = "Unknown", target_audience: str = "", tone_of_voice: str = "", marketing_objectives: str = "", suggested_metrics: dict = {}, posting_time: str = ""):
@@ -168,3 +170,28 @@ def create_briefing_pdf(content_json: dict, client_name: str, output_filename: s
     doc.build(story)
 
     return story
+
+
+def register_fonts():
+    """
+    Registra as fontes DejaVu Sans para uso no ReportLab.
+    Isso permite a renderização correta de caracteres Unicode, incluindo emojis.
+    """
+    try:
+        # 1. Registra as fontes
+        pdfmetrics.registerFont(TTFont('DejaVuSans', 'src/utils/pdf_generator/styles/fonts/dejavu-sans.book.ttf'))
+        pdfmetrics.registerFont(TTFont('DejaVuSans-Bold', 'src/utils/pdf_generator/styles/fonts/dejavu-sans.bold.ttf'))
+        pdfmetrics.registerFont(TTFont('DejaVuSans-Oblique', 'src/utils/pdf_generator/styles/fonts/dejavu-sans.oblique.ttf'))
+        pdfmetrics.registerFont(TTFont('DejaVuSans-BoldOblique', 'src/utils/pdf_generator/styles/fonts/dejavu-sans.bold-oblique.ttf'))
+
+        # 2. Cria um alias para facilitar o uso
+        pdfmetrics.registerFontFamily('DejaVuSans',
+                                      normal='DejaVuSans',
+                                      bold='DejaVuSans-Bold',
+                                      italic='DejaVuSans-Oblique',
+                                      boldItalic='DejaVuSans-BoldOblique')
+        print("Fontes DejaVu Sans registradas com sucesso.")
+    except Exception as e:
+        print(f"Erro ao registrar fontes: {e}")
+
+register_fonts()
