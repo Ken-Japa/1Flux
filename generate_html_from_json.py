@@ -8,10 +8,11 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), 'src'
 
 from utils.html_generator.create_briefing_html import create_briefing_html
 
+
 def main():
     """
-    Script para gerar um arquivo HTML de briefing a partir de um arquivo JSON de conteúdo.
-    Uso: python generate_html_from_json.py <caminho_para_json_de_conteudo>
+    Script independente para geração de HTML a partir de um arquivo JSON de resposta da IA.
+    Aceita o caminho do JSON como argumento e extrai parâmetros necessários do conteúdo JSON e do caminho do arquivo.
     """
     if len(sys.argv) < 2:
         print("Uso: python generate_html_from_json.py <caminho_para_json_de_conteudo>")
@@ -34,21 +35,17 @@ def main():
         sys.exit(1)
 
     try:
-        # Extrai o nome do cliente e a data de geração do nome do arquivo JSON
-        file_name = os.path.basename(json_file_path)
-        client_name_match = "_debug_" + file_name.split("_debug_")[1].split("_")[0]
-        client_name = client_name_match.replace("_debug_", "").replace("_", " ").title() if "_debug_" in file_name else "Cliente Desconhecido"
-        
-        # A data pode ser extraída do nome do arquivo de debug
-        date_match = file_name.split("_debug_")[1].split("_")[1]
-        generation_date = date_match if len(date_match) == 8 and date_match.isdigit() else datetime.now().strftime("%Y%m%d")
+        # Extrai modelo da IA a partir do caminho do arquivo (ex: output_files/respostas_IA/Gemini/...)
+        model_name = os.path.basename(os.path.dirname(os.path.dirname(json_file_path)))
+        client_name = content_json.get('client_name', 'Cliente Desconhecido')
+        generation_date = content_json.get('generation_date', datetime.now().strftime("%Y%m%d"))
 
-        output_dir = os.path.join(os.path.dirname(__file__), 'output_files', 'briefings_testes')
+        output_dir = os.path.join(os.path.dirname(__file__), 'output_files', 'briefings_testes', model_name)
         os.makedirs(output_dir, exist_ok=True)
 
-        html_output_path = os.path.join(output_dir, f"briefing_{client_name.replace(" ", "_")}_{generation_date}.html")
+        html_output_path = os.path.join(output_dir, f"briefing_{client_name.replace(' ', '_')}_{generation_date}.html")
 
-        # Extrair informações adicionais do JSON para o sumário executivo
+        # Extrai parâmetros necessários do JSON (compatível com main_gemini.py)
         target_audience = content_json.get('publico_alvo', '')
         tone_of_voice = content_json.get('tom_de_voz', '')
         marketing_objectives = content_json.get('objetivos_de_marketing', '')

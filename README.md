@@ -10,6 +10,10 @@ python clear.py
 Escolhe qual IA rodar individualmente
 python individual.py
 
+Renderização Separada
+python generate_pdf_from_json.py "output_files/respostas_IA/Gemini/briefing_Fluxo_Criativo_20251013.json"
+python generate_html_from_json.py "output_files/respostas_IA/Gemini/briefing_Fluxo_Criativo_20251013.json"
+
 ## Visão Geral do Projeto
 
 O projeto `mvp_concierge` é composto por três módulos principais:
