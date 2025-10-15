@@ -185,7 +185,7 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
         }}
         .checklist {{ list-style-type: none; padding: 0; }}
         .checklist li {{ background: #f0f0f0; margin-bottom: 5px; padding: 10px; border-radius: 3px; }}
-        .checklist li:before {{ content: "\f058"; font-family: "Font Awesome 6 Free"; color: #2E7D32; font-weight: bold; margin-right: 8px; }}
+        .checklist li:before {{ content: "\\f058"; font-family: "Font Awesome 6 Free"; color: #2E7D32; font-weight: bold; margin-right: 8px; }}
         .calendar-table {{ width: 100%; border-collapse: separate; border-spacing: 2px; margin-top: 20px; }}
         .calendar-table th, .calendar-table td {{ border: 2px solid #333; padding: 12px; text-align: left; }}
         .calendar-table th {{ background-color: #3F51B5; color: #fff; }} /* Cabeçalho mais vibrante */
@@ -206,12 +206,12 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
         .checklist li {{ padding: 12px; margin-bottom: 8px; display: flex; align-items: center; }}
         .checklist ul {{ margin-left: 20px; list-style-type: disc; }} /* Sub-listas com bullets */
         ul.competitor-list li {{ border-bottom: 1px solid #E0E0E0; padding-bottom: 10px; margin-bottom: 10px; }}
-        ul.competitor-list li:before {{ content: "\f091"; font-family: "Font Awesome 6 Free"; color: #FF5722; margin-right: 8px; }} /* Ícone de trophy para refs */
+        ul.competitor-list li:before {{ content: "\\f091"; font-family: "Font Awesome 6 Free"; color: #FF5722; margin-right: 8px; }} /* Ícone de trophy para refs */
         details {{ margin-bottom: 15px; }}
         summary {{ cursor: pointer; font-weight: bold; color: #5C6BC0; }}
         .post-section p strong:before {{ font-family: "Font Awesome 6 Free"; margin-right: 6px; }}
-        .post-section p strong[data-icon="theme"]:before {{ content: "\f249"; }} 
-        .post-section p strong[data-icon="cta"]:before {{ content: "\f0a1"; }} 
+        .post-section p strong[data-icon="theme"]:before {{ content: "\\f249"; }} 
+        .post-section p strong[data-icon="cta"]:before {{ content: "\\f0a1"; }} 
         .post-section p {{ word-break: break-word; max-width: 100%; }} 
         @media print {{ 
             .container {{ width: 100%; box-shadow: none; }} 

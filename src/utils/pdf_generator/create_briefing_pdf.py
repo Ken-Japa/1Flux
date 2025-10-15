@@ -30,7 +30,7 @@ def _cover_page_background(canvas, doc):
     canvas.linearGradient(0, 0, 0, doc.height, [colors.HexColor('#1A237E'), colors.HexColor('#0D47A1')])
     canvas.restoreState()
 
-def create_briefing_pdf(content_json: dict, client_name: str, output_filename: str, formatted_period: str, formatted_generation_date: str, model_name: str = "Unknown", target_audience: str = "", tone_of_voice: str = "", marketing_objectives: str = "", suggested_metrics: dict = {}, posting_time: str = ""):
+def create_briefing_pdf(content_json: dict, client_name: str, output_filename: str, model_name: str = "Unknown", target_audience: str = "", tone_of_voice: str = "", marketing_objectives: str = "", suggested_metrics: dict = {}, posting_time: str = ""):
     """
     Converte o JSON de conteúdo gerado em um "PDF de Briefing Profissional".
 
@@ -38,8 +38,6 @@ def create_briefing_pdf(content_json: dict, client_name: str, output_filename: s
         content_json (dict): O objeto JSON com os posts, legendas, variações, hashtags e formatos.
         client_name (str): Nome do cliente para personalizar o PDF.
         output_filename (str): Nome do arquivo PDF a ser salvo.
-        formatted_period (str): Período formatado para o briefing (ex: "13 de Outubro de 2025 - 20 de Outubro de 2025").
-        formatted_generation_date (str): Data de geração formatada para o briefing (ex: "13 de Outubro de 2025").
         model_name (str): Nome do modelo de IA que gerou o conteúdo (ex: "Gemini", "Mistral").
         target_audience (str): O público-alvo do briefing.
         tone_of_voice (str): O tom de voz a ser utilizado no briefing.
@@ -96,6 +94,29 @@ def create_briefing_pdf(content_json: dict, client_name: str, output_filename: s
     story = []
     
     doc = SimpleDocTemplate(output_filename, pagesize=A4, rightMargin=72, leftMargin=72, topMargin=72, bottomMargin=36)
+    
+    today = datetime.now()
+    formatted_generation_date = today.strftime('%d/%m/%y')
+    
+    publication_calendar = generate_publication_calendar(today, posts)
+
+    # Extrair a última data do calendário de publicação para o período final
+    latest_date = None
+    if publication_calendar:
+        for entry in publication_calendar:
+            # A data está na string 'day', por exemplo "Sexta-feira, 26/07"
+            day_str = entry['day'].split(', ')[1] # Pega "26/07"
+            # Adiciona o ano atual para criar um objeto datetime completo
+            current_calendar_date = datetime.strptime(f"{day_str}/{today.year}", "%d/%m/%Y")
+            if latest_date is None or current_calendar_date > latest_date:
+                latest_date = current_calendar_date
+
+    start_date = datetime.now()
+    if latest_date:
+        # Formata a data para o padrão DD/MM/AA
+        formatted_period = f"{start_date.strftime('%d/%m/%y')} a {latest_date.strftime('%d/%m/%y')}"
+    else:
+        formatted_period = f"{start_date.strftime('%d/%m/%y')}"
     
     # Templates 
     cover_template = PageTemplate(id='CoverPage', frames=Frame(doc.leftMargin, doc.bottomMargin, doc.width, doc.height, id='cover'), onPage=_cover_page_background) 
