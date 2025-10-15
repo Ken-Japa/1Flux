@@ -1,65 +1,44 @@
 {
-  "nome_do_cliente": "Fluxo Criativo",
-  "subnicho": "Plataforma de geração de conteúdo automatizado com inteligência artificial",
-  "informacoes_de_contato": "www.chefia.app | contato@chefia.app",
-  "publico_alvo": "profissionais autônomos, pequenos negócios e criadores de conteúdo que desejam publicar posts consistentes e de qualidade sem precisar de uma equipe de marketing.",
-  "tom_de_voz": "inovador, didático e inspirador",
-  "estilo_de_comunicacao": "como se fosse uma conversa entre um consultor de marketing e um empreendedor curioso, explicando com clareza e empolgação como a tecnologia pode simplificar sua presença digital.",
-  "vocabulario_da_marca": [
-    "inteligência artificial",
-    "automação criativa",
-    "conteúdo estratégico",
-    "facilidade",
-    "escala de resultados",
-    "posts personalizados",
-    "criação inteligente"
-  ],
-  "exemplos_de_nicho": [
-    "aplicativos de automação de marketing",
-    "plataformas de geração de conteúdo com IA",
-    "ferramentas para social media"
-  ],
-  "objetivos_de_marketing": "educar o público sobre o poder da IA na criação de conteúdo, gerar confiança na ferramenta e atrair novos usuários para testarem o app.",
-  "canais_de_distribuicao": [
-    "Instagram",
-    "LinkedIn",
-    "YouTube",
-    "Blog",
-    "Landing page"
-  ],
-  "topicos_principais": [
-    "como a IA pode acelerar sua criação de conteúdo",
-    "dicas de marketing digital para pequenos negócios",
-    "casos reais de transformação com automação",
-    "tutoriais rápidos sobre uso do app",
-    "tendências em IA e marketing"
-  ],
-  "palavras_chave": [
-    "gerador de posts com IA",
-    "marketing automatizado",
-    "inteligência artificial para conteúdo",
-    "ferramenta de social media",
-    "posts automáticos para Instagram"
-  ],
-  "chamada_para_acao": "Experimente o Fluxo Criativo e descubra como gerar conteúdo de alto impacto em minutos!",
-  "restricoes_e_diretrizes": "Evitar jargões técnicos de programação; manter o foco no benefício real para o usuário; não prometer resultados irreais; comunicar com clareza e empatia.",
-  "informacoes_adicionais": "O Fluxo Criativo é uma plataforma de geração de conteúdo inteligente que combina estratégia de marketing com tecnologia de ponta em IA. Permite criar postagens, legendas e campanhas completas com base em um briefing simples, gerando ideias originais e alinhadas à voz da marca.",
-  "referencias_de_concorrentes": [
-    "@copy.ai",
-    "@jasperai",
-    "@simplifiedapp"
-  ],
-  "referencias_de_estilo_e_formato": [
-    "carrosséis educativos sobre IA e marketing",
-    "vídeos curtos de demonstração do produto",
-    "posts comparativos antes/depois do uso da ferramenta"
-  ],
-  "tipo_de_conteudo": "conteúdo educativo e institucional com foco em conversão e awareness",
-  "tipo_de_campanha": "lancamento",
+  "nome_do_cliente": "InvestFacil",
+  "subnicho": "Fintech para iniciantes",
+  "informacoes_de_contato": "Email: contato@investfacil.com.br, WhatsApp: +55 11 91234-5678, Instagram: @investfacil",
+  "publico_alvo": "Jovens profissionais de 25-35 anos, residentes em SP/RJ, interessados em aprender a investir com pouco dinheiro",
+  "tom_de_voz": "Casual e inspirador",
+  "estilo_de_comunicacao": "Como um amigo experiente dando dicas práticas",
+  "vocabulario_da_marca": ["Descomplicar", "Investir é para todos", "Primeiro passo", "Cresça com confiança"],
+  "exemplos_de_nicho": ["Nubank", "Toro Investimentos", "Rico"],
+  "objetivos_de_marketing": "Construir autoridade e gerar leads para app de investimentos",
+  "canais_de_distribuicao": ["Instagram", "LinkedIn"],
+  "topicos_principais": ["Dicas de investimento para iniciantes", "Planejamento financeiro", "Histórias de sucesso"],
+  "palavras_chave": ["finanças pessoais", "investimento fácil", "educação financeira", "dinheiro"],
+  "chamada_para_acao": "Baixe nosso app grátis na bio!",
+  "restricoes_e_diretrizes": "Evitar termos técnicos complexos; sempre em PT-BR; nada de promessas irreais de ganhos",
+  "informacoes_adicionais": "Foco em conteúdo educativo e acessível, com cases fictícios de jovens que começaram a investir com R$50",
+  "referencias_de_concorrentes": ["@nubank: linguagem simples e visual vibrante", "@toroinvestimentos: conteúdo educativo em carrosséis"],
+  "referencias_de_estilo_e_formato": ["Carrosséis com 3-5 slides explicativos", "Reels curtos com storytelling"],
+  "tipo_de_conteudo": "Reels, Carrosséis, Stories",
+  "tipo_de_campanha": "autoridade",
+  "posts_anteriores": ["Post sobre '5 erros comuns ao investir' (Carrossel, 500 curtidas)", "Reel com dica rápida de poupança (1k views)"],
   "conteudos_semanais": [
     {
-      "chamada_para_acao_individual": "Entre em contato e veja como a IA do Fluxo Criativo pode transformar sua estratégia de conteúdo.",
-      "objetivo_do_conteudo_individual": "gerar cadastros e leads qualificados para Fluxo Criativo"
+      "chamada_para_acao_individual": "Salve este post para consultar depois!",
+      "objetivo_do_conteudo_individual": "Apresentar problema comum (medo de investir)"
+    },
+    {
+      "chamada_para_acao_individual": "Comente: Qual seu maior medo ao investir?",
+      "objetivo_do_conteudo_individual": "Ensinar 3 passos simples para começar"
+    },
+    {
+      "chamada_para_acao_individual": "Baixe nosso app grátis na bio!",
+      "objetivo_do_conteudo_individual": "Mostrar case fictício de sucesso"
+    },
+    {
+      "chamada_para_acao_individual": "Clique no link para aprender mais!",
+      "objetivo_do_conteudo_individual": "Explicar diversificação de investimentos"
+    },
+    {
+      "chamada_para_acao_individual": "Cadastre-se na nossa newsletter!",
+      "objetivo_do_conteudo_individual": "Convidar para ação direta no app"
     }
   ]
 }

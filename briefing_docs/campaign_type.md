@@ -5,6 +5,8 @@
         "retencao"
         "criativa"
 
+        "lancamento", "autoridade", "engajamento",  "conversao",  "retencao",  "criativa"
+
 "lancamento": [
 "A campanha deve seguir uma narrativa progressiva ao longo dos 5 posts, abordando:",
 "- Post 1: Apresentação do Problema/Desafio do público-alvo.",
