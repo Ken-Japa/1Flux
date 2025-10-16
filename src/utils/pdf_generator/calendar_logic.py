@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
 import json
+from collections import defaultdict
 
 def generate_publication_calendar(start_date: datetime, posts_list: list) -> list:
     """

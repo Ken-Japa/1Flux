@@ -2,6 +2,9 @@ import json
 from datetime import datetime
 from src.utils.pdf_generator.calendar_logic import generate_publication_calendar
 from src.utils.pdf_generator.checklist_logic import generate_publication_checklist
+from markdown import markdown
+import textwrap
+from bs4 import BeautifulSoup
 
 def create_briefing_html(content_json: dict, client_name: str, output_filename: str = "briefing.html", target_audience: str = "", tone_of_voice: str = "", marketing_objectives: str = "", future_strategy: str = "", market_references: list = None, suggested_metrics: dict = None):
     """
@@ -17,7 +20,8 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
         tone_of_voice (str): O tom de voz a ser utilizado no briefing.
         marketing_objectives (str): Os objetivos de marketing do briefing.
     """
-
+    # Formatar todo o JSON para suportar Markdown
+    content_json = formatar_json_markdown(content_json)
 
     # Determine the generation date
     generation_date_str = content_json.get("generation_date")
@@ -44,7 +48,21 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
         summary_html += f"        <p>{weekly_strategy_summary_dict.get('summary', 'N/A')}</p>\n"
         
         future_strategy = content_json.get('future_strategy', '')
-        if future_strategy:
+        if future_strategy and isinstance(future_strategy, dict):
+            summary_html += "        <h3>Sugestões para Depois da Campanha:</h3>\n"
+            if 'proximos_passos' in future_strategy:
+                summary_html += f"        <p>{future_strategy['proximos_passos']}</p>\n"
+            if 'posts_nutricao' in future_strategy:
+                summary_html += "        <h4>Posts de Nutrição:</h4>\n        <ul>\n"
+                for p in future_strategy['posts_nutricao']:
+                    summary_html += f"            <li><strong>{p.get('tema', 'N/A')}</strong> - {p.get('formato', 'N/A')} - {p.get('objetivo', 'N/A')}</li>\n"
+                summary_html += "        </ul>\n"
+            if 'remarketing' in future_strategy:
+                summary_html += "        <h4>Estratégias de Remarketing:</h4>\n        <ul>\n"
+                for r in future_strategy['remarketing']:
+                    summary_html += f"            <li><strong>{r.get('estrategia', 'N/A')}</strong> - Canal: {r.get('canal', 'N/A')}</li>\n"
+                summary_html += "        </ul>\n"
+        elif future_strategy:
             summary_html += f"        <h3>Sugestões para Depois da Campanha:</h3><p>{future_strategy}</p>\n"
 
         market_references = content_json.get('market_references', []) 
@@ -96,7 +114,7 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
         calendar_html += "            <thead>\n"
         calendar_html += "                <tr><th>Dia</th><th>Data</th><th>Horário</th><th>Post</th></tr>\n"
         calendar_html += "            </thead>\n"
-        calendar_html += "            <tbody>\n        """
+        calendar_html += "            <tbody>\n"
         for entry in publication_calendar:
             for sub_entry in entry['entries']:
                 calendar_html += f"                <tr><td>{entry['day'].split(', ')[0]}</td><td>{entry['day'].split(', ')[1]}</td><td>{sub_entry['time']}</td><td>{sub_entry['content']}</td></tr>\n"
@@ -115,7 +133,7 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
             for task in day_entry['tasks']:
                 # Prioridade: Postar (negrito), Preparar, Responder comentários
                 task_type = task['type']
-                task_title = task['title']
+                task_title = formatar_texto_markdown(task['title'])
                 if "Postar" in task_type:
                     checklist_html += f"                <li><strong>{task_type} Post #{task['post_number']}: {task_title}</strong></li>\n"
                 else:
@@ -176,19 +194,31 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
             margin-top: 0;
             margin-bottom: 15px;
         }}
-        /* Destaque para os rótulos (Tema, Legenda, etc.) */
-        .post-section p strong {{
-            color: #5C6BC0; /* Azul Médio */
+        /* Destaque para os rótulos (Tema, Legenda, etc.) – agora específico para labels */
+        .post-section p > strong:first-child {{
+            color: #5C6BC0; /* Azul Médio apenas para o primeiro strong (labels) */
             font-weight: 700;
             text-transform: uppercase;
             font-size: 1.1em;
         }}
+        /* Reset para strong internos (no texto Markdown) */
+        .post-section p strong:not(:first-child) {{
+            color: inherit; /* Sem cor extra */
+            text-transform: none; /* Sem uppercase */
+            font-size: inherit; /* Tamanho normal */
+        }}
         .checklist {{ list-style-type: none; padding: 0; }}
         .checklist li {{ background: #f0f0f0; margin-bottom: 5px; padding: 10px; border-radius: 3px; }}
         .checklist li:before {{ content: "\\f058"; font-family: "Font Awesome 6 Free"; color: #2E7D32; font-weight: bold; margin-right: 8px; }}
+        em {{
+            font-style: italic;
+            color: #5C6BC0;
+        }}
         .calendar-table {{ width: 100%; border-collapse: separate; border-spacing: 2px; margin-top: 20px; }}
         .calendar-table th, .calendar-table td {{ border: 2px solid #333; padding: 12px; text-align: left; }}
-        .calendar-table th {{ background-color: #3F51B5; color: #fff; }} /* Cabeçalho mais vibrante */
+        .calendar-table th {{ background-color: #3F51B5; color: #fff; position: relative; }} /* Cabeçalho mais vibrante */
+        .calendar-table th:before {{ font-family: "Font Awesome 6 Free"; margin-right: 8px; }} /* Ícone de calendário em th */
+        .calendar-table td:first-child {{ font-weight: bold; color: #1A237E; }} /* Bold em dias */
         .calendar-table tr:nth-child(even) {{ background-color: #E8EAF6; }} /* Azul claro alternado */
         .calendar-table tr:hover {{ background-color: #C5CAE9; transition: background 0.3s; }} /* Hover para destaque */
         .footer {{
@@ -210,14 +240,14 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
         details {{ margin-bottom: 15px; }}
         summary {{ cursor: pointer; font-weight: bold; color: #5C6BC0; }}
         .post-section p strong:before {{ font-family: "Font Awesome 6 Free"; margin-right: 6px; }}
-        .post-section p strong[data-icon="theme"]:before {{ content: "\\f249"; }} 
-        .post-section p strong[data-icon="cta"]:before {{ content: "\\f0a1"; }} 
-        .post-section p {{ word-break: break-word; max-width: 100%; }} 
-        @media print {{ 
-            .container {{ width: 100%; box-shadow: none; }} 
-            .cover {{ page-break-after: always; }} 
-            .post-section {{ page-break-inside: avoid; }} 
-        }} 
+        .post-section p strong[data-icon="theme"]:before {{ content: "\\f249"; }}
+        .post-section p strong[data-icon="cta"]:before {{ content: "\\f0a1"; }}
+        .post-section p {{ word-break: break-word; max-width: 100%; }}
+        @media print {{
+            .container {{ width: 100%; box-shadow: none; }}
+            .cover {{ page-break-after: always; }}
+            .post-section {{ page-break-inside: avoid; }}
+        }}
         @media (max-width: 768px) {{
             .container {{ width: 95%; padding: 15px; }}
             .post-section {{ padding: 15px; }}
@@ -253,7 +283,7 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
                 <p><strong>Briefing:</strong> {post.get("micro_briefing", "N/A")}</p>
                 <p><strong>Legenda:</strong> {post.get("legenda_principal", "N/A")}</p>
                 <details>
-                    <summary style="text-decoration: underline; font-style: italic; color: #0000EE;">Clique para expandir variações</summary>
+                    <summary style="text-decoration: underline; font-style: italic; color: #FFA500;">Clique para expandir variações</summary>
                     <p><strong>Variações:</strong></p>
                     <ul>
         """
@@ -262,21 +292,16 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
         html_content += f"""
                     </ul>
                 </details>
-                {f"""
-                <details>
-                    <summary>Clique para expandir hashtags</summary>
-                    <p><strong>Hashtags:</strong> {" ".join(post.get("hashtags", []))}</p>
-                </details>
-                """ if post.get("hashtags") and len(post.get("hashtags", [])) > 10 else f"<p><strong>Hashtags:</strong> {" ".join(post.get("hashtags", []))}</p>" if post.get("hashtags") else ""}
+{f"<p><strong>Hashtags:</strong> {' '.join(post.get('hashtags', []))}</p>" if post.get("hashtags") else ""}
                 {f"<p><strong>Indicador Principal:</strong> {post.get("indicador_principal", "N/A")}</p>" if post.get("indicador_principal") else ""}
                 {f"<p><strong data-icon=\"cta\">Chamada para Ação (CTA):</strong> {post.get("cta_individual", "N/A")}</p>" if post.get("cta_individual") else ""}
-                {f"<p><strong>Sugestões de Interação/Engajamento:</strong> {post.get("interacao", "N/A")}</p>" if post.get("interacao") else ""}
+                {f"<p><strong>Sugestões de Interação/Engajamento:</strong></p> {post.get("interacao", "N/A")}" if post.get("interacao") else ""}
         """
         response_script = post.get("response_script", [])
         if response_script:
             html_content += f"""
                 <details>
-                    <summary style="text-decoration: underline; font-style: italic; color: #0000EE;">Clique para expandir roteiro de respostas</summary>
+                    <summary style="text-decoration: underline; font-style: italic; color: #FFA500;">Clique para expandir roteiro de respostas</summary>
                     <p><strong>Roteiro de Respostas:</strong></p>
                     <ul>
             """
@@ -316,8 +341,8 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
             """
         html_content += f"""
                 {f"<p><strong>Prompt para IA Geradora de Imagens:</strong> {post.get("visual_prompt_suggestion", "N/A")}</p>" if post.get("visual_prompt_suggestion") else ""}
-                {f"<p><strong>Testes A/B:</strong> {post.get("ab_test_suggestions", "N/A")}</p>" if post.get("ab_test_suggestions") else ""}
-                {f"<p><strong>Como Corrigir a Rota (Gatilhos de Otimização):</strong> {post.get("optimization_triggers", "N/A")}</p>" if post.get("optimization_triggers") else ""}
+                {f"<p><strong>Testes A/B:</strong></p> {post.get("ab_test_suggestions", "N/A")}" if post.get("ab_test_suggestions") else ""}
+                {f"<p><strong>Como Corrigir a Rota (Gatilhos de Otimização):</strong></p> {post.get("optimization_triggers", "N/A")}" if post.get("optimization_triggers") else ""}
                 <p><strong>Checklist de Publicação:</strong></p>
                 <ul class="checklist">
                     <li>Revisar texto e gramática.</li>
@@ -344,3 +369,106 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
 
     with open(output_filename, "w", encoding="utf-8") as f:
         f.write(html_content)
+
+
+
+def formatar_texto_markdown(texto):
+    """Converte Markdown para HTML inline, removendo wrappers externos e indentação."""
+    if not texto or not isinstance(texto, str):
+        return texto
+    
+    # Remove indentação e strip
+    texto = textwrap.dedent(texto).strip()
+    
+    # Converte para HTML
+    html = markdown(texto, extensions=['extra', 'nl2br'])
+    
+    # Parse com BeautifulSoup
+    soup = BeautifulSoup(html, 'html.parser')
+    
+    # Remove wrapper externo
+    block = soup.find(['p', 'ul', 'ol', 'pre', 'code', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
+    if block:
+        inner_html = ''.join(str(child) for child in block.children if child).strip()
+    else:
+        inner_html = str(soup).strip()
+    
+    # Para hashtags: Se começar com #, escapa para não virar <h1>
+    if inner_html.startswith('<h1>'):
+        inner_html = inner_html.replace('<h1>', '', 1).replace('</h1>', '', 1)
+    
+    return inner_html
+    
+    return inner_html
+
+def formatar_json_markdown(content_json):
+    content_json = content_json.copy()
+    # Campos de nível superior
+    if 'weekly_strategy_summary' in content_json and isinstance(content_json['weekly_strategy_summary'], str):
+        content_json['weekly_strategy_summary'] = formatar_texto_markdown(content_json['weekly_strategy_summary'])
+    
+    # Future strategy: Se dict, formatar cada valor
+    if 'future_strategy' in content_json and isinstance(content_json['future_strategy'], dict):
+        fs = content_json['future_strategy']
+        if 'proximos_passos' in fs:
+            fs['proximos_passos'] = formatar_texto_markdown(fs['proximos_passos'])
+        if 'posts_nutricao' in fs:
+            for p in fs['posts_nutricao']:
+                for k in ['tema', 'formato', 'objetivo']:
+                    if k in p:
+                        p[k] = formatar_texto_markdown(p[k])
+        if 'remarketing' in fs:
+            for r in fs['remarketing']:
+                for k in ['estrategia', 'canal']:
+                    if k in r:
+                        r[k] = formatar_texto_markdown(r[k])
+    
+    # Posts
+    for post in content_json.get('posts', []):
+        campos_texto = [
+            'titulo', 'tema', 'post_strategy_rationale', 'micro_briefing',
+            'legenda_principal', 'cta_individual', 'interacao',
+            'visual_description_portuguese', 'text_in_image',
+            'visual_prompt_suggestion', 'ab_test_suggestions', 'optimization_triggers'
+        ]
+        for campo in campos_texto:
+            if campo in post and isinstance(post[campo], str):
+                post[campo] = formatar_texto_markdown(post[campo])
+        
+        # Variações
+        if 'variacoes_legenda' in post:
+            post['variacoes_legenda'] = [formatar_texto_markdown(var) for var in post['variacoes_legenda']]
+        
+        # Hashtags: Não formatar (evita # virar <h1>)
+        pass
+        
+        # Response script
+        if 'response_script' in post:
+            for script_item in post['response_script']:
+                for key in ['comentario_generico', 'resposta_sugerida', 'comentario_negativo', 'resposta_negativo']:
+                    if key in script_item:
+                        script_item[key] = formatar_texto_markdown(script_item[key])
+        
+        # Carrossel slides
+        if 'carrossel_slides' in post:
+            for slide in post['carrossel_slides']:
+                for key in ['titulo_slide', 'texto_slide', 'sugestao_visual_slide']:
+                    if key in slide:
+                        slide[key] = formatar_texto_markdown(slide[key])
+        
+        # Micro roteiro
+        if 'micro_roteiro' in post:
+            for cena in post['micro_roteiro']:
+                for key in ['cena', 'descricao', 'fala']:
+                    if key in cena:
+                        cena[key] = formatar_texto_markdown(cena[key])
+    
+    # Métricas
+    if 'suggested_metrics' in content_json:
+        if 'objetivo_principal' in content_json['suggested_metrics']:
+            content_json['suggested_metrics']['objetivo_principal'] = formatar_texto_markdown(content_json['suggested_metrics']['objetivo_principal'])
+        for key in ['indicadores_chave', 'metricas_secundarias']:
+            if key in content_json['suggested_metrics']:
+                content_json['suggested_metrics'][key] = [formatar_texto_markdown(item) for item in content_json['suggested_metrics'][key]]
+    
+    return content_json

@@ -1,0 +1,405 @@
+{
+    "weekly_strategy_summary": "    **Campanha 'Primeiro Passo Sem Medo'** – Uma jornada de 5 dias para desmistificar investimentos e converter jovens profissionais em usuários ativos do app InvestFacil.    **Narrativa Progressiva**:    1. **Sexta (18h)**: *Quebra de gelo* – Validação do medo + promessa de simplicidade (Reel empático).    2. **Sábado (11h)**: *Bastidores* – Método InvestFacil em 3 passos (Carrossel didático).    3. **Domingo (20h)**: *Inspiração* – Case da Ana (R$50 → R$400 em 8 meses) com storytelling emocional (Carrossel).    4. **Segunda (9h)**: *Educação* – Diversificação explicada com analogia da cesta de ovos (Carrossel + infográfico).    5. **Quarta (12h)**: *CTA Premium* – Convite para webinar gratuito sobre 'Como investir R$100/mês sem medo' (Vídeo curto + link na bio).    **Tonalidade**: Amigo experiente que descomplica (ex: 'Imagina só: você trocaria um café de R$10 por um tijolinho no seu futuro?').    **Diferenciais**:    - **Cases fictícios hiper-realistas** (ex: Ana, 30 anos, SP, R$50/mês).    - **Dados concretos** (ex: '8% de rendimento vs. 0,5% da poupança').    - **CTAs progressivos** (de curiosidade → confiança → ação).    **Objetivo Final**: Gerar 500 leads qualificados (downloads do app) e aumentar em 20% o engajamento em posts educativos.    ",
+    "future_strategy": {
+        "proximos_passos": "        - **Pós-campanha (7 dias)**: Nutrir leads com conteúdo sobre 'como escolher seu primeiro investimento' via email e Stories.        - **Mês 2**: Lançar série 'Pergunte ao Especialista' (Stories com Q&A ao vivo).        - **Mês 3**: Parceria com microinfluenciadores (ex: @meuprimeirolivreto) para cases reais de usuários.        ",
+        "posts_nutricao": [
+            {
+                "tema": "Mitologia dos Investimentos: 3 Mentiras que Você Acredita",
+                "formato": "Reel (15s) + Carrossel",
+                "objetivo": "Manter engajamento com conteúdo viral (ex: 'Investir é só para ricos? MITO!')"
+            },
+            {
+                "tema": "O que Fazer com R$100: Poupança vs. CDB vs. Tesouro Direto",
+                "formato": "Infográfico comparativo",
+                "objetivo": "Educar sobre opções de baixo risco com dados visuais"
+            }
+        ],
+        "remarketing": [
+            {
+                "estrategia": "Sequência de emails para leads não convertidos: 'Esqueceu de dar o primeiro passo? A Ana começou com R$50...'",
+                "canal": "Email Marketing (ActiveCampaign)"
+            },
+            {
+                "estrategia": "Anúncios de Stories com depoimentos fictícios: 'Eu pensei que não sabia nada, mas o app me guiou'",
+                "canal": "Meta Ads (público: 25-35 anos, SP/RJ, interesses em 'finanças pessoais')"
+            }
+        ],
+        "long_term": {
+            "comunidade": "            - Criar grupo no WhatsApp/Telegram: 'Clube do Primeiro Investimento' com desafios mensais (ex: 'Invista R$20 este mês').            - Lives semanais com temas como 'Como ler um extrato de investimento sem chorar'.            ",
+            "parcerias": "            - Colaboração com fintechs complementares (ex: Organize para planejamento financeiro) para webinars conjuntos.            - Patrocínio de podcasts como 'Dinheiro na Cabeça' para atingir público qualificado.            "
+        }
+    },
+    "market_references": [
+        {
+            "Nome/Handle": "@nubank",
+            "Diferenciais": "            - **Tom coloquial e descontraído** (ex: 'A gente sabe que banco parece coisa de adulto chato').            - **Uso de memes e analogias** (ex: comparar juros do cartão com 'um monstro que come seu salário').            - **Foco em solucionar dores emocionais** (ex: 'Ninguém merece passar aperto no fim do mês').            ",
+            "Oportunidades": "            - Aprofundar em conteúdo para investidores iniciantes (hoje, o Nubank foca mais em conta digital).            - Explorar mais cases de clientes reais (hoje, usam principalmente dados genéricos).            ",
+            "Posicionamento do Cliente": "            - **InvestFacil deve se diferenciar** ao mostrar **jornadas pessoais** (ex: 'Como a Ana virou a chave com R$50') e **metodologia clara** (3 passos), enquanto o Nubank é mais genérico.            "
+        },
+        {
+            "Nome/Handle": "@toroinvestimentos",
+            "Diferenciais": "            - **Conteúdo educativo em vídeo** (ex: 'Toro Explica' com animações).            - **Abordagem 'investimento como hábito'** (ex: 'Poupar é guardar; investir é fazer seu dinheiro trabalhar').            - **Uso de dados de mercado** (ex: 'Sabia que 60% dos brasileiros não investem por medo?').            ",
+            "Oportunidades": "            - Falta de **histórias emocionais** (focam em dados, não em pessoas).            - Pouco conteúdo para **quem tem menos de R$100/mês** para investir.            ",
+            "Posicionamento do Cliente": "            - **InvestFacil deve humanizar mais** os dados (ex: 'A Ana ganhou 8% em 8 meses – e você pode também') e **simplificar ainda mais** a linguagem (evitar termos como 'rentabilidade nominal').            "
+        },
+        {
+            "Nome/Handle": "@rico.com.vc",
+            "Diferenciais": "            - **Design clean e profissional** (cores claras, tipografia legível).            - **Foco em investimentos de longo prazo** (ex: 'Aposentadoria não é sobre idade, é sobre planejamento').            - **Parcerias com influencers** (ex: Thiago Nigro).            ",
+            "Oportunidades": "            - Conteúdo muito voltado para **público com maior poder aquisitivo** (ex: falam de R$1.000/mês).            - Pouca **interatividade** (poucos posts com perguntas ou enquetes).            ",
+            "Posicionamento do Cliente": "            - **InvestFacil deve ser a opção 'para quem está começando do zero'**, com **CTAs mais diretos** (ex: 'Baixe e invista R$10 hoje') e **menos formalidade** (ex: usar 'galera' em vez de 'investidores').            "
+        }
+    ],
+    "posts": [
+        {
+            "titulo": "O Medo de Investir é Normal (e a Gente Entende)",
+            "tema": "Validação do medo inicial + promessa de simplicidade, usando humor e empatia para quebrar a resistência.",
+            "legenda_principal": "            Você já abriu o app do banco, viu a opção 'Investimentos' e sentiu aquele frio na barriga? 🥶\n\nA gente sabe: parece que pra investir, você precisa entender gráficos que parecem hieróglifos, ter um terno caro e falar 'compra/venda' no telefone como se fosse o Lobão.\n\n**Mas a verdade é outra:**\n- 67% dos brasileiros entre 25-35 anos **não investem** por medo de errar (fonte: ANBIMA, 2023).- A maioria acha que precisa de **milhares de reais** pra começar (spoiler: a Ana começou com R$50).- O maior risco não é investir errado… é **não investir nada**. \n\nE se a gente te dissesse que dar o primeiro passo é mais fácil que escolher o que pedir no iFood? \n\n**Fica ligado essa semana** que a gente vai te mostrar como. 👇\n\n#Descomplicar #PrimeiroPassoSemMedo            ",
+            "variacoes_legenda": [
+                "                **Confessa:** você já ficou paralisado na frente da tela do banco sem saber por onde começar? 🙋‍♂️\n\nPois é, você não está sozinho. **7 em cada 10 jovens** têm medo de investir (dados da CVM).\n\nMas e se a gente te provar que começar é mais simples que fazer um pix? \n\n**Essa semana, a gente te mostra o caminho.** Fica aqui com a gente! ⬇️                ",
+                "                **Investir parece coisa de outro planeta?** Você não é o único a pensar isso.\n\nA boa notícia: **não precisa ser expert** pra começar. A Ana, 30 anos, começou com R$50 e hoje já tem R$400 guardados (sim, é possível!).\n\n**Vem com a gente nessa jornada** – o primeiro passo é mais fácil do que você imagina. 💜                "
+            ],
+            "hashtags": [
+                "#InvestFacil",
+                "#PrimeiroPasso",
+                "#MedoDeInvestir",
+                "#DinheiroSemMedo",
+                "#FintechParaIniciantes"
+            ],
+            "horario_de_postagem": "Sexta-feira, 18h (horário de 'descompressão' pós-trabalho, quando o público está mais receptivo a conteúdo leve e inspirador)",
+            "sugestao_formato": "Reel (15-20 segundos) com transições rápidas entre cenas de: 1) Pessoa com expressão de medo olhando para tela de celular (gráfico complexo), 2) Mão segurando café com texto 'R$10 podem ser seu primeiro investimento', 3) Logo InvestFacil com CTA 'Fica ligado essa semana'.",
+            "micro_roteiro": [
+                {
+                    "cena": 1,
+                    "descricao": "Close em rosto de pessoa (25-30 anos) olhando para celular com expressão de confusão. Tela do celular mostra gráfico de ações cheio de números.",
+                    "texto_tela": "INVESTIR = ???",
+                    "fala": "Você já se sentiu assim na frente dos investimentos?",
+                    "trilha": "Som de suspiro dramático"
+                },
+                {
+                    "cena": 2,
+                    "descricao": "Mão segurando xícara de café com nota de R$10 saindo dela. Transição para moedas caindo em um cofrinho transparente com logo InvestFacil.",
+                    "texto_tela": "R$10 = SEU PRIMEIRO PASSO",
+                    "fala": "Mas a verdade é que começar pode ser mais simples que escolher o que pedir no iFood.",
+                    "trilha": "Som de moedas caindo"
+                },
+                {
+                    "cena": 3,
+                    "descricao": "Pessoa sorrindo, segure um celular com tela do app InvestFacil (simulado). Texto na tela: 'Essa semana, a gente te mostra como'.",
+                    "texto_tela": "FICA LIGADO ESSA SEMANA 👇",
+                    "fala": "Fica aqui com a gente que a gente te mostra o caminho.",
+                    "trilha": "Som motivacional (ex: 'Uplifting' leve)"
+                }
+            ],
+            "carrossel_slides": [],
+            "post_strategy_rationale": "            **Objetivo**: Quebrar a primeira barreira emocional (medo) e **criar expectativa** para os próximos posts. O Reel usa humor e dados reais para **normalizar o medo** e posicionar a InvestFacil como a solução acessível.            **Por que funciona**:            - **Empatia + dados**: Combina validação emocional ('você não está sozinho') com estatísticas (ANBIMA) para construir credibilidade.            - **CTA sutil**: Não pede ação imediata, mas **compromete o público** a acompanhar a semana ('fica ligado').            - **Formato**: Reels têm 2x mais alcance orgânico que posts estáticos (Meta, 2023).            ",
+            "micro_briefing": "Gerar identificação imediata com o público através do medo compartilhado, usando humor e dados para desarmar a resistência. Preparar o terreno para os posts seguintes (metodologia, case, educação).",
+            "visual_prompt_suggestion": "            A young Brazilian professional (25-30 years old, casual clothing) looking confused at a smartphone screen displaying a complex stock chart with red/green candles. The background is a cozy home office with a coffee cup and notebook. The lighting is warm but slightly dramatic to emphasize the 'fear' emotion. Close-up shot, shallow depth of field. Style: cinematic, slightly desaturated colors with a pop of warm tones on the coffee cup and phone screen. No text in the image.            ",
+            "text_in_image": "",
+            "visual_description_portuguese": "            Close em um jovem profissional (25-30 anos, roupa casual) olhando confuso para um celular que mostra um gráfico de ações complexo. Ao fundo, uma xícara de café e um caderno em uma mesa de home office. Iluminação quente mas com contraste para destacar a expressão de medo. Estilo cinematográfico, cores levemente dessaturadas com destaque para o café e a tela do celular.            ",
+            "cta_individual": "Curtiu? Ativa as notificações pra não perder o que vem por aí! ⚠️",
+            "interacao": "Qual o seu maior medo na hora de pensar em investir? 'Perder dinheiro'? 'Não entender'? Conta aqui nos comentários! 👇",
+            "response_script": [
+                {
+                    "comentario_generico": "Tenho medo de perder tudo!",
+                    "resposta_sugerida": "                    Entendemos, @usuario! Mas sabia que diversificar (colocar seus ovos em cestas diferentes) reduz MUITO esse risco? Essa semana a gente explica direitinho como fazer isso sem dor de cabeça. 😉                    ",
+                    "comentario_negativo": "Investir é só pra rico, não pra mim que ganho um salário mínimo.",
+                    "resposta_negativo": "                    @usuario, a Ana da nossa história começou com R$50/mês (menos que um almoço fora). O segredo não é o valor, é **começar**. Vamos te mostrar como! 💜                    "
+                },
+                {
+                    "comentario_generico": "Não entendo NADA de economia...",
+                    "resposta_sugerida": "                    E não precisa entender tudo de uma vez, @usuario! A gente descomplica pra você. Essa semana, vamos te mostrar que investir pode ser tão simples quanto pedir um Uber. 🚀                    ",
+                    "comentario_negativo": "Já tentei e não deu certo, desisti.",
+                    "resposta_negativo": "                    @usuario, a gente sabe que frustração dói. Mas e se dessa vez você tivesse um método **passo a passo** pra não errar? Dá uma chance pra gente te mostrar como. 💙                    "
+                }
+            ],
+            "ab_test_suggestions": "            - **Título do Reel**: 'O Medo de Investir é Normal' vs 'Investir Não é Bicho de 7 Cabeças' → Métrica: Taxa de retenção até o final.            - **CTA na legenda**: 'Fica ligado essa semana' vs 'Salva esse post pra não esquecer' → Métrica: Número de salvamentos.            ",
+            "indicador_principal": "Taxa de retenção até o final do Reel (meta: >70%)",
+            "optimization_triggers": "            1) **Threshold de alerta**: Retenção <50% → Revisar os primeiros 3 segundos do vídeo (hook).            2) **Ação corretiva**: Testar legenda com pergunta direta ('Você já teve medo de investir?').            3) **Threshold de sucesso**: Retenção >80% + 200+ comentários → Replicar formato em futuras campanhas.            "
+        },
+        {
+            "titulo": "Nosso Método em 3 Passos (Sem Financês)",
+            "tema": "Apresentação transparente da metodologia InvestFacil, focando em simplicidade e confiança.",
+            "legenda_principal": "            Prometemos descomplicar, e aqui está como a gente faz. ✨\n\nNa InvestFacil, a gente acredita que investir não é sobre **saber tudo**, mas sobre **dar o primeiro passo com confiança**. Por isso, criamos um método em 3 passos que qualquer pessoa pode seguir – **mesmo que seja a primeira vez na vida**. \n\n👉 **Passo 1: Descubra seu perfil** (sim, tem gente que gosta de risco e gente que prefere dormir tranquila. E tá tudo bem!).👉 **Passo 2: Comece com pouco** (a Ana começou com R$50, lembra?).👉 **Passo 3: Deixe a gente te guiar** (a gente avisa quando é hora de ajustar, sem você precisar ficar olhando gráfico o dia todo).\n\n**Arrasta pro lado** que a gente te mostra cada passo em detalhes (e sem nenhum 'financês' chato). \n\n#Bastidores #MetodoInvestFacil            ",
+            "variacoes_legenda": [
+                "                **Você já tentou investir e se perdeu no meio do caminho?** A gente entende.\n\nPor isso, criamos um método **simples e humano** em 3 passos. Nada de planilhas complexas ou termos que só economista entende.\n\n**Arrasta pra ver** como a gente faz pra você começar **hoje mesmo** – mesmo que seja com R$20. 👇                ",
+                "                **Investir não é sobre adivinhar o futuro.** É sobre seguir um método claro e **dar um passo de cada vez**. \n\nAqui na InvestFacil, a gente te guia desde o 'eu não entendo nada' até o 'uau, meu dinheiro está crescendo!'.\n\n**Quer ver como?** É só arrastar pro lado. ✨                "
+            ],
+            "hashtags": [
+                "#InvestFacil",
+                "#Bastidores",
+                "#MetodoSimples",
+                "#InvestimentoParaIniciantes",
+                "#SemFinancês"
+            ],
+            "horario_de_postagem": "Sábado, 11h (horário de 'descanso' do público, ideal para conteúdo educativo que pode ser consumido com calma)",
+            "sugestao_formato": "Carrossel de 4 slides: 1) Capa com título 'Nosso Método em 3 Passos', 2) Passo 1 (ilustração de pessoa respondendo quiz), 3) Passo 2 (mão depositando moedas em cofrinho), 4) Passo 3 (celular com notificação 'Hora de ajustar seus investimentos'). Design clean, cores primárias da marca + ilustrações minimalistas.",
+            "carrossel_slides": [
+                {
+                    "titulo_slide": "Nosso Método em 3 Passos",
+                    "texto_slide": "                    Investir não precisa ser complicado. \n\nAqui na InvestFacil, a gente te guia em **3 passos simples** – sem stress, sem achismo.                    ",
+                    "sugestao_visual_slide": "                    Ilustração de uma estrada com 3 marcasções (Passo 1, 2, 3) e uma pessoa caminhando. Cores: fundo claro, texto em azul escuro (cor da marca), ícones de setas.                    "
+                },
+                {
+                    "titulo_slide": "Passo 1: Descubra seu perfil",
+                    "texto_slide": "                    Você é do time que **ama risco** ou prefere **segurança**? \n\nA gente te ajuda a descobrir em 2 minutos – **sem teste chato**.                    ",
+                    "sugestao_visual_slide": "                    Ilustração de duas pessoas: uma em um roler coaster (risco), outra em um banco de parque (segurança). Fundo branco, texto em preto.                    "
+                },
+                {
+                    "titulo_slide": "Passo 2: Comece com pouco",
+                    "texto_slide": "                    Não precisa de milhares. **R$50 já são suficientes** pra dar o pontapé inicial. \n\n(A Ana começou assim e hoje já tem R$400!)                    ",
+                    "sugestao_visual_slide": "                    Foto realística de uma mão depositando moedas em um cofrinho transparente com logo InvestFacil. Texto sobreposto: 'R$50 = seu primeiro passo'.                    "
+                },
+                {
+                    "titulo_slide": "Passo 3: Deixe a gente te guiar",
+                    "texto_slide": "                    A gente **monitora** seus investimentos e te avisa quando é hora de ajustar. \n\nVocê só precisa **começar**. O resto, a gente faz.                    ",
+                    "sugestao_visual_slide": "                    Mockup de celular com notificação: 'Seus investimentos renderam R$X este mês! 🎉'. Fundo gradiente azul claro.                    "
+                }
+            ],
+            "micro_roteiro": [],
+            "post_strategy_rationale": "            **Objetivo**: Construir **confiança** ao mostrar o 'como' por trás do produto. O carrossel permite **educar sem sobrecarregar**, com cada slide focando em um benefício claro.            **Por que funciona**:            - **Transparência**: Mostrar o método desmistifica o processo e reduz a ansiedade do iniciante.            - **Prova social**: Menção à Ana (do post seguinte) cria **antecipação** e conexão emocional.            - **Design**: Ilustrações minimalistas **facilitam a compreensão** e alinham com a identidade visual da marca.            ",
+            "micro_briefing": "Educar o público sobre o método InvestFacil de forma visual e acessível, reforçando que investir é um processo guiado e não uma 'adivinhação'. Preparar para o case da Ana no próximo post.",
+            "visual_prompt_suggestion": "            A flat-lay composition with three minimalist illustrations representing the steps: 1) A person taking a quiz on a tablet, 2) A hand dropping coins into a transparent piggy bank with the InvestFacil logo, 3) A smartphone with a notification 'Your investments grew!'. Background: light blue gradient with white space. Style: modern, clean, with soft shadows and pastel accents. No text in the images.            ",
+            "text_in_image": "",
+            "visual_description_portuguese": "            Composição flat lay com três ilustrações minimalistas: 1) Pessoa respondendo quiz em um tablet, 2) Mão depositando moedas em um cofrinho transparente com logo InvestFacil, 3) Smartphone com notificação 'Seus investimentos cresceram!'. Fundo em degrade azul claro com espaço em branco. Estilo moderno e limpo, com sombras suaves e toques pastel.            ",
+            "cta_individual": "Qual desses passos você achou mais fácil? Conta pra gente nos comentários! 👇",
+            "interacao": "Se você pudesse começar hoje com R$50, o que te impediria? Medo? Falta de tempo? Comenta aqui que a gente te ajuda!",
+            "response_script": [
+                {
+                    "comentario_generico": "Não tenho R$50 sobrando todo mês...",
+                    "resposta_sugerida": "                    @usuario, a gente entende! Mas e se a gente te dissesse que **R$20 já dão pra começar**? O importante é criar o hábito. Vamos te mostrar como! 💙                    ",
+                    "comentario_negativo": "Isso parece muito bom pra ser verdade...",
+                    "resposta_negativo": "                    @usuario, a gente sabe que parece, mas jura que não é mágica! O método é baseado em **diversificação automática** e acompanhamento constante. Se quiser, a gente explica melhor nos DMs. 😊                    "
+                },
+                {
+                    "comentario_generico": "Qual o passo mais importante?",
+                    "resposta_sugerida": "                    @usuario, todos são importantes, mas **começar** (Passo 2) é o que mais vê a galera travando. A Ana do nosso case começou com R$50 e hoje não para mais! 🚀                    ",
+                    "comentario_negativo": "Já tentei outros apps e não deu certo.",
+                    "resposta_negativo": "                    @usuario, a gente sabe como é frustrante. Mas aqui a gente faz diferente: **te guiamos do zero**, sem deixar você sozinho. Que tal dar uma segunda chance? 💜                    "
+                }
+            ],
+            "ab_test_suggestions": "            - **Ordem dos slides**: Passo 1 → 2 → 3 vs 3 → 2 → 1 (invertido para testar curiosidade) → Métrica: Tempo médio no carrossel.            - **CTA na legenda**: 'Arrasta pro lado' vs 'Clique no link da bio pra ver mais' → Métrica: Taxa de cliques no link.            ",
+            "indicador_principal": "Taxa de conclusão do carrossel (meta: >60% dos visualizadores chegam ao slide 4)",
+            "optimization_triggers": "            1) **Threshold de alerta**: <40% completam o carrossel → Simplificar texto dos slides ou adicionar setas visuais para guiar o arraste.            2) **Ação corretiva**: Testar versão com apenas 3 slides (juntar Passos 1 e 3).            3) **Threshold de sucesso**: >70% completam + 150+ comentários → Criar versão em Reel deste conteúdo.            "
+        },
+        {
+            "titulo": "Com R$50, a Ana Virou a Chave (e Você Também Pode)",
+            "tema": "Case fictício da Ana (30 anos, SP) que começou com R$50 e hoje tem R$400, provando que investir é para todos.",
+            "legenda_principal": "            Essa é a Ana. 👋\n\n30 anos, mora em SP, trabalha com design e, como muita gente, achava que **investir era só pra quem entende de economia ou tem muito dinheiro**. \n\nAté que um dia, ela resolveu trocar **um lanche de R$50** por um investimento. \n\n**8 meses depois:**✅ Os R$50 viraram **R$54** (8% de rendimento – bem mais que a poupança!).✅ Ela criou o **hábito de investir R$50/mês** – hoje, já são **R$400** guardados.✅ O melhor? **Ela não precisou virar expert** – só seguiu o método que a gente te mostrou ontem. \n\n**A história da Ana prova que:**\n- Não precisa de milhares pra começar.- O mais difícil é **dar o primeiro passo**.- **Você também pode.**\n\nE aí, qual vai ser a **sua** história? 💬\n\n#EstudoDeCaso #InvestirÉParaTodos            ",
+            "variacoes_legenda": [
+                "                **R$50 podem mudar sua relação com dinheiro.** \n\nPelo menos foi assim pra Ana, que em 8 meses transformou um valor que nem daria pra um jantar em **R$400** – e o mais importante: **ganhou confiança** pra continuar.\n\n**O que você faria com R$50 hoje?** Um delivery... ou o primeiro tijolo do seu futuro? 🧱\n\n#CasesQueInspiram                ",
+                "                **'Eu não sei nada de investimentos'** – foi isso que a Ana pensava antes de começar. \n\nHoje, ela não só tem R$400 guardados como **entende como o dinheiro pode trabalhar pra ela** – tudo isso **sem virar economista**.\n\n**E se a próxima história for a sua?** 👇                "
+            ],
+            "hashtags": [
+                "#InvestFacil",
+                "#EstudoDeCaso",
+                "#ComeceComPouco",
+                "#HistoriasQueInspiram",
+                "#InvestimentoParaIniciantes"
+            ],
+            "horario_de_postagem": "Domingo, 20h (horário de 'reflexão' do público, ideal para conteúdo inspirador que motiva ação na segunda-feira)",
+            "sugestao_formato": "Carrossel de 5 slides: 1) Capa com foto da 'Ana' (modelo fictício) e título, 2) 'O dilema da Ana' (ilustração de ela segure R$50), 3) 'A decisão' (print simulado do app com depósito), 4) '8 meses depois' (gráfico de crescimento), 5) 'E você?' (CTA para baixar app).",
+            "carrossel_slides": [
+                {
+                    "titulo_slide": "Conheça a Ana",
+                    "texto_slide": "                    30 anos, designer, moradora de SP. \n\nComo você, ela achava que investir **não era pra ela**.                    ",
+                    "sugestao_visual_slide": "                    Foto estilo 'candid' de uma mulher sorrindo (modelo fictício, 30 anos, roupa casual). Fundo: café ou parque. Texto sobreposto: 'Essa é a Ana'.                    "
+                },
+                {
+                    "titulo_slide": "O Dilema: R$50",
+                    "texto_slide": "                    Todo mês, sobravam R$50. \n\nEla podia:                    ➡️ Pedir um lanche                    ➡️ **Investir**\n\nEla escolheu a segunda opção.                    ",
+                    "sugestao_visual_slide": "                    Ilustração de uma mão segure uma nota de R$50, com duas setas: uma apontando para um hambúrguer, outra para um cofrinho com logo InvestFacil.                    "
+                },
+                {
+                    "titulo_slide": "A Decisão",
+                    "texto_slide": "                    Sem entender de siglas, sem planilhas. \n\nEla só **seguiu o método** que a gente te mostrou ontem e depositou seus R$50.                    ",
+                    "sugestao_visual_slide": "                    Mockup de tela de smartphone com app InvestFacil (simulado), mostrando depósito de R$50 e mensagem: 'Parabéns, Ana!'.                    "
+                },
+                {
+                    "titulo_slide": "8 Meses Depois",
+                    "texto_slide": "                    **Resultados da Ana:**                    💰 R$50 → **R$54** (8% de rendimento).                    📈 **R$400** guardados (investindo R$50/mês).                    😌 **Confiança** pra continuar.                    ",
+                    "sugestao_visual_slide": "                    Gráfico de barras simples mostrando crescimento de R$50 para R$400 em 8 meses. Cores: azul (marca) e verde (crescimento).                    "
+                },
+                {
+                    "titulo_slide": "E Você?",
+                    "texto_slide": "                    A Ana provou que **o difícil não é o valor, é começar**. \n\n**Qual vai ser a sua história?** \n\nBaixe o app e dê o primeiro passo hoje mesmo! (Link na bio)                    ",
+                    "sugestao_visual_slide": "                    Foto de mãos segure um celular com tela do app InvestFacil. Texto sobreposto: 'Sua vez de começar!'.                    "
+                }
+            ],
+            "micro_roteiro": [],
+            "post_strategy_rationale": "            **Objetivo**: **Provar socialmente** que investir é possível para o público-alvo, usando um case **relatável** (Ana = jovem, pouco dinheiro, sem conhecimento). O carrossel combina **dados concretos** (8% de rendimento) com **emoção** (confiança).            **Por que funciona**:            - **Identificação**: Ana é um espelho do público (idade, localização, dilemas).            - **Números tangíveis**: R$50 → R$400 em 8 meses é **alcançável** e inspirador.            - **CTA forte**: Conecta diretamente ao app, com urgência ('hoje mesmo').            ",
+            "micro_briefing": "Inspirar o público através de uma história realista e motivadora, mostrando que resultados são possíveis mesmo com pouco dinheiro. Direcionar para o download do app como próximo passo lógico.",
+            "visual_prompt_suggestion": "            A photo series telling Ana's story: 1) A candid photo of a 30-year-old Brazilian woman (casual clothes, smiling) in a park, 2) An illustration of a hand holding a R$50 bill with arrows pointing to a burger and a piggy bank, 3) A smartphone mockup showing a deposit confirmation in the InvestFacil app, 4) A simple bar chart showing growth from R$50 to R$400 over 8 months (blue and green colors), 5) Hands holding a phone with the app open. Style: warm, inviting, with a mix of real photos and minimalist illustrations. No text in images.            ",
+            "text_in_image": "",
+            "visual_description_portuguese": "            Série de fotos/contando a história da Ana: 1) Foto candid de uma mulher de 30 anos (roupa casual, sorrindo) em um parque, 2) Ilustração de uma mão segure uma nota de R$50 com setas para um hambúrguer e um cofrinho, 3) Mockup de smartphone com confirmação de depósito no app InvestFacil, 4) Gráfico de barras simples mostrando crescimento de R$50 para R$400 em 8 meses (cores azul e verde), 5) Mãos segure um celular com o app aberto. Estilo: acolhedor, mistura de fotos reais e ilustrações minimalistas.            ",
+            "cta_individual": "Se identificou com a Ana? **Baixe nosso app** e comece a escrever a sua história! Link na bio. 🚀",
+            "interacao": "O que te impede de ser como a Ana? Medo? Falta de tempo? Conta aqui que a gente te ajuda! 👇",
+            "response_script": [
+                {
+                    "comentario_generico": "Também quero começar, mas tenho medo de errar!",
+                    "resposta_sugerida": "                    @usuario, a Ana também tinha esse medo! Mas com o nosso método, **você não fica sozinho** – a gente te guia em cada passo. Que tal começar com R$20 pra testar? 😉                    ",
+                    "comentario_negativo": "Isso parece propaganda enganosa...",
+                    "resposta_negativo": "                    @usuario, a história da Ana é fictícia, mas baseada em **dados reais** de nossos usuários. Se quiser, a gente te mostra prints de rendimentos reais no DM. Transparência é tudo pra gente! 💙                    "
+                },
+                {
+                    "comentario_generico": "Quanto tempo levou pra ela ver resultado?",
+                    "resposta_sugerida": "                    @usuario, a Ana viu os primeiros R$4 de rendimento já no **primeiro mês**! Mas o legal mesmo é o **hábito** que ela criou. 📈                    ",
+                    "comentario_negativo": "Com R$50 não dá pra fazer nada...",
+                    "resposta_negativo": "                    @usuario, a Ana começou com R$50, mas o segredo foi **continuar**. Hoje, ela investe R$100/mês e já tem R$400. O valor não é o mais importante – é a **consistência**. 💪                    "
+                }
+            ],
+            "ab_test_suggestions": "            - **Foto da Ana**: Modelo real vs ilustração → Métrica: Taxa de engajamento (curtidas/comentários).            - **CTA final**: 'Baixe o app' vs 'Fale com a gente no DM pra te ajudarmos' → Métrica: Cliques no link da bio.            ",
+            "indicador_principal": "Taxa de cliques no link da bio (meta: >5%)",
+            "optimization_triggers": "            1) **Threshold de alerta**: CTR <2% → Testar CTA mais direto ('Baixe AGORA e ganhe R$10 de bônus').            2) **Ação corretiva**: Adicionar slide extra com depoimento real de usuário (se disponível).            3) **Threshold de sucesso**: CTR >8% + 300+ comentários → Criar série de cases semelhantes.            "
+        },
+        {
+            "titulo": "Não Coloque Todos os Ovos na Mesma Cesta (Sim, Isso Vale Pra Investimentos)",
+            "tema": "Explicação simples e visual sobre diversificação, quebrando a objeção de risco.",
+            "legenda_principal": "            'E se eu investir e perder tudo?' 😨\n\nEssa é a dúvida que **9 em cada 10 iniciantes** têm (dados: pesquisa InvestFacil, 2023). \n\nA resposta? **Diversificação** – ou, como a vovó diria: **'Não ponha todos os ovos na mesma cesta'**. \n\n🥚 **Cenário 1**: Você coloca R$100 em **uma única ação**. Se ela cair, você perde tudo.🧺 **Cenário 2**: Você divide esses R$100 em **4 investimentos diferentes** (Tesouro Direto, CDB, ações, fundos). Se um cair, os outros segurem o tranco.\n\n**Na prática:**- A Ana (sim, **aquela** Ana!) divide seu R$50 em **3 opções** todos os meses.- Em 8 meses, **nenhum mês** ela teve prejuízo (mesmo quando a bolsa oscila!).\n\n**Diversificar não é só pra expert.** É pra quem quer dormir tranquilo. 😴\n\nArrasta pro lado que a gente te mostra como fazer isso **sem dor de cabeça**. #Descomplicar            ",
+            "variacoes_legenda": [
+                "                **'Investir é arriscado' – MITO.** \n\nO verdadeiro risco é **não diversificar**. Imagina depender só de um único investimento… é como apostar tudo no vermelho da roleta. 🎰\n\nA Ana, por exemplo, divide seu dinheiro em **3 tipos de investimentos** e dorme tranquila. \n\n**Quer aprender como?** É só arrastar! 👇                ",
+                "                **Você não precisa ser um gênio pra investir bem.** \n\nBasta seguir a regra de ouro: **diversifique**. \n\nIsso significa não colocar todo seu dinheiro em um lugar só – assim, se um investimento não vai bem, os outros compensam.\n\n**Na prática:** A Ana faz isso automaticamente pelo app. Você também pode! 💡                "
+            ],
+            "hashtags": [
+                "#InvestFacil",
+                "#Diversificacao",
+                "#InvestimentoSemMedo",
+                "#FinancasParaIniciantes",
+                "#Descomplicar"
+            ],
+            "horario_de_postagem": "Segunda-feira, 9h (horário de 'começo de semana produtivo', quando o público está mais aberto a aprender algo novo)",
+            "sugestao_formato": "Carrossel de 4 slides: 1) Capa com ilustração de cesta de ovos, 2) 'Cenário 1: Todos os ovos em uma cesta' (gráfico de queda), 3) 'Cenário 2: Ovos em várias cestas' (gráfico estável), 4) 'Como a Ana faz' (print do app com alocação diversificada).",
+            "carrossel_slides": [
+                {
+                    "titulo_slide": "A Regra de Ouro",
+                    "texto_slide": "                    **Não coloque todos os ovos na mesma cesta.**\n\nEssa frase vale pra vida… e pra seus investimentos. 🧺                    ",
+                    "sugestao_visual_slide": "                    Ilustração de uma cesta de vime com ovos quebrados no chão (metade) e ovos inteiros em várias cestas (outra metade). Fundo branco.                    "
+                },
+                {
+                    "titulo_slide": "Cenário 1: Tudo em Um Lugar",
+                    "texto_slide": "                    **Risco:** Se você investe tudo em **uma só coisa**, qualquer problema pode zerar seu dinheiro. 😱\n\nExemplo: Ação da Empresa X cai 50% → seu investimento também.                    ",
+                    "sugestao_visual_slide": "                    Gráfico de linha vermelha em queda acentuada. Texto: 'R$100 → R$50'.                    "
+                },
+                {
+                    "titulo_slide": "Cenário 2: Diversificado",
+                    "texto_slide": "                    **Segurança:** Se você divide seu dinheiro em **4 investimentos**, a queda de um não afeta tanto o todo. 😌\n\nExemplo: 3 sobem, 1 cai → seu saldo **continua positivo**.                    ",
+                    "sugestao_visual_slide": "                    Gráfico de 4 linhas (3 verdes subindo, 1 vermelha caindo levemente). Texto: 'R$100 → R$105'.                    "
+                },
+                {
+                    "titulo_slide": "Como a Ana Faz",
+                    "texto_slide": "                    A Ana divide seus R$50 em:\n✅ **Tesouro Direto** (segurança)\n✅ **CDB** (rentabilidade)\n✅ **Fundos** (diversificação automática)\n\n**Resultado:** 8 meses sem prejuízo! \n\n**Quer fazer igual?** Baixe o app e a gente te ajuda a montar sua cesta. 🧺                    ",
+                    "sugestao_visual_slide": "                    Mockup de celular com tela do app mostrando alocação: 40% Tesouro, 30% CDB, 30% Fundos. Texto: 'Sua vez de diversificar!'.                    "
+                }
+            ],
+            "micro_roteiro": [],
+            "post_strategy_rationale": "            **Objetivo**: **Quebrar a objeção de risco** (principal barreira para iniciantes) através de uma analogia **visual e simples**. O carrossel permite comparar cenários de forma clara, reforçando a **autoridade** da InvestFacil em educar.            **Por que funciona**:            - **Analogia da cesta**: Tornar um conceito abstrato (diversificação) em algo **tangível**.            - **Dados da Ana**: Prova social + continuidade da narrativa da campanha.            - **CTA prático**: Direciona para o app, onde a diversificação é **automática**.            ",
+            "micro_briefing": "Educar o público sobre diversificação de forma acessível, usando analogias e dados concretos para reduzir o medo de perder dinheiro. Posicionar o app como a solução fácil para diversificar.",
+            "visual_prompt_suggestion": "            A 4-slide carousel: 1) Illustration of a wicker basket with broken eggs on the floor (half) and whole eggs in multiple baskets (other half), 2) A red line chart showing a 50% drop with text 'R$100 → R$50', 3) A mixed line chart with 3 green lines up and 1 red line slightly down, text 'R$100 → R$105', 4) Smartphone mockup showing app allocation screen (40% Treasury, 30% CDB, 30% Funds). Style: clean, with bold colors for contrast (red for risk, green for safety). No text in images.            ",
+            "text_in_image": "",
+            "visual_description_portuguese": "            Carrossel de 4 slides: 1) Ilustração de cesta de vime com ovos quebrados no chão (metade) e ovos inteiros em várias cestas (outra metade), 2) Gráfico de linha vermelha mostrando queda de 50% com texto 'R$100 → R$50', 3) Gráfico misto com 3 linhas verdes subindo e 1 vermelha caindo levemente, texto 'R$100 → R$105', 4) Mockup de smartphone com tela do app mostrando alocação (40% Tesouro, 30% CDB, 30% Fundos). Estilo limpo, com cores contrastantes (vermelho para risco, verde para segurança).            ",
+            "cta_individual": "Já diversifica seus investimentos? Conta pra gente nos comentários! 👇",
+            "interacao": "Qual sua maior dúvida sobre diversificação? 'Como escolher os investimentos?' 'Quanto colocar em cada?' Pergunta aqui!",
+            "response_script": [
+                {
+                    "comentario_generico": "Não entendo nada de gráficos...",
+                    "resposta_sugerida": "                    @usuario, não precisa entender! No app, a gente **monta a sua cesta automaticamente** baseado no seu perfil. Você só escolhe quanto quer investir. 😊                    ",
+                    "comentario_negativo": "Diversificar é só pra quem tem muito dinheiro.",
+                    "resposta_negativo": "                    @usuario, a Ana começou com R$50 divididos em 3 opções! O segredo é **proporção**, não valor absoluto. Vamos te mostrar como. 💙                    "
+                },
+                {
+                    "comentario_generico": "Onde eu aprendo mais sobre isso?",
+                    "resposta_sugerida": "                    @usuario, dentro do app tem um **guia completo** sobre diversificação – e a gente ainda te avisa quando é hora de ajustar. Que tal dar uma olhada? 👀                    ",
+                    "comentario_negativo": "Já perdi dinheiro diversificando antes...",
+                    "resposta_negativo": "                    @usuario, sentimos muito por isso. A diferença aqui é que a gente **monitora seus investimentos 24/7** e ajusta automaticamente. Vamos te ajudar a recuperar a confiança! 💪                    "
+                }
+            ],
+            "ab_test_suggestions": "            - **Slide 1**: Ilustração da cesta vs foto real de ovos → Métrica: Taxa de compartilhamento.            - **CTA final**: 'Baixe o app' vs 'Fale com nosso time no DM' → Métrica: Cliques no link.            ",
+            "indicador_principal": "Taxa de compartilhamentos (meta: >10%)",
+            "optimization_triggers": "            1) **Threshold de alerta**: <5% compartilhamentos → Testar legenda com pergunta direta ('Você diversifica?').            2) **Ação corretiva**: Adicionar slide com depoimento real (se disponível).            3) **Threshold de sucesso**: >15% compartilhamentos + 200+ comentários → Criar versão em Reel deste conteúdo.            "
+        },
+        {
+            "titulo": "Webinar GRATUITO: Como Investir R$100/Mês Sem Medo",
+            "tema": "Convite para webinar ao vivo com especialista, focado em tirar dúvidas e converter leads em usuários ativos.",
+            "legenda_principal": "            Você acompanhou a história da Ana, aprendeu sobre diversificação e viu como nosso método funciona. **Agora, chegou a hora de agir.** ✨\n\n**Neste webinar GRATUITO**, você vai aprender:\n✅ Como começar a investir **com apenas R$100/mês** (sim, dá pra fazer muito com pouco!).✅ Os **3 erros** que 90% dos iniciantes cometem (e como evitá-los).✅ **Dicas práticas** para escolher seus primeiros investimentos **sem medo**.\n\n📅 **Quando?** Quinta-feira, 20h (ao vivo!\n🎤 **Com quem?** Com a @carolfinancas (especialista em investimentos para iniciantes).\n🔗 **Como participar?** Clique no link da bio e garanta sua vaga! (Vagas limitadas!)\n\n**Não deixe pra depois.** O seu futuro agradece. 💙\n\n#WebinarGratuito #InvestirSemMedo            ",
+            "variacoes_legenda": [
+                "                **Você já deu o primeiro passo mental… agora falta o passo prático!** 🚀\n\nNeste webinar, a @carolfinancas vai te mostrar **exatamente como** transformar R$100/mês em um hábito que muda sua vida financeira.\n\n**Inscreva-se AGORA** – vagas estão acabando! (Link na bio)                ",
+                "                **O que a Ana, o método em 3 passos e a diversificação têm em comum?** \n\nTodos são **ferramentas** pra você começar a investir **com confiança**. \n\nNo webinar dessa quinta, a gente junta TUDO isso e te mostra **na prática** como aplicar.\n\n**Garanta seu lugar!** (Link na bio) 👇                "
+            ],
+            "hashtags": [
+                "#InvestFacil",
+                "#WebinarGratuito",
+                "#InvestimentoParaIniciantes",
+                "#DinheiroSemMedo",
+                "#ComeceHoje"
+            ],
+            "horario_de_postagem": "Quarta-feira, 12h (horário de almoço, quando o público está no celular e mais propenso a se inscrever em eventos)",
+            "sugestao_formato": "Vídeo curto (30 segundos) com: 1) Especialista (Carol) falando para câmera: 'Você já aprendeu a teoria... agora vamos pra prática!', 2) Telas do webinar anterior (público participando), 3) CTA com link na bio. Estilo: dinâmico, com cortes rápidos e texto na tela.",
+            "micro_roteiro": [
+                {
+                    "cena": 1,
+                    "descricao": "Especialista (mulher, 30 anos, roupa casual profissional) olhando para câmera, sorrindo.",
+                    "texto_tela": "PRATICAR > SÓ APRENDER",
+                    "fala": "Você já viu a história da Ana, aprendeu sobre diversificação... Agora, chegou a hora de **colocar em prática**!",
+                    "trilha": "Música motivacional (ex: 'Upbeat corporate')"
+                },
+                {
+                    "cena": 2,
+                    "descricao": "Montagem rápida de telas de webinars anteriores: público nos comentários, especialista explicando, gráficos.",
+                    "texto_tela": "WEBINAR GRATUITO: COMO INVESTIR R$100/MES",
+                    "fala": "Neste webinar **100% gratuito**, eu vou te mostrar como começar **hoje mesmo** – mesmo que você não saiba nada.",
+                    "trilha": "Som de notificação de mensagem (transição)"
+                },
+                {
+                    "cena": 3,
+                    "descricao": "Tela dividida: lado esquerdo (especialista), lado direito (mockup de celular com link da bio destacado).",
+                    "texto_tela": "QUINTA, 20H – LINK NA BIO!",
+                    "fala": "Clique no link da bio e garanta sua vaga! **Vagas limitadas.**",
+                    "trilha": "Som de contagem regressiva (ex: 'tick-tock')"
+                }
+            ],
+            "carrossel_slides": [],
+            "post_strategy_rationale": "            **Objetivo**: **Converter** o público engajado durante a semana em leads qualificados (inscritos no webinar) e, posteriormente, em usuários do app. O webinar serve como **ponte** entre o conteúdo educativo e a ação (download).            **Por que funciona**:            - **Urgência**: 'Vagas limitadas' + data/hora específicas aumentam conversão.            - **Autoridade**: Presença de especialista (@carolfinancas) valida o conteúdo.            - **Continuidade**: Conecta todos os posts anteriores (Ana, método, diversificação) em uma **oferta concreta**.            ",
+            "micro_briefing": "Gerar inscrições para o webinar, posicionando-o como a **próxima etapa natural** após a jornada educativa da semana. Usar urgência e prova social para maximizar conversões.",
+            "visual_prompt_suggestion": "            A 30-second video featuring a Brazilian financial educator (woman, 30s, casual professional attire) speaking directly to the camera. Scene 1: Close-up of her smiling, with text overlay 'THEORY → PRACTICE'. Scene 2: Fast cuts of previous webinar screens (audience comments, charts, educator explaining). Scene 3: Split screen – educator on the left, smartphone mockup with 'LINK IN BIO' highlighted on the right. Style: dynamic, bright lighting, quick cuts, upbeat background music. Text on screen: 'FREE WEBINAR: HOW TO INVEST R$100/MONTH – THURSDAY, 8PM'.            ",
+            "text_in_image": "PRATICAR > SÓ APRENDER | WEBINAR GRATUITO: COMO INVESTIR R$100/MES | QUINTA, 20H – LINK NA BIO!",
+            "visual_description_portuguese": "            Vídeo de 30 segundos com uma educadora financeira (mulher, 30 anos, roupa casual profissional) falando diretamente para a câmera. Cena 1: Close dela sorrindo, com texto sobreposto 'TEORIA → PRÁTICA'. Cena 2: Cortes rápidos de telas de webinars anteriores (comentários do público, gráficos, educadora explicando). Cena 3: Tela dividida – educadora à esquerda, mockup de celular com 'LINK NA BIO' destacado à direita. Estilo: dinâmico, iluminação clara, cortes rápidos, música de fundo animada.            ",
+            "cta_individual": "**Garanta sua vaga AGORA!** Clique no link da bio. 🚀 (Vagas limitadas)",
+            "interacao": "Quem mais vai participar? Marca aquele amigo que sempre diz 'quero investir, mas não sei por onde começar'! 👇",
+            "response_script": [
+                {
+                    "comentario_generico": "Não sei se vou conseguir participar ao vivo...",
+                    "resposta_sugerida": "                    @usuario, sem problema! Todos os inscritos recebem a **gravação** + material exclusivo. Não fica de fora! 😉                    ",
+                    "comentario_negativo": "Isso parece só mais uma venda disfarçada...",
+                    "resposta_negativo": "                    @usuario, entendemos sua desconfiança! Mas jura que esse webinar é **100% educativo** – sem venda no final. Nosso objetivo é te ajudar a dar o primeiro passo. Se não gostar, a gente devolve seu tempo (brincadeira, é de graça mesmo!). 💙                    "
+                },
+                {
+                    "comentario_generico": "Vou marcar meu amigo aqui!",
+                    "resposta_sugerida": "                    @usuario, que massa! Quanto mais gente aprendendo, melhor. **Compartilha esse post** com ele também! 👏                    ",
+                    "comentario_negativo": "Já me inscrevi em mil coisas e nunca participo...",
+                    "resposta_negativo": "                    @usuario, a gente sabe como é! Mas esse webinar é **curto (45 min) e prático** – sem enrolação. E se não der, você assiste depois. O importante é **começar**! 💪                    "
+                }
+            ],
+            "ab_test_suggestions": "            - **CTA no vídeo**: 'Garanta sua vaga' vs 'Só 50 vagas restantes!' → Métrica: Taxa de cliques no link.            - **Horário do webinar**: 20h vs 21h → Métrica: Taxa de inscrição (testar em próximos webinars).            ",
+            "indicador_principal": "Taxa de conversão (inscritos/visualizações do post) – meta: >15%",
+            "optimization_triggers": "            1) **Threshold de alerta**: <8% conversão → Testar CTA com benefício claro ('Ganhe um e-book gratuito ao se inscrever').            2) **Ação corretiva**: Enviar lembrete via Stories 24h antes do webinar.            3) **Threshold de sucesso**: >20% conversão + 300+ inscritos → Criar série de webinars mensais.            "
+        }
+    ],
+    "metricas_de_sucesso_sugeridas": {
+        "objetivo_principal": "Gerar 500 leads qualificados (inscritos no webinar + downloads do app) e aumentar em 20% o engajamento médio nos posts educativos.",
+        "indicadores_chave": [
+            "Taxa de retenção até o final dos Reels (meta: >70%)",
+            "Taxa de conclusão dos carrosséis (meta: >60%)",
+            "Número de compartilhamentos por post (meta: >10% dos alcançados)",
+            "Taxa de cliques no link da bio (meta: >5%)",
+            "Número de inscritos no webinar (meta: 300+)",
+            "Taxa de conversão em downloads do app (meta: 20% dos inscritos no webinar)"
+        ],
+        "metricas_secundarias": [
+            "Crescimento de seguidores orgânicos (meta: +10% em 7 dias)",
+            "Número de comentários com dúvidas ou identificação (meta: 50+ por post)",
+            "Menções em Stories ('@marquei meu amigo!')",
+            "Salvamentos dos posts (meta: >200 por carrossel)",
+            "Tempo médio de visualização dos vídeos (meta: >15s para Reels, >20s para webinar)",
+            "Taxa de abertura dos emails de nutrição pós-campanha (meta: >30%)"
+        ]
+    }
+}
