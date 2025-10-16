@@ -194,9 +194,13 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
             margin-top: 0;
             margin-bottom: 15px;
         }}
+        .post-section .subtitulo-grupo1 strong:first-child {{ color: #1A237E !important; }} /* Azul Escuro */
+        .post-section .subtitulo-grupo2 strong:first-child {{ color: #5C6BC0 !important; }} /* Azul Médio */
+        .post-section .subtitulo-grupo3 strong:first-child {{ color: #2E7D32 !important; }} /* Verde */
+        .post-section .subtitulo-grupo4 strong:first-child {{ color: #555555 !important; }} /* Cinza Escuro */
         /* Destaque para os rótulos (Tema, Legenda, etc.) – agora específico para labels */
         .post-section p > strong:first-child {{
-            color: #5C6BC0; /* Azul Médio apenas para o primeiro strong (labels) */
+            
             font-weight: 700;
             text-transform: uppercase;
             font-size: 1.1em;
@@ -272,16 +276,36 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
 
         <h2>Posts Sugeridos</h2>
         """
+        
+    subtitulo_grupos = {
+    'Tema:': 'subtitulo-grupo1',
+    'Justificativa Estratégica:': 'subtitulo-grupo1',
+    'Micro Briefing:': 'subtitulo-grupo1',
+    'Legenda Principal:': 'subtitulo-grupo2',
+    'Variações de Legenda:': 'subtitulo-grupo2',
+    'Hashtags:': 'subtitulo-grupo2',
+    'Indicador Principal:': 'subtitulo-grupo2',
+    'CTA Individual:': 'subtitulo-grupo3',
+    'Sugestões de Interação/Engajamento:': 'subtitulo-grupo3',
+    'Roteiro de Respostas a Comentários:': 'subtitulo-grupo3',
+    'Sugestões Visuais:': 'subtitulo-grupo4',
+    'Texto na Imagem/Vídeo:': 'subtitulo-grupo4',
+    'Formato Sugerido:': 'subtitulo-grupo4',
+    'Prompt para IA Geradora de Imagens:': 'subtitulo-grupo4',
+    'Testes A/B:': 'subtitulo-grupo4',
+    'Como Corrigir a Rota (Gatilhos de Otimização):': 'subtitulo-grupo4',
+    'Checklist de Publicação:': 'subtitulo-grupo4'
+}
 
     # Adiciona os posts dinamicamente
     for i, post in enumerate(content_json.get("posts", [])):
         html_content += f"""
             <div class="post-section">
                 <h3>Post #{i + 1}: {post.get("titulo", "Sem Título")}</h3>
-                {f"<p><strong data-icon=\"theme\">Tema:</strong> {post.get("tema", "N/A")}</p>" if post.get("tema") else ""}
-                <p><strong>Justificativa Estratégica:</strong> {post.get("post_strategy_rationale", "N/A")}</p>
-                <p><strong>Briefing:</strong> {post.get("micro_briefing", "N/A")}</p>
-                <p><strong>Legenda:</strong> {post.get("legenda_principal", "N/A")}</p>
+               <p class="{subtitulo_grupos.get('Tema:', '')}"><strong>Tema:</strong> {post.get("tema", "N/A")}</p>
+                <p class="{subtitulo_grupos.get('Justificativa Estratégica:', '')}"><strong>Justificativa Estratégica:</strong> {post.get("post_strategy_rationale", "N/A")}</p>
+                <p class="{subtitulo_grupos.get('Micro Briefing:', '')}"><strong>Micro Briefing:</strong> {post.get("micro_briefing", "N/A")}</p>
+                <p class="{subtitulo_grupos.get('Legenda Principal:', '')}"><strong>Legenda Principal:</strong> {post.get("legenda_principal", "N/A")}</p>
                 <details>
                     <summary style="text-decoration: underline; font-style: italic; color: #FFA500;">Clique para expandir variações</summary>
                     <p><strong>Variações:</strong></p>
@@ -292,10 +316,10 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
         html_content += f"""
                     </ul>
                 </details>
-{f"<p><strong>Hashtags:</strong> {' '.join(post.get('hashtags', []))}</p>" if post.get("hashtags") else ""}
-                {f"<p><strong>Indicador Principal:</strong> {post.get("indicador_principal", "N/A")}</p>" if post.get("indicador_principal") else ""}
-                {f"<p><strong data-icon=\"cta\">Chamada para Ação (CTA):</strong> {post.get("cta_individual", "N/A")}</p>" if post.get("cta_individual") else ""}
-                {f"<p><strong>Sugestões de Interação/Engajamento:</strong></p> {post.get("interacao", "N/A")}" if post.get("interacao") else ""}
+                <p class="{subtitulo_grupos.get('Hashtags:', '')}"><strong>Hashtags:</strong> {" ".join(post.get("hashtags", []))}</p>
+                <p class="{subtitulo_grupos.get('Indicador Principal:', '')}"><strong>Indicador Principal:</strong> {post.get("indicador_principal", "N/A")}</p>
+                <p class="{subtitulo_grupos.get('CTA Individual:', '')}"><strong>CTA Individual:</strong> {post.get("cta_individual", "N/A")}</p>
+                <p class="{subtitulo_grupos.get('Sugestões de Interação/Engajamento:', '')}"><strong>Sugestões de Interação/Engajamento:</strong> {post.get("interacao", "N/A")}</p>
         """
         response_script = post.get("response_script", [])
         if response_script:
@@ -315,9 +339,10 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
                 </details>
             """
         html_content += f"""
-                {f"<p><strong>Sugestões Visuais:</strong> {post.get("visual_description_portuguese", "N/A")}</p>" if post.get("visual_description_portuguese") else ""}
-                {f"<p><strong>Texto na Imagem/Vídeo:</strong> {post.get("text_in_image", "N/A")}</p>" if post.get("text_in_image") else ""}
-                <p><strong>Formato Sugerido:</strong> {post.get("sugestao_formato", "N/A")}</p>
+                {f'<p class="{subtitulo_grupos.get("Sugestões Visuais:", "")}"><strong>Sugestões Visuais:</strong> {post.get("visual_description_portuguese", "N/A")}</p>' if post.get("visual_description_portuguese") else ""}
+                {f'<p class="{subtitulo_grupos.get("Texto na Imagem/Vídeo:", "")}"><strong>Texto na Imagem/Vídeo:</strong> {post.get("text_in_image", "N/A")}</p>' if post.get("text_in_image") else ""}
+                <p class="{subtitulo_grupos.get('Formato Sugerido:', '')}"><strong>Formato Sugerido:</strong> {post.get("sugestao_formato", "N/A")}</p>
+        
         """
         if post.get("carrossel_slides") and len(post["carrossel_slides"]) > 0:
             html_content += f"""
@@ -340,10 +365,10 @@ def create_briefing_html(content_json: dict, client_name: str, output_filename: 
                 </ol>
             """
         html_content += f"""
-                {f"<p><strong>Prompt para IA Geradora de Imagens:</strong> {post.get("visual_prompt_suggestion", "N/A")}</p>" if post.get("visual_prompt_suggestion") else ""}
-                {f"<p><strong>Testes A/B:</strong></p> {post.get("ab_test_suggestions", "N/A")}" if post.get("ab_test_suggestions") else ""}
-                {f"<p><strong>Como Corrigir a Rota (Gatilhos de Otimização):</strong></p> {post.get("optimization_triggers", "N/A")}" if post.get("optimization_triggers") else ""}
-                <p><strong>Checklist de Publicação:</strong></p>
+                {f'<p class="{subtitulo_grupos.get("Prompt para IA Geradora de Imagens:", "")}"><strong>Prompt para IA Geradora de Imagens:</strong> {post.get("visual_prompt_suggestion", "N/A")}</p>' if post.get("visual_prompt_suggestion") else ""}
+                {f'<p class="{subtitulo_grupos.get("Testes A/B:", "")}"><strong>Testes A/B:</strong> {post.get("ab_test_suggestions", "N/A")}</p>' if post.get("ab_test_suggestions") else ""}
+                {f'<p class="{subtitulo_grupos.get("Como Corrigir a Rota (Gatilhos de Otimização):", "")}"><strong>Como Corrigir a Rota (Gatilhos de Otimização):</strong> {post.get("optimization_triggers", "N/A")}</p>' if post.get("optimization_triggers") else ""}
+                <p class="{subtitulo_grupos.get('Checklist de Publicação:', '')}"><strong>Checklist de Publicação:</strong></p>
                 <ul class="checklist">
                     <li>Revisar texto e gramática.</li>
                     <li>Verificar a qualidade da imagem/vídeo.</li>
