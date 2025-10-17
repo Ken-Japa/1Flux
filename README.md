@@ -17,6 +17,8 @@ Renderização Separada
 python generate_pdf_from_json.py "output_files/respostas_IA/Gemini/Gemini_content_json_debug_20251013_204310.json"
 python generate_html_from_json.py "output_files/respostas_IA/Consolidado/Mistral_content_json_debug_20251015_085158.json"
 
+python -m src.main_consolidar
+
 ## Visão Geral do Projeto
 
 O projeto `mvp_concierge` é composto por três módulos principais:

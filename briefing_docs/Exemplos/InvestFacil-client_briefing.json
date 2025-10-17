@@ -1,0 +1,44 @@
+{
+  "nome_do_cliente": "InvestFacil",
+  "subnicho": "Fintech para iniciantes",
+  "informacoes_de_contato": "Email: contato@investfacil.com.br, WhatsApp: +55 11 91234-5678, Instagram: @investfacil",
+  "publico_alvo": "Jovens profissionais de 25-35 anos, residentes em SP/RJ, interessados em aprender a investir com pouco dinheiro",
+  "tom_de_voz": "Casual e inspirador",
+  "estilo_de_comunicacao": "Como um amigo experiente dando dicas práticas",
+  "vocabulario_da_marca": ["Descomplicar", "Investir é para todos", "Primeiro passo", "Cresça com confiança"],
+  "exemplos_de_nicho": ["Nubank", "Toro Investimentos", "Rico"],
+  "objetivos_de_marketing": "Construir autoridade e gerar leads para app de investimentos",
+  "canais_de_distribuicao": ["Instagram", "LinkedIn"],
+  "topicos_principais": ["Dicas de investimento para iniciantes", "Planejamento financeiro", "Histórias de sucesso"],
+  "palavras_chave": ["finanças pessoais", "investimento fácil", "educação financeira", "dinheiro"],
+  "chamada_para_acao": "Baixe nosso app grátis na bio!",
+  "restricoes_e_diretrizes": "Evitar termos técnicos complexos; sempre em PT-BR; nada de promessas irreais de ganhos",
+  "informacoes_adicionais": "Foco em conteúdo educativo e acessível, com cases fictícios de jovens que começaram a investir com R$50",
+  "referencias_de_concorrentes": ["@nubank: linguagem simples e visual vibrante", "@toroinvestimentos: conteúdo educativo em carrosséis"],
+  "referencias_de_estilo_e_formato": ["Carrosséis com 3-5 slides explicativos", "Reels curtos com storytelling"],
+  "tipo_de_conteudo": "Reels, Carrosséis, Stories",
+  "tipo_de_campanha": "autoridade",
+  "posts_anteriores": ["Post sobre '5 erros comuns ao investir' (Carrossel, 500 curtidas)", "Reel com dica rápida de poupança (1k views)"],
+  "conteudos_semanais": [
+    {
+      "chamada_para_acao_individual": "Salve este post para consultar depois!",
+      "objetivo_do_conteudo_individual": "Apresentar problema comum (medo de investir)"
+    },
+    {
+      "chamada_para_acao_individual": "Comente: Qual seu maior medo ao investir?",
+      "objetivo_do_conteudo_individual": "Ensinar 3 passos simples para começar"
+    },
+    {
+      "chamada_para_acao_individual": "Baixe nosso app grátis na bio!",
+      "objetivo_do_conteudo_individual": "Mostrar case fictício de sucesso"
+    },
+    {
+      "chamada_para_acao_individual": "Clique no link para aprender mais!",
+      "objetivo_do_conteudo_individual": "Explicar diversificação de investimentos"
+    },
+    {
+      "chamada_para_acao_individual": "Cadastre-se na nossa newsletter!",
+      "objetivo_do_conteudo_individual": "Convidar para ação direta no app"
+    }
+  ]
+}

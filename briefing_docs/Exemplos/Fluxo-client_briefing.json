@@ -1,12 +1,11 @@
 {
   "nome_do_cliente": "Fluxo Criativo",
-  "subnicho": "Plataforma de geração de conteúdo automatizado com inteligência artificial",
-  "informacoes_de_contato": "www.chefia.app | contato@chefia.app",
-  "publico_alvo": "profissionais autônomos, pequenos negócios e criadores de conteúdo que desejam publicar posts consistentes e de qualidade sem precisar de uma equipe de marketing.",
+  "subnicho": "Plataforma de geração de conteúdo estratégico para redes sociais",
+  "informacoes_de_contato": "kiira.shinta@gmail.com",
+  "publico_alvo": "Solopreneurs BR (coaches, consultores, etc.). Foco em autoridade vs lançamento.",
   "tom_de_voz": "inovador, didático e inspirador",
-  "estilo_de_comunicacao": "como se fosse uma conversa entre um consultor de marketing e um empreendedor curioso, explicando com clareza e empolgação como a tecnologia pode simplificar sua presença digital.",
+  "estilo_de_comunicacao": "uma conversa entre um consultor de marketing e um empreendedor/influencer curioso, explicando com clareza e empolgação como o serviço pode otimizar sua presença digital e trazer oportunidades para seu negócio.",
   "vocabulario_da_marca": [
-    "inteligência artificial",
     "automação criativa",
     "conteúdo estratégico",
     "facilidade",
@@ -16,50 +15,45 @@
   ],
   "exemplos_de_nicho": [
     "aplicativos de automação de marketing",
-    "plataformas de geração de conteúdo com IA",
     "ferramentas para social media"
   ],
-  "objetivos_de_marketing": "educar o público sobre o poder da IA na criação de conteúdo, gerar confiança na ferramenta e atrair novos usuários para testarem o app.",
+  "objetivos_de_marketing": "gerar confiança na ferramenta e atrair usuários para experimentarem o serviço.",
   "canais_de_distribuicao": [
     "Instagram",
     "LinkedIn",
-    "YouTube",
-    "Blog",
+    "Facebook",
     "Landing page"
   ],
   "topicos_principais": [
-    "como a IA pode acelerar sua criação de conteúdo",
-    "dicas de marketing digital para pequenos negócios",
+    "como acelerar criação de conteúdo",
+    "dicas de marketing digital",
     "casos reais de transformação com automação",
-    "tutoriais rápidos sobre uso do app",
-    "tendências em IA e marketing"
+    "tendências em marketing"
   ],
   "palavras_chave": [
-    "gerador de posts com IA",
     "marketing automatizado",
-    "inteligência artificial para conteúdo",
-    "ferramenta de social media",
-    "posts automáticos para Instagram"
+    "ferramenta de social media"
   ],
   "chamada_para_acao": "Experimente o Fluxo Criativo e descubra como gerar conteúdo de alto impacto em minutos!",
   "restricoes_e_diretrizes": "Evitar jargões técnicos de programação; manter o foco no benefício real para o usuário; não prometer resultados irreais; comunicar com clareza e empatia.",
-  "informacoes_adicionais": "O Fluxo Criativo é uma plataforma de geração de conteúdo inteligente que combina estratégia de marketing com tecnologia de ponta em IA. Permite criar postagens, legendas e campanhas completas com base em um briefing simples, gerando ideias originais e alinhadas à voz da marca.",
+  "informacoes_adicionais": "O Fluxo Criativo é uma plataforma de geração de conteúdo inteligente que combina estratégia de marketing com tecnologia de ponta. Permite criar postagens, legendas e campanhas completas com base em um briefing simples, gerando ideias originais e alinhadas à voz da marca.",
   "referencias_de_concorrentes": [
     "@copy.ai",
     "@jasperai",
-    "@simplifiedapp"
+    "Buffer",
+    "Hootsuite"
   ],
   "referencias_de_estilo_e_formato": [
     "carrosséis educativos sobre IA e marketing",
-    "vídeos curtos de demonstração do produto",
-    "posts comparativos antes/depois do uso da ferramenta"
+    "Instagram",
+    "Linkedin"
   ],
   "tipo_de_conteudo": "conteúdo educativo e institucional com foco em conversão e awareness",
-  "tipo_de_campanha": "lancamento",
+  "tipo_de_campanha": "conversao",
   "conteudos_semanais": [
     {
-      "chamada_para_acao_individual": "Entre em contato e veja como a IA do Fluxo Criativo pode transformar sua estratégia de conteúdo.",
-      "objetivo_do_conteudo_individual": "gerar cadastros e leads qualificados para Fluxo Criativo"
+      "chamada_para_acao_individual": "",
+      "objetivo_do_conteudo_individual": ""
     }
   ]
 }
